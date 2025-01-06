@@ -1,0 +1,6 @@
+.text-side-by-side {
+  aside {
+    border-top: 1px solid var(--color-gray-dark);
+    padding-block-start: var(--space-m);
+  }
+}

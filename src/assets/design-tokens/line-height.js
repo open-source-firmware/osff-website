@@ -1,8 +1,6 @@
 export const lineHeight = {
-  flat: 1,
-  tight: 1.25,
-  snug: 1.375,
+  flat: 1.1,
+  tight: 1.3,
   normal: 1.5,
-  relaxed: 1.625,
-  loose: 2,
+  loose: 1.9,
 };

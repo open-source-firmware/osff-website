@@ -7,12 +7,12 @@ import { interpolate } from "../../utils/css/interpolate";
  */
 export const fontSize = {
   "step--2": "0.75rem",
-  "step--1": "0.875rem",
-  "step-0": "1rem",
-  "step-1": "1.125rem",
-  "step-2": "1.25rem",
-  "step-3": "1.5rem",
-  "step-4": interpolate({ min: 24, max: 32 }),
+  "step--1": interpolate({ min: 15, max: 20 }),
+  "step-0": interpolate({ min: 17, max: 24 }),
+  "step-1": interpolate({ min: 20, max: 30 }),
+  "step-2": interpolate({ min: 22, max: 38 }),
+  "step-3": interpolate({ min: 30, max: 54 }),
+  "step-4": interpolate({ min: 30, max: 70 }),
 };
 
 /**

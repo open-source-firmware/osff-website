@@ -1,0 +1,67 @@
+.btn {
+  padding: var(--space-xs) var(--space-s);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-step-0);
+  text-decoration: none;
+  background: var(--color-black);
+  color: var(--color-white);
+  display: inline-flex;
+  position: relative;
+  clip-path: polygon(
+    15px 0,
+    100% 0,
+    100% 0,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 20px
+  );
+  transition: clip-path 0.3s ease;
+
+  &:hover {
+    clip-path: polygon(
+      30px 0,
+      100% 0,
+      100% 0,
+      100% 100%,
+      100% 100%,
+      0 100%,
+      0 100%,
+      0 35px
+    );
+  }
+}
+
+.btn--primary {
+  background: var(--color-salmon);
+  color: var(--color-white);
+}
+
+.btn--small {
+  padding: var(--space-xxs) var(--space-xs);
+  font-size: var(--text-step--1);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 0,
+    100% 100%,
+    100% 100%,
+    0 100%,
+    0 100%,
+    0 0
+  );
+
+  &:hover {
+    clip-path: polygon(
+      15px 0,
+      100% 0,
+      100% 0,
+      100% 100%,
+      100% 100%,
+      0 100%,
+      0 100%,
+      0 20px
+    );
+  }
+}

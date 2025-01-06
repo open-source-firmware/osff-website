@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     {% include "partials/meta-info.njk" %}
 
     <script>
@@ -21,14 +21,14 @@
     {# <link rel="stylesheet" href="/assets/css/fonts/fonts.css?{{ assetHash }}" /> #}
     {% if env.nodeenv !== 'production' %}
       <!-- We're not in production mode -->
-      <link rel="stylesheet" href="/assets/css/global.css" />
+      <link rel="stylesheet" href="/assets/css/global.css"/>
     {% endif %}
   </head>
 
   <body>
     {% include "partials/site-head.njk" %}
 
-    <main tabindex="-1" id="main-content" class="leading-snug stack-s">
+    <main tabindex="-1" id="main-content" class="leading-snug stack-2xl">
       {% block content %}
         {{ content | safe }}
       {% endblock %}

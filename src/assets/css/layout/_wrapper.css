@@ -3,6 +3,13 @@
  * Sets a max width, adds a consisten gutter and horizontally
  * centers the contents
  */
+
+:root {
+  --wrapper-s: clamp(40rem, 60vw, 60rem);
+  --wrapper-m: clamp(60rem, 90vw, 80rem);
+  --wrapper-l: clamp(80rem, 100vw, 150rem);
+}
+
 .wrapper {
   width: min(100% - var(--space-m) * 2, var(--wrapper-max, 70rem));
   margin-inline: auto;

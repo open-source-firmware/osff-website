@@ -24,10 +24,19 @@ dd {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: var(--leading-flat);
+}
+
 /* Allow percentage-based heights in the application*/
 html,
 body {
   min-height: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /* Set core root defaults */

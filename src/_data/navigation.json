@@ -1,20 +1,20 @@
 {
   "items": [
     {
-      "text": "item-01",
-      "url": "/item-01/"
+      "text": "About us",
+      "url": "/about-us/"
     },
     {
-      "text": "item-02",
-      "url": "/item-02/"
+      "text": "Our Work",
+      "url": "/our-work/"
     },
     {
-      "text": "item-03",
-      "url": "/item-03/"
+      "text": "Community",
+      "url": "/community/"
     },
     {
-      "text": "item-04",
-      "url": "/item-04/"
+      "text": "Events",
+      "url": "/events/"
     }
   ]
 }

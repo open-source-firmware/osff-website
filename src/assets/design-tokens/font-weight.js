@@ -1,5 +1,5 @@
 export const fontWeight = {
-  light: 300,
-  regular: 500,
-  bold: 700,
+  regular: 400,
+  medium: 600,
+  bold: 800,
 };

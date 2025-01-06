@@ -1,0 +1,32 @@
+.link {
+  color: var(--color-salmon);
+  text-decoration: none;
+  font-size: var(--text-step--1);
+  font-weight: var(--weight-medium);
+  padding-inline: calc(var(--space-m) + var(--space-s)) var(--space-s);
+  position: relative;
+  display: inline-flex;
+  transition: padding 0.3s ease;
+
+  &::before {
+    content: "";
+    width: var(--space-m);
+    height: 2px;
+    background: var(--color-salmon);
+    position: absolute;
+    left: 0;
+    top: calc(var(--text-step-1) / 2);
+    transition: width 0.3s ease, transform 0.25s ease;
+    transform: rotate(0);
+  }
+
+  &:hover {
+    padding-inline: var(--space-s) calc(var(--space-m) + var(--space-s));
+
+    &::before {
+      width: var(--space-xs);
+      transform: rotate(-45deg);
+      transition: width 0.3s ease, transform 0.25s ease 0.25s;
+    }
+  }
+}

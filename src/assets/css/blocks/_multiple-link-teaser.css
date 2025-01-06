@@ -1,0 +1,112 @@
+.multiple-link-teaser {
+  display: grid;
+  row-gap: var(--space-s);
+  position: relative;
+
+  @media (--md) {
+    grid-template-columns: auto max-content;
+    column-gap: var(--space-l);
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: var(--color-gray);
+      bottom: calc(var(--space-l) * -1);
+      left: calc(var(--space-l) * -1);
+      height: var(--space-3xl);
+      width: calc(100% + var(--space-l) * 2);
+      z-index: -1;
+    }
+  }
+
+  @media (--lg) {
+    column-gap: var(--space-xl);
+  }
+}
+
+.multiple-link-teaser__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+
+  a {
+    background: var(--color-black);
+    color: var(--color-white);
+    text-decoration: none;
+    padding: var(--space-xs) var(--space-s) var(--space-xs) var(--space-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--text-step--1);
+    font-weight: var(--weight-medium);
+    transition: clip-path 0.3s ease;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 0,
+      100% 100%,
+      100% 100%,
+      0 100%,
+      0 100%,
+      0 0
+    );
+
+    &:hover {
+      clip-path: polygon(
+        15px 0,
+        100% 0,
+        100% 0,
+        100% 100%,
+        100% 100%,
+        0 100%,
+        0 100%,
+        0 20px
+      );
+    }
+  }
+}
+
+.multiple-link-teaser__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.multiple-link-teaser__image {
+  background-image: url("/assets/images/governance.jpg");
+  background-position: center;
+  background-size: cover;
+
+  @media (--md) {
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(
+      60px 0,
+      100% 0,
+      100% 0,
+      100% 100%,
+      100% 100%,
+      0 100%,
+      0 100%,
+      0 65px
+    );
+  }
+}
+
+.multiple-link-teaser__hint {
+  max-width: 36ch;
+  grid-row: 3/4;
+  margin-block-start: var(--space-m);
+
+  @media (--md) {
+    grid-row: 2/3;
+    margin-block-start: 0;
+  }
+}
+
+.multiple-link-teaser__small-link {
+  grid-row: 4/5;
+
+  @media (--md) {
+    grid-row: 2/3;
+  }
+}
