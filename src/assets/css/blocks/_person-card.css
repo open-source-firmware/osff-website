@@ -1,3 +1,87 @@
 .person-card {
-    
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  width: max(20rem, calc(33% - var(--space-xxs)));
+  padding: var(--space-xs);
+
+  &:hover,
+  &:focus-within {
+    background-color: var(--color-purple);
+
+    .person-card__info {
+      h3 {
+        color: var(--color-white);
+      }
+
+      color: var(--color-white);
+    }
+
+    .person-card__role::before {
+      background-color: var(--color-white);
+    }
+
+    .person-card__image-container {
+      img {
+        mix-blend-mode: normal;
+      }
+
+      span {
+        transform: translate(-50%, -55%);
+      }
+    }
+  }
+}
+
+.person-card__info {
+  padding-top: var(--space-m);
+}
+
+.person-card__role {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+
+  &::before {
+    content: "";
+    width: var(--space-l);
+    height: 2px;
+    background-color: var(--color-black);
+  }
+}
+
+.person-card__image-container {
+  position: relative;
+  background-color: var(--color-purple);
+
+  img {
+    mix-blend-mode: luminosity;
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+
+  span {
+    display: inline-block;
+    position: absolute;
+    color: #2d64bc;
+    background-color: var(--color-white);
+    padding: var(--space-xs);
+    margin-left: 50%;
+    border-radius: var(--space-l);
+    transform: translate(-50%, -50%);
+    transition: 0.2s ease-out;
+  }
+}
+
+.person-card__link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  &:focus {
+    outline: none;
+  }
 }
