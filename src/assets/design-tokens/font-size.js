@@ -11,7 +11,7 @@ export const fontSize = {
   "step-0": interpolate({ min: 17, max: 24 }),
   "step-1": interpolate({ min: 20, max: 30 }),
   "step-2": interpolate({ min: 22, max: 38 }),
-  "step-3": interpolate({ min: 30, max: 54 }),
+  "step-3": interpolate({ min: 30, max: 50 }),
   "step-4": interpolate({ min: 30, max: 70 }),
 };
 

@@ -7,6 +7,7 @@
   color: var(--color-white);
   display: inline-flex;
   position: relative;
+  text-align: center;
   clip-path: polygon(
     15px 0,
     100% 0,
