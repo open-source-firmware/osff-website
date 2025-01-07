@@ -1,4 +1,5 @@
 /* This file defines our media queries */
 @custom-media --sm (width >= 40em);
 @custom-media --md (width >= 60em);
+@custom-media --md-max (width <= 60em);
 @custom-media --lg (width >= 80em);

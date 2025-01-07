@@ -63,6 +63,13 @@
         0 20px
       );
     }
+
+    &:focus-visible {
+      background: var(--color-white);
+      color: var(--color-black);
+      outline: 2px dashed var(--color-black);
+      outline-offset: -2px;
+    }
   }
 }
 

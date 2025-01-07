@@ -1,6 +1,5 @@
 .btn {
   padding: var(--space-xs) var(--space-s);
-  font-weight: var(--weight-medium);
   font-size: var(--text-step-0);
   text-decoration: none;
   background: var(--color-black);
@@ -31,6 +30,11 @@
       0 100%,
       0 35px
     );
+  }
+
+  &:focus-visible {
+    outline: 2px dashed var(--color-white);
+    outline-offset: -4px;
   }
 }
 

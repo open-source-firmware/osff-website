@@ -1,6 +1,7 @@
-@layer reset, layout, utils, blocks;
+@layer fonts, reset, layout, utils, blocks;
 
 @import "./_media.css";
+@import "./_fonts.css" layer(fonts);
 @import "./_reset.css" layer(reset);
 
 @import-glob "./blocks/**/_*.css" layer(blocks);
