@@ -1,0 +1,26 @@
+.text-highlight {
+  position: relative;
+
+  &::before {
+    content: "";
+    margin-left: 17px;
+    display: block;
+    margin-block: var(--space-m);
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-salmon);
+    outline: 7px solid var(--color-purple);
+    outline-offset: 10px;
+  }
+
+  @media (--sm) {
+    padding-left: calc(44px + var(--space-s));
+
+    &::before {
+      position: absolute;
+      left: 17px;
+      top: 20px;
+      margin: 0;
+    }
+  }
+}

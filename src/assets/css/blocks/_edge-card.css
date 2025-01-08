@@ -11,25 +11,41 @@
     height: var(--space-m);
     background: var(--color-white);
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -1px;
+    left: -1px;
 
     @media (--lg) {
       width: var(--space-l);
       height: var(--space-l);
     }
   }
+}
 
-  &--purple {
-    background: var(--color-purple);
-    color: var(--color-white);
-  }
+.edge-card--purple {
+  background: var(--color-purple);
+  color: var(--color-white);
 }
 
 .edge-card__header {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    @media (--sm) {
+      margin-inline-start: var(--space-m);
+    }
+  }
+
+  svg + h2,
+  svg + h3,
+  svg + h4,
+  svg + h5 {
+    margin-inline-start: 0;
+  }
 }
 
 .edge-card__header-icon {

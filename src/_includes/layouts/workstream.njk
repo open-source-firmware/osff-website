@@ -1,0 +1,15 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+    <div class="workstream">
+        <div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-s)">
+            {{ content | safe }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block relatedContent %}
+    <div class="workstream">
+        {{ relatedContent | safe }}
+    </div>
+{% endblock %}

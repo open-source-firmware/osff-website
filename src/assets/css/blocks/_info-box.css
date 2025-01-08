@@ -1,0 +1,17 @@
+.info-box {
+  background: var(--color-gray);
+  color: var(--color-black);
+  padding: var(--space-m) var(--space-s) var(--space-s) var(--space-m);
+  position: relative;
+
+  &::before {
+    content: "";
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+    width: var(--space-m);
+    height: var(--space-m);
+    background: var(--color-white);
+    position: absolute;
+    top: -1px;
+    left: -1px;
+  }
+}
