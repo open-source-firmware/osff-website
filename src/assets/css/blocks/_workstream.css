@@ -4,6 +4,7 @@
   padding-block: var(--space-xl);
 
   .date {
+    margin-top: var(--space-l);
     display: flex;
     align-items: flex-start;
     flex-direction: column;
