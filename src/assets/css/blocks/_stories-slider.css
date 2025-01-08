@@ -86,14 +86,6 @@
   }
 }
 
-.stories-slider__content-tag {
-  border: 3px solid var(--color-black);
-  padding-block-start: var(--space-xxs);
-  padding-block-end: calc(var(--space-xxs) / 2);
-  padding-inline: var(--space-xs);
-  border-radius: var(--space-xl);
-}
-
 .stories-slider__content-text {
   max-width: 30ch;
 }

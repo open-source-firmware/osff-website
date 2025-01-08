@@ -1,10 +1,18 @@
 .tag {
   text-transform: uppercase;
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-medium);
   font-family: var(--font-head);
   border: 3px solid var(--color-black);
   border-radius: 20px;
   width: fit-content;
   padding: 0.25rem 1rem 0;
   font-size: var(--text-step--1);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    outline: none;
+  }
 }
