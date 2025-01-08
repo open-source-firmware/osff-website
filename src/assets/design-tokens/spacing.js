@@ -13,7 +13,7 @@ export const spacing = {
   s: interpolate({ min: 20, max: 35, vwMin: 480, vwMax: 1440 }),
   m: interpolate({ min: 30, max: 50, vwMin: 480, vwMax: 1440 }),
   l: interpolate({ min: 40, max: 80, vwMin: 480, vwMax: 1440 }),
-  xl: interpolate({ min: 100, max: 150, vwMin: 480, vwMax: 1440 }),
+  xl: interpolate({ min: 100, max: 180, vwMin: 480, vwMax: 1440 }),
   "2xl": interpolate({ min: 150, max: 280, vwMin: 480, vwMax: 1440 }),
   "3xl": interpolate({ min: 200, max: 400, vwMin: 480, vwMax: 1440 }),
 };

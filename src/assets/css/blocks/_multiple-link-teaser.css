@@ -3,19 +3,27 @@
   row-gap: var(--space-s);
   position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    background: var(--color-gray);
+    top: calc(var(--space-l) * -1);
+    left: calc(var(--space-l) * -1);
+    height: calc(100% / 2.5);
+    width: calc(100% + var(--space-l) * 2);
+    z-index: -1;
+  }
+
   @media (--md) {
     grid-template-columns: auto max-content;
     column-gap: var(--space-l);
 
     &::before {
-      content: "";
-      position: absolute;
-      background: var(--color-gray);
+      top: unset;
       bottom: calc(var(--space-l) * -1);
       left: calc(var(--space-l) * -1);
       height: var(--space-3xl);
       width: calc(100% + var(--space-l) * 2);
-      z-index: -1;
     }
   }
 

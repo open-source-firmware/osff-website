@@ -1,6 +1,6 @@
 ---
 title: "About us"
-layout: "layouts/base.njk"
+layout: "layouts/subpage.njk"
 permalink: /about-us/index.html
 ---
 
@@ -19,7 +19,6 @@ permalink: /about-us/index.html
   <br><br>
   Join us in driving change through open collaboration and cutting-edge technology.
   </p>
-            <a href="#" class="btn btn--primary">More info</a>
         </div>
         <aside class="stack-xs">
             <p class="text-step-0 text-gray-dark">The entire logo selection of the Open-Source Firmware Foundation.</p>
@@ -82,7 +81,7 @@ permalink: /about-us/index.html
     <a href="#" class="multiple-link-teaser__small-link link">Explore the Community</a>
 </div>
 
-<div class="wrapper stack-xl" style="--wrapper-max: var(--wrapper-m)">
+<div class="wrapper stack-xl --stack-space-2xl" style="--wrapper-max: var(--wrapper-m);">
     <div class="stack-m">
         <h2 class="text-center uppercase font-head text-purple weight-bold text-step-3">Officers</h2>
         <div class="cluster" style="--cluster-justification: center; --cluster-gap: var(--space-xxs);">
@@ -306,19 +305,115 @@ permalink: /about-us/index.html
     </div>
 </div>
 
-<div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
-  <div class="decoline-container">
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-  </div>
-
-  <div class="image-teaser__content">
-    <div class="wrapper image-teaser__image"><img class="overlay" src="/assets/images/osfc-2024.jpeg" alt=""></div>
-    <div class="image-teaser__cta stack-s">
-      <p class="uppercase text-purple font-head text-step--1 leading-flat ">Don’t miss the loremsum</p>
-      <h2 class="leading-normal weight-regular">OSFC 2024 - Open-Source Firmware Conference 2024</h2>
-      <a class="btn weight-regular" href="#">Info & Tickets</a>
+<div class="wrapper | stack-l" style="--wrapper-max: var(--wrapper-m)">
+    <div class="sidebar-left" style="
+      --sidebar-threshold: 30rem;
+      --sidebar-gap-vertical: var(--space-xs);
+      --sidebar-gap: var(--space-l);
+      --sidebar-width: 50ch;
+    ">
+        <div class="stack-xs">
+            <h3 class="uppercase text-purple font-head text-step-3 weight-bold">osff Membership Directory</h3>
+        </div>
+        <div class="stack-s">
+            <hr>
+            <p class="text-step-1 text-gray-dark">Want to know more about the benefits being an OSFF Member?</p>
+            <a href="#" class="link">Checkout OSFF Slides</a>
+        </div>
     </div>
-  </div>
+
+    <ul role="list" class="grid-switcher" style="
+      --gs-columns-small: 1;
+      --gs-columns-medium: 2;
+      --gs-columns-large: 3;
+      --gs-gap: var(--space-m);
+    ">
+        <li class="round-card">
+            <div class="round-card__tagline">
+                <p class="tag">Founding Member</p>
+            </div>
+            <div class="centerflex round-card__header bg-gray">
+                {% icon icon = "osff",
+        alt = "OSFF",
+        class = "edge-card__header-icon",
+        width = "var(--space-xl)" %}
+            </div>
+            <div class="round-card__footer">
+                <a href="#" class="link">More info</a>
+            </div>
+        </li>
+        <li class="round-card">
+            <div class="round-card__tagline">
+                <p class="tag">Founding Member</p>
+            </div>
+            <div class="centerflex round-card__header bg-gray">
+                {% icon icon = "osff",
+        alt = "OSFF",
+        class = "edge-card__header-icon",
+        width = "var(--space-xl)" %}
+            </div>
+            <div class="round-card__footer">
+                <a href="#" class="link">More info</a>
+            </div>
+        </li>
+        <li class="round-card">
+            <div class="round-card__tagline">
+                <p class="tag">Founding Member</p>
+            </div>
+            <div class="centerflex round-card__header bg-gray">
+                {% icon icon = "osff",
+        alt = "OSFF",
+        class = "edge-card__header-icon",
+        width = "var(--space-xl)" %}
+            </div>
+            <div class="round-card__footer">
+                <a href="#" class="link">More info</a>
+            </div>
+        </li>
+        <li class="round-card">
+            <div class="round-card__tagline">
+                <p class="tag">Founding Member</p>
+            </div>
+            <div class="centerflex round-card__header bg-gray">
+                {% icon icon = "osff",
+        alt = "OSFF",
+        class = "edge-card__header-icon",
+        width = "var(--space-xl)" %}
+            </div>
+            <div class="round-card__footer">
+                <a href="#" class="link">More info</a>
+            </div>
+        </li>
+        <li class="round-card">
+            <div class="round-card__tagline">
+                <p class="tag">Founding Member</p>
+            </div>
+            <div class="centerflex round-card__header bg-gray">
+                {% icon icon = "osff",
+        alt = "OSFF",
+        class = "edge-card__header-icon",
+        width = "var(--space-xl)" %}
+            </div>
+            <div class="round-card__footer">
+                <a href="#" class="link">More info</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
+    <div class="decoline-container">
+        <span class="decoline" aria-hidden="true"></span>
+        <span class="decoline" aria-hidden="true"></span>
+        <span class="decoline" aria-hidden="true"></span>
+    </div>
+
+    <div class="image-teaser__content">
+        <div class="wrapper image-teaser__image"><img class="overlay" src="/assets/images/osfc-2024.jpeg" alt=""></div>
+        <div class="image-teaser__cta stack-s">
+            <p class="uppercase text-purple font-head text-step--1 leading-flat ">Don’t miss the loremsum</p>
+            <h2 class="leading-normal weight-regular">OSFC 2024 - Open-Source Firmware Conference 2024</h2>
+            <a class="btn weight-regular" href="#">Info & Tickets</a>
+        </div>
+    </div>
 </div>
