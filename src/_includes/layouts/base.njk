@@ -25,7 +25,7 @@
     {% endif %}
   </head>
 
-  <body>
+  <body class="{{ "dark" if color==="dark" else "light" }}">
     {% include "partials/site-head.njk" %}
 
     <main tabindex="-1" id="main-content" class="leading-snug">
