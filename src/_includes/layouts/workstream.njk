@@ -9,7 +9,9 @@
 {% endblock %}
 
 {% block relatedContent %}
-    <div class="workstream">
-        {{ relatedContent | safe }}
+    <div class="workstream-related-content">
+        <div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-s)">
+            {{ relatedContent | safe }}
+        </div>
     </div>
 {% endblock %}

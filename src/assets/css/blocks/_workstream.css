@@ -75,4 +75,47 @@
       }
     }
   }
+
+  .recources {
+  }
+
+  .resources__item {
+    position: relative;
+    background: var(--color-white);
+    padding: 1rem 1rem 0.8rem 1.5rem;
+
+    @media (--md) {
+      padding: 1.5rem 2rem 1.2rem 2.5rem;
+    }
+
+    &::before {
+      content: "";
+      clip-path: polygon(0 0, 0% 100%, 100% 0);
+      width: var(--space-s);
+      height: var(--space-s);
+      background: var(--color-purple);
+      position: absolute;
+      top: -1px;
+      left: -1px;
+
+      @media (--lg) {
+        width: var(--space-m);
+        height: var(--space-m);
+      }
+    }
+
+    a {
+      text-decoration: none;
+      font-size: var(--text-step-1);
+      font-weight: var(--weight-bold);
+      font-family: var(--font-head);
+      color: var(--color-black);
+      line-height: 1.2;
+    }
+  }
+}
+
+.workstream-related-content {
+  background-color: var(--color-white);
+  padding-block: var(--space-xl);
 }
