@@ -50,6 +50,10 @@ body {
   line-height: 1.5;
 }
 
+main {
+  overflow-x: clip;
+}
+
 /* Default link styles */
 a {
   text-decoration-skip-ink: auto;

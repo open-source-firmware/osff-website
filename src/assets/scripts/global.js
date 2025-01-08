@@ -5,4 +5,4 @@
  * `import { myFunction } from './myFunction';`
  */
 
-console.log("Hello from global.js");
+import "./decoline.js";

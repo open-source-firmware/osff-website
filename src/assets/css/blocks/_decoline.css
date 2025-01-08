@@ -1,0 +1,46 @@
+:root {
+  --decoline-color: var(--color-salmon);
+  --decoline-width: 5px;
+  --decoline-height: 1.5rem;
+
+  @media (--sm) {
+    --decoline-width: 7px;
+    --decoline-height: 2rem;
+  }
+}
+
+.decoline-container {
+  height: calc(var(--decoline-height) * 4);
+  width: 100vw;
+  transform-origin: right;
+  position: absolute;
+  z-index: 1;
+}
+
+.decoline {
+  position: absolute;
+  height: var(--decoline-height);
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    width: 100%;
+    height: var(--decoline-width);
+    background-color: var(--decoline-color);
+    left: calc(var(--decoline-height) * -1 + var(--decoline-width));
+    top: calc(50% - (var(--decoline-width) / 2));
+  }
+
+  &::after {
+    border-radius: 50%;
+    border: var(--decoline-width) solid var(--decoline-color);
+    height: 100%;
+    aspect-ratio: 1;
+    right: 0;
+  }
+}
