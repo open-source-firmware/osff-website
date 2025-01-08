@@ -24,23 +24,24 @@ permalink: /workstream/index.html
         <p>The Silicon Interface Design workstream has the goal to unify these interfaces and define a specification around it so 
                 that SoC vendors and (open-source) firmware projects, and their developers, have a fixed and common way to interact 
                 and configure those silicon initialization code.</p>
-        <ul aria-label="The Goals:" class="fancy-list | text-step-0" role="list">
-            <li class="done">
-                <p>Develop a transparent, easy-to-follow workflow for feature requests.</p>
-            </li>
-            <li class="done">
-                <p>Ensure businesses and the community can collaborate efficiently.</p>
-            </li>
-            <li class="done">
-                <p>Avoid the creation of fragmented forks by encouraging upstream development.</p>
-            </li>
-            <li>
-                <p>Balance business needs with the open-source ethos.</p>
-            </li>
-        </ul>
     </div>
-    <ul class="resources | auto-grid" role="list" style="
+    <ul aria-label="The Goals:" class="fancy-list | text-step-0" role="list">
+        <li class="done">
+            <p>Develop a transparent, easy-to-follow workflow for feature requests.</p>
+        </li>
+        <li class="done">
+            <p>Ensure businesses and the community can collaborate efficiently.</p>
+        </li>
+        <li class="done">
+            <p>Avoid the creation of fragmented forks by encouraging upstream development.</p>
+        </li>
+        <li>
+            <p>Balance business needs with the open-source ethos.</p>
+        </li>
+    </ul>
+    <ul aria-label="Resources" class="resources | auto-grid" role="list" style="
             --auto-grid-min-size: 25rem;
+            --auto-grid-gap: var(--space-s);
         ">
         <li class="resources__item">
             <a href="#">Introduction slides</a>
@@ -52,6 +53,22 @@ permalink: /workstream/index.html
             <a href="#">Apply for write access to guideline documentation</a>
         </li>
     </ul>
+    <div class="stack-s">
+        <h3 class="weight-bold font-head text-step-2">Workstream Leads</h3>
+        <div class="workstream-lead">
+            <div class="workstream-lead__portrait">
+                <img src="/assets/images/people/werner-zeh.png" alt="">
+            </div>
+            <div class="workstream-lead__content">
+                <p class="uppercase text-step-1 weight-bold font-head">Werner Zeh</p>
+                <a href="mailto:werner.zeh@osfw.foundation">
+                    {% icon icon = "mail",
+                    alt = "",
+                    width = "var(--space-s)" %}
+                    werner.zeh@osfw.foundation</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block relatedContent %}
