@@ -192,6 +192,54 @@ permalink: /
   </aside>
 </div>
 
+<div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
+  <h2 class="text-center uppercase font-head weight-bold text-step-4 text-purple">hot firmware projects</h2>
+  <ul role="list" class="grid-switcher" style="
+      --gs-columns-medium: 1;
+      --gs-columns-large: 2;
+      --gs-gap: var(--space-m);
+    ">
+    <li class="edge-card">
+      <div class="edge-card__header">
+        {% icon icon = "osff",
+        alt = "OSFF",
+        class = "edge-card__header-icon",
+        width = "clamp(4rem, 10vw, 8rem)" %}
+        <h3 class="uppercase text-step-2 font-head weight-bold">Covered Security Suite</h3>
+      </div>
+      <div class="edge-card__content">
+        <p class="weight-medium text-step--1">CSS is an open-source toolkit for provisioning and testing security features in firmware, specifically supporting Intel platform security.</p>
+      </div>
+      <div class="edge-card__footer">
+        <a href="#" class="btn btn--small">More info</a>
+        {% icon icon = "osff-sign",
+        alt = "OSFF",
+        class = "edge-card__footer-icon",
+        width = "var(--space-l)" %}
+      </div>
+    </li>
+    <li class="edge-card">
+      <div class="edge-card__header">
+        {% icon icon = "linuxboot",
+        alt = "LinusBoot",
+        class = "edge-card__header-icon",
+        width = "clamp(4rem, 10vw, 8rem)" %}
+        <h3 class="uppercase text-step-2 font-head weight-bold">LinuxBoot</h3>
+      </div>
+      <div class="edge-card__content">
+        <p class="weight-medium text-step--1">LinuxBoot is a firmware for modern servers that replaces specific firmware functionality like the UEFI DXE phase with a Linux kernel and runtime.</p>
+      </div>
+      <div class="edge-card__footer">
+        <a href="#" class="btn btn--small">More info</a>
+        {% icon icon = "osff-sign",
+        alt = "OSFF",
+        class = "edge-card__footer-icon",
+        width = "var(--space-l)" %}
+      </div>
+    </li>
+  </ul>
+</div>
+
 <div class="wrapper stories-slider bg-gray" style="--wrapper-max: var(--wrapper-m)">
   <div class="decoline-container">
     <span class="decoline" aria-hidden="true"></span>
@@ -220,86 +268,6 @@ permalink: /
 </div>
 
 <div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
-  <h2 class="text-center uppercase font-head weight-bold text-step-4 text-purple">hot firmware projects</h2>
-  <ul role="list" class="grid-switcher" style="
-      --gs-columns-medium: 1;
-      --gs-columns-large: 2;
-      --gs-gap: var(--space-m);
-    ">
-    <li class="edge-card">
-      <div class="edge-card__header">
-        {% icon icon = "osff",
-        alt = "OSFF",
-        class = "edge-card__header-icon",
-        width = "var(--space-xl)" %}
-        <h3 class="uppercase text-step-2 font-head weight-bold">Covered Security Suite</h3>
-      </div>
-      <div class="edge-card__content">
-        <p class="weight-medium text-step--1">CSS is an open-source toolkit for provisioning and testing security features in firmware, specifically supporting Intel platform security.</p>
-      </div>
-      <div class="edge-card__footer">
-        <a href="#" class="btn btn--small">More info</a>
-        {% icon icon = "osff-sign",
-        alt = "OSFF",
-        class = "edge-card__footer-icon",
-        width = "var(--space-l)" %}
-      </div>
-    </li>
-    <li class="edge-card">
-      <div class="edge-card__header">
-        {% icon icon = "linuxboot",
-        alt = "LinusBoot",
-        class = "edge-card__header-icon",
-        width = "var(--space-xl)" %}
-        <h3 class="uppercase text-step-2 font-head weight-bold">LinuxBoot</h3>
-      </div>
-      <div class="edge-card__content">
-        <p class="weight-medium text-step--1">LinuxBoot is a firmware for modern servers that replaces specific firmware functionality like the UEFI DXE phase with a Linux kernel and runtime.</p>
-      </div>
-      <div class="edge-card__footer">
-        <a href="#" class="btn btn--small">More info</a>
-        {% icon icon = "osff-sign",
-        alt = "OSFF",
-        class = "edge-card__footer-icon",
-        width = "var(--space-l)" %}
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
-  <h2 class="text-center uppercase font-head weight-bold text-step-4 text-purple">hot firmware projects</h2>
-  <ul role="list" class="grid-switcher" style="
-      --gs-columns-medium: 1;
-      --gs-columns-large: 2;
-      --gs-gap: var(--space-m);
-    ">
-    <li class="edge-card edge-card--purple">
-      <div class="edge-card__header">
-        <h3 class="uppercase text-step-2 font-head weight-bold">Covered Security Suite</h3>
-      </div>
-      <div class="edge-card__content">
-        <p class="weight-medium text-step--1">CSS is an open-source toolkit for provisioning and testing security features in firmware, specifically supporting Intel platform security.</p>
-      </div>
-      <div class="edge-card__footer">
-        <a href="#" class="btn btn--small">More info</a>
-      </div>
-    </li>
-    <li class="edge-card edge-card--purple">
-      <div class="edge-card__header">
-        <h3 class="uppercase text-step-2 font-head weight-bold">LinuxBoot</h3>
-      </div>
-      <div class="edge-card__content">
-        <p class="weight-medium text-step--1">LinuxBoot is a firmware for modern servers that replaces specific firmware functionality like the UEFI DXE phase with a Linux kernel and runtime.</p>
-      </div>
-      <div class="edge-card__footer">
-        <a href="#" class="btn btn--small">More info</a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
   <div class="sidebar-left" style="
       --sidebar-threshold: 30rem;
       --sidebar-gap-vertical: var(--space-xs);
@@ -317,7 +285,7 @@ permalink: /
       --gs-columns-medium: 1;
       --gs-columns-large: 2;
       --gs-gap: var(--space-m);
-    ">
+      ">
     <li class="round-card">
       <div class="round-card__tagline">
         <p class="tag">Founding member</p>
@@ -404,64 +372,24 @@ permalink: /
       </div>
       <div class="round-card__footer">
         <a href="#" class="btn btn--small">More info</a>
-      </div>
-    </li>
-  </ul>
-
-  <ul role="list" class="grid-switcher" style="
-      --gs-columns-medium: 1;
-      --gs-columns-large: 2;
-      --gs-gap: var(--space-m);
-    ">
-    <li class="round-card">
-      <div class="round-card__tagline">
-        <p class="tag">September 05 –––– 2024</p>
-      </div>
-      <div class="round-card__header bg-purple">
-        <h3 class="text-white uppercase text-step-3 font-head weight-bold">OSFC 2024 - Open-Source Firmware Conference 2024</h3>
-      </div>
-      <div class="round-card__content">
-        <p class="text-step-0 text-gray-dark">The Open Source Firmware Foundation, in cooperation with 9elements and Google will host this years OSFC in Germany</p>
-      </div>
-      <div class="round-card__footer">
-        <a href="#" class="link">More info</a>
-      </div>
-    </li>
-    <li class="round-card">
-      <div class="round-card__tagline">
-        <p class="tag">September 05 –––– 2024</p>
-      </div>
-      <div class="round-card__header bg-purple">
-        <h3 class="text-white uppercase text-step-3 font-head weight-bold">OSFC 2024 - Open-Source Firmware Conference 2024</h3>
-      </div>
-      <div class="round-card__content">
-        <p class="text-step-0 text-gray-dark">The Open Source Firmware Foundation, in cooperation with 9elements and Google will host this years OSFC in Germany</p>
-      </div>
-      <div class="round-card__footer">
-        <a href="#" class="link">More info</a>
       </div>
     </li>
   </ul>
 </div>
 
-<div class="wrapper | stack-l" style="--wrapper-max: var(--wrapper-m)">
-  <div class="sidebar-right" style="
-      --sidebar-threshold: 40rem;
-      --sidebar-gap: var(--space-l);
-      --sidebar-width: 25rem;
-    ">
-    <div class="stack-s">
-      <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Empowering Innovation through 
-      Open-Source Projects</h3>
-      <p class="text-highlight | text-step-0">
-        Explore our supported projects advancing open-source firmware solutions. 
-        Each initiative tackles real-world challenges, driving progress in security, 
-        performance, and accessibility for a more transparent digital future.
-      </p>
-    </div>
-    <div class="info-box | stack-s">
-      <h4 class="leading-tight weight-regular text-step-0">Ready to make an impact? Discover projects that are pushing open-source firmware forward.</h4>
-      <a class="btn btn--small" href="#">Explore</a>
+<div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
+  <div class="decoline-container">
+    <span class="decoline" aria-hidden="true"></span>
+    <span class="decoline" aria-hidden="true"></span>
+    <span class="decoline" aria-hidden="true"></span>
+  </div>
+
+  <div class="image-teaser__content">
+    <div class="wrapper image-teaser__image"><img class="overlay" src="/assets/images/osfc-2024.jpeg" alt=""></div>
+    <div class="image-teaser__cta stack-s">
+      <p class="uppercase text-purple font-head text-step--1 leading-flat ">Don’t miss the loremsum</p>
+      <h2 class="leading-normal weight-regular">OSFC 2024 - Open-Source Firmware Conference 2024</h2>
+      <a class="btn weight-regular" href="#">Info & Tickets</a>
     </div>
   </div>
 </div>

@@ -9,11 +9,16 @@
   a {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: var(--space-s);
     border-top: 2px solid var(--color-black);
     text-decoration: none;
     padding: var(--space-s);
+    font-size: var(--text-step-0);
+    flex-direction: column;
+
+    @media (--md) {
+      flex-direction: row;
+    }
 
     > div {
       display: flex;
@@ -21,16 +26,26 @@
       gap: var(--space-s);
 
       &:last-of-type {
+        flex-shrink: 0;
+        width: max-content;
+
         svg {
           height: var(--space-m);
           width: var(--space-m);
+        }
+
+        width: 100%;
+        justify-content: space-between;
+
+        @media (--md) {
+          width: unset;
         }
       }
     }
 
     svg {
-      height: var(--space-l);
-      width: var(--space-l);
+      height: var(--space-m);
+      width: var(--space-m);
       flex-shrink: 0;
     }
 
