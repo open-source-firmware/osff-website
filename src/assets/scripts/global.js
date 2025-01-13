@@ -6,3 +6,19 @@
  */
 
 import "./decoline.js";
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+
+const swiper = new Swiper(".stories-slider__content", {
+  modules: [Navigation, Pagination],
+  slidesPerView: 1, // Zorg ervoor dat één slide per keer wordt weergegeven
+  spaceBetween: 20, // Optioneel: ruimte tussen slides
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
+});
