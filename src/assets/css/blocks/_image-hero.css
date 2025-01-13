@@ -1,5 +1,5 @@
 .image-hero {
-  --image-height: 60vh;
+  --image-height: 80vh;
   --cutout-height: var(--space-l);
 
   position: relative;
