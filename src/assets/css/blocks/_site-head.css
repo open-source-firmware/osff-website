@@ -1,4 +1,7 @@
 .site-head {
+  overflow-x: clip;
+  width: 100vw;
+
   > .cluster {
     --cluster-gap: var(--space-s);
     --cluster-justification: center;
@@ -119,7 +122,7 @@
   }
 }
 
-.dark .site-head {
+.dark.site-head {
   background-color: var(--color-purple);
 
   svg {
@@ -166,5 +169,15 @@
         }
       }
     }
+  }
+}
+
+.image-head.site-head {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+
+  svg {
+    color: var(--color-white);
   }
 }
