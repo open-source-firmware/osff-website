@@ -1,4 +1,4 @@
-.image-header {
+.image-hero {
   --image-height: 60vh;
   --cutout-height: var(--space-l);
 
@@ -6,7 +6,7 @@
   height: calc(var(--image-height) + var(--cutout-height));
 }
 
-.image-header__cutout {
+.image-hero__cutout {
   position: absolute;
   bottom: var(--cutout-height);
   width: 100%;
@@ -55,7 +55,7 @@
   }
 }
 
-.image-header__container {
+.image-hero__container {
   height: var(--image-height);
 
   picture {
