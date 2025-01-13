@@ -32,3 +32,9 @@
     }
   }
 }
+
+.fancy-list-container {
+  padding-block: var(--space-s);
+  border-top: 2px solid var(--color-purple);
+  border-bottom: 2px solid var(--color-purple);
+}

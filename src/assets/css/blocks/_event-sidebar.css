@@ -1,0 +1,38 @@
+.event-sidebar {
+  padding: var(--space-m);
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--space-m);
+  justify-content: space-between;
+  margin-top: var(--space-s);
+  z-index: 5;
+
+  span:has(a) {
+    flex-basis: 100%;
+    margin-inline: auto;
+  }
+
+  a {
+    margin-inline: auto;
+    display: block;
+    width: fit-content;
+  }
+
+  svg {
+    background-color: var(--color-white);
+    padding: var(--space-xxs);
+  }
+
+  @media (--sm) {
+    justify-content: space-around;
+  }
+
+  @media (--md) {
+    top: 15rem;
+    translate: 0 -10rem;
+    position: sticky;
+    flex-basis: max(25%, 20rem);
+  }
+}

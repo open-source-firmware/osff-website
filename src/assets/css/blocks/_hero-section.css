@@ -30,6 +30,23 @@
   }
 }
 
+.hero-section__event {
+  &::after {
+    content: "";
+    position: absolute;
+    height: 10%;
+    width: 100vw;
+    bottom: -1px;
+    left: 30%;
+    background-color: var(--color-white);
+    transform: skewX(-35deg);
+  }
+
+  time {
+    order: -1;
+  }
+}
+
 .hero-section__shoutout {
   position: absolute;
   right: 0;

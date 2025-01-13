@@ -1,0 +1,7 @@
+.alert {
+  background-color: color-mix(in srgb, var(--color-salmon), transparent 80%);
+  color: var(--color-salmon);
+  padding: var(--space-xs);
+  font-size: var(--text-step-0);
+  width: fit-content;
+}

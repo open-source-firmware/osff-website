@@ -16,3 +16,18 @@
     outline: none;
   }
 }
+
+.tag.tag-variation {
+  color: var(--color-salmon);
+  border-color: var(--color-salmon);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+
+  .line {
+    display: block;
+    height: 2px;
+    background-color: var(--color-salmon);
+    width: 3rem;
+  }
+}
