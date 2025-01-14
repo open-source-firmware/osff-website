@@ -70,30 +70,3 @@
     );
   }
 }
-
-.btn--small-triangle {
-  position: relative;
-  background-color: var(--color-salmon);
-  color: var(--color-white);
-  text-decoration: none;
-  padding: var(--space-xxs) var(--space-xs);
-  translate: var(--space-s) 0;
-  width: fit-content;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 1px;
-    top: 0;
-    transform: translateX(-100%);
-    background-color: var(--color-salmon);
-    height: 100%;
-    aspect-ratio: 1;
-    clip-path: polygon(45% 100%, 100% 0, 100% 100%);
-  }
-
-  &:focus-visible {
-    outline-color: var(--color-salmon);
-    outline-offset: 3px;
-  }
-}
