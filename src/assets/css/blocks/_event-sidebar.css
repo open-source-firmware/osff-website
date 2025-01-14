@@ -35,4 +35,12 @@
     position: sticky;
     flex-basis: max(25%, 20rem);
   }
+
+  &.event-sidebar-bottom {
+    margin-bottom: var(--space-m);
+
+    @media (--md) {
+      display: none;
+    }
+  }
 }

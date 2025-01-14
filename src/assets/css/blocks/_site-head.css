@@ -18,15 +18,15 @@
 
   svg {
     color: var(--color-purple);
-
+    /*
     @media (--md) {
       width: 20%;
     }
 
     @media (--lg) {
-      padding-top: var(--space-m);
+      margin-top: var(--space-m);
       width: auto;
-    }
+    } */
   }
 
   ul {
@@ -125,6 +125,11 @@
 .dark.site-head {
   background-color: var(--color-purple);
 
+  .site-head__logo:focus-visible {
+    outline-color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
   svg {
     color: var(--color-white);
   }
@@ -177,7 +182,37 @@
   z-index: 2;
   width: 100%;
 
+  .site-head__logo:focus-visible {
+    outline-color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
   svg {
     color: var(--color-white);
+  }
+}
+
+.site-head__logo {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: 0.25s ease-out;
+  }
+
+  @media (--md) {
+    width: 20%;
+  }
+
+  @media (--lg) {
+    margin-top: var(--space-m);
+    width: auto;
+  }
+
+  &:hover {
+    scale: 0.97;
+  }
+
+  &:focus-visible {
+    outline: 2px dashed var(--color-purple);
+    background-color: #4f50a935;
+    outline-offset: 4px;
   }
 }

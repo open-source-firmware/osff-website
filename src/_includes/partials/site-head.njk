@@ -1,6 +1,6 @@
 <header class="site-head {{ "dark" if color==="dark" else "light" }} {{ "hero-variation" if type==="hero-variation" }}">
   <div class="wrapper cluster" style="--wrapper-max: var(--wrapper-m);">
-    {% icon icon="osff-logo" %}
+    <a class="site-head__logo" href="/">{% icon icon="osff-logo" %}</a>
     <nav aria-label="Main">
       <ul class="cluster font-head" style="--cluster-gap: var(--space-m)" role="list">
         {% for item in navigation.items %}

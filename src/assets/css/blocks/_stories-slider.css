@@ -76,11 +76,6 @@
     flex-shrink: 0;
     width: 100%;
   }
-
-  @media (--md) {
-    width: auto;
-    padding-block-end: var(--space-m);
-  }
 }
 
 .stories-slider__content-button {

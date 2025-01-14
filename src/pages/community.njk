@@ -97,7 +97,7 @@ permalink: /community/index.html
             <h2 class="uppercase text-purple font-head text-step-0 weight-regular">Hardware Partners</h2>
             <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Powering Open Source Possibilities</h3>
         </div>
-        <p class="text-step-1">Discover industry-leading hardware solutions optimized for open-source projects. From servers to processors, 
+        <p class="text-step-1">Discover industry-leading hardware solutions optimized for open-source projects. From servers to processors,
       explore the partners enabling next-generation innovation.</p>
     </div>
     <ul role="list" class="grid-switcher" style="
@@ -197,30 +197,39 @@ permalink: /community/index.html
 </div>
 
 <div class="wrapper stories-slider bg-gray" style="--wrapper-max: var(--wrapper-m)">
-    <div class="decoline-container">
-        <span class="decoline" aria-hidden="true"></span>
-        <span class="decoline" aria-hidden="true"></span>
-        <span class="decoline" aria-hidden="true"></span>
+  <div class="decoline-container">
+    <span class="decoline" aria-hidden="true"></span>
+    <span class="decoline" aria-hidden="true"></span>
+    <span class="decoline" aria-hidden="true"></span>
+  </div>
+
+  <div class="bg-white stories-slider__header stack-xs">
+    <p class="uppercase text-purple font-head text-step--1 leading-flat ">Real-world impact</p>
+    <h2 class="leading-normal weight-regular">Explore transformative Successes in Open Source</h2>
+  </div>
+
+  <div class="stories-slider__content swiper stack-s">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide stack-m">
+        <h3 class="tag">Mozilla Firefox</h3>
+        <p class="text-center stories-slider__content-text font-head text-step-3 text-purple">Mozilla <span class="weight-bold">transformed web browsing</span> with Firebox, promoting user privacy and security. This project has fostered a <span class="weight-bold">strong open-source</span> community.</p>
+
+        <a class="text-center btn" href="#">Read more</a>
+      </div>
+
+      <div class="swiper-slide stack-m">
+        <h3 class="tag">Mozilla Firefox</h3>
+        <p class="text-center stories-slider__content-text font-head text-step-3 text-purple">Mozilla <span class="weight-bold">transformed web browsing</span> with Firebox, promoting user privacy and security. This project has fostered a <span class="weight-bold">strong open-source</span> community.</p>
+
+        <a class="text-center btn" href="#">Read more</a>
+      </div>
     </div>
 
-    <div class="bg-white stories-slider__header stack-xs">
-        <p class="uppercase text-purple font-head text-step--1 leading-flat ">Real-world impact</p>
-        <h2 class="leading-normal weight-regular">Explore transformative Successes in Open Source</h2>
-    </div>
+    <button class="stories-slider__content-button swiper-button-prev">{% icon icon = "arrowhead-left", alt="previous slide"%}</button>
+    <button class="stories-slider__content-button swiper-button-next">{% icon icon = "arrowhead-right", alt="next slide"%}</button>
 
-    <div class="stories-slider__content stack-s">
-        <button class="stories-slider__content-button">{% icon icon = "arrowhead-left", alt="previous slide"%}</button>
-        <div class="stack-m">
-            <h3 class="tag">Mozilla Firefox</h3>
-            <p class="text-center stories-slider__content-text font-head text-step-3 text-purple">Mozilla <span class="weight-bold">transformed web browsing</span> with Firebox, promoting user privacy and security. This project has fostered a <span class="weight-bold">strong open-source</span> community.</p>
-
-            <a class="text-center btn" href="#">Read more</a>
-        </div>
-
-        <button class="stories-slider__content-button">{% icon icon = "arrowhead-right", alt="next slide"%}</button>
-    </div>
-
-    <p class="text-center stories-slider__counter font-head">1 / 4</p>
+    <div class="swiper-pagination"></div>
+  </div>
 </div>
 
 <div class="multiple-link-teaser | wrapper" style="--wrapper-max: var(--wrapper-m);">

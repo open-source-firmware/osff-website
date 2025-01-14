@@ -1,6 +1,3 @@
-.resource-list {
-}
-
 .resource-list__item {
   &:last-of-type a {
     border-bottom: 2px solid var(--color-black);

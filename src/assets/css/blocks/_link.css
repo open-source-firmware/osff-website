@@ -6,6 +6,7 @@
   padding-inline: calc(var(--space-m) + var(--space-s)) var(--space-s);
   position: relative;
   display: inline-flex;
+  height: fit-content;
   transition: padding 0.3s ease;
 
   &::before {
