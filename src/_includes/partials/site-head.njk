@@ -2,12 +2,27 @@
   <div class="wrapper cluster" style="--wrapper-max: var(--wrapper-m);">
     <a class="site-head__logo" href="/">{% icon icon="osff-logo" %}</a>
     <nav aria-label="Main">
-      <ul class="cluster font-head" style="--cluster-gap: var(--space-m)" role="list">
+      <ul class="site-head__nav cluster font-head" style="--cluster-gap: var(--space-m)" role="list">
         {% for item in navigation.items %}
-          <li>
-            <a class="uppercase text-step-0 weight-medium" href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+          <li class="{{ 'has-subnav' if item.subnav }}">
+            <a
+              class="uppercase text-step-0 weight-medium"
+              href="{{ item.url }}"
+              aria-expanded="false"
+              aria-controls="subnav-{{ loop.index }}"
+              {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
+            >
               {{ item.text }}
             </a>
+            {%- if item.subnav -%}
+              <ul id="subnav-{{ loop.index }}" class="site-head__sub-nav" role="list" hidden>
+                {%- for item in item.subnav -%}
+                  <li>
+                    <a class="site-head__sub-nav__item" href="{{ item.url }}">{{ item.text }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
           </li>
         {% endfor %}
       </ul>

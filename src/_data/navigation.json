@@ -6,7 +6,25 @@
     },
     {
       "text": "Our Work +",
-      "url": "/our-work/"
+      "url": "#",
+      "subnav": [
+        {
+          "text": "Projects",
+          "url": "/projects/"
+        },
+        {
+          "text": "Workstreams",
+          "url": "/workstreams/"
+        },
+        {
+          "text": "Resources",
+          "url": "/resources/"
+        },
+        {
+          "text": "Services",
+          "url": "/services/"
+        }
+      ]
     },
     {
       "text": "Community",
