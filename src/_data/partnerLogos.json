@@ -1,162 +1,27 @@
 [
   {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
+    "src": "/assets/images/partner-logos/9e.svg",
+    "alt": "logo of 9elements cyber security",
+    "url": "https://9esec.io/"
   },
   {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
+    "src": "/assets/images/partner-logos/siemens.svg",
+    "alt": "logo of Siemens",
+    "url": "https://siemens.com/"
   },
   {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
+    "src": "/assets/images/partner-logos/mullvad.svg",
+    "alt": "logo of mullvad",
+    "url": "https://mullvad.net/de/"
   },
   {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
+    "src": "/assets/images/partner-logos/immune.svg",
+    "alt": "logo of immune gmbh",
+    "url": "https://immune.gmbh/"
   },
   {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-1.png",
-    "alt": "Logo 1",
-    "url": "https://www.9elements.com"
-  },
-  {
-    "src": "/assets/images/partner-logos/example-2.png",
-    "alt": "Logo 2",
-    "url": "https://www.9elements.com"
+    "src": "/assets/images/partner-logos/binarly.png",
+    "alt": "logo of binarly inc",
+    "url": "https://binarly.io/"
   }
 ]
