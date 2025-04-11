@@ -9,178 +9,27 @@ type: "hero-variation"
   <h1 class="text-center text-white uppercase font-head weight-bold text-step-4">Shaping the future of firmware</h1>
   <p class="text-center text-white text-step-1">Open, Transparent and Collaborative.</p>
 
+  {% set nextEvent = events.upcoming[0] %}
   <div class="bg-white hero-section__shoutout">
-    <h2 class="uppercase text-purple weight-bold text-step-1 font-head">Open source firmware conference 2025</h2>
-    <p class="uppercase text-purple text-step-0 font-head">Up next</p>
-    <a class="btn btn--small btn--primary text-step--1" href="#">Join us</a>
+    <h2 class="uppercase text-purple weight-bold text-step-1 font-head">{{ nextEvent.title }}</h2>
+    <p class="uppercase text-purple text-step-0 font-head">Up next: {{ nextEvent.date }}</p>
+    <a class="btn btn--small btn--primary text-step--1" href="{{ nextEvent.url }}">Join us</a>
   </div>
 </section>
 
 <div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
   <h2 class="text-center uppercase font-head weight-bold text-step-4 text-purple">Companies transforming the Ecosystem with Open-Source Firmware</h2>
-  <ul role="list" class="logo-list | auto-grid" style="
-    --auto-grid-min-size: clamp(8rem, 20vw, 12rem);
-    ">
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 134; --height: 127;">
-        <img src="/assets/images/partner-logos/example-1.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
-    <li class="logo-list__item">
-      <div class="logo-list__logo" style="--width: 642; --height: 241;">
-        <img src="/assets/images/partner-logos/example-2.png" alt="">
-      </div>
-      <a href="https://www.9elements.com" target="blank">
-        <span class="sr-only">Checkout 9elements Website</span>
-      </a>
-    </li>
+  <ul role="list" class="logo-list | auto-grid" style="--auto-grid-min-size: clamp(8rem, 20vw, 12rem);">
+    {% for partner in partners %}
+      <li class="logo-list__item">
+        <div class="logo-list__logo" style="--width: {{ partner.width }}; --height: {{ partner.height }};">
+          <img src="{{ partner.logo }}" alt="{{ partner.name }}">
+        </div>
+        <a href="{{ partner.url }}" target="_blank">
+          <span class="sr-only">Checkout {{ partner.name }} Website</span>
+        </a>
+      </li>
+    {% endfor %}
   </ul>
   <a href="" class="btn btn--small" style="z-index: 2; position: relative;left: 50%; transform: translateX(-50%); margin-block-start: calc(var(--space-2xl) * -1)">Checkout all open source  driven Companies</a>
 </div>
@@ -196,11 +45,11 @@ type: "hero-variation"
   <br><br>
   Join us in driving change through open collaboration and cutting-edge technology.
   </p>
-    <a href="#" class="btn btn--primary">More info</a>
+    <a href="/about-us" class="btn btn--primary">More info</a>
   </div>
   <aside class="stack-xs">
     <p class="text-step-0 text-gray-dark">The entire logo selection of the Open-Source Firmware Foundation.</p>
-    <a href="#" class="link text-step--1">Zum Download</a>
+    <a href="/assets/images/downloads/osff_logos.zip" download class="link text-step--1">Zum Download</a>
   </aside>
 </div>
 
