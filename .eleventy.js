@@ -61,6 +61,61 @@ export default function EleventyConfig(config) {
   config.addFilter("markdownFilter", markdownFilter);
   config.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
+  // Add capitalize filter
+  config.addFilter("capitalize", function(str) {
+    if (!str) return "";
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  });
+
+  // Event filters
+  config.addFilter("filterUpcomingEvents", (events, today) => {
+    if (!today) {
+      today = new Date();
+    }
+    return events.filter(event => {
+      const eventDate = new Date(event.data.date);
+      return eventDate >= today;
+    }).sort((a, b) => {
+      return new Date(a.data.date) - new Date(b.data.date);
+    });
+  });
+
+  config.addFilter("filterPastEvents", (events, today) => {
+    if (!today) {
+      today = new Date();
+    }
+    return events.filter(event => {
+      const eventDate = new Date(event.data.date);
+      return eventDate < today;
+    }).sort((a, b) => {
+      return new Date(b.data.date) - new Date(a.data.date);
+    });
+  });
+
+  // Add a date filter to format dates
+  config.addFilter("date", function(date, format) {
+    if (!date) return "";
+    const d = new Date(date);
+
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    if (format === "YYYY") {
+      return d.getFullYear();
+    }
+
+    if (format === "MMMM DD") {
+      return `${monthNames[d.getMonth()]} ${d.getDate().toString().padStart(2, '0')}`;
+    }
+
+    if (format === "MMMM DD, YYYY") {
+      return `${monthNames[d.getMonth()]} ${d.getDate().toString().padStart(2, '0')}, ${d.getFullYear()}`;
+    }
+
+    return date;
+  });
+
   // Add Shortcodes
   config.addShortcode("icon", iconShortcode);
   config.addShortcode("script", scriptShortcode);
@@ -114,6 +169,10 @@ export default function EleventyConfig(config) {
         ],
       },
     },
+  });
+
+  config.addCollection("events", (collectionApi) => {
+    return collectionApi.getFilteredByGlob("./src/content/events/*.md");
   });
 
   // Only minify HTML if we are in production because it slows builds _right_ down

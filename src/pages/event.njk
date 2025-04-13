@@ -1,13 +1,16 @@
 ---
 title: "Events"
 layout: "layouts/base.njk"
-permalink: /events/event/index.html
+permalink: /events/{{ pagination.items[0].fileSlug }}/index.html
 type: "hero-variation"
+pagination:
+  data: collections.events
+  size: 1
+  alias: event
 ---
-
 <div class="hero-section hero-section__event wrapper" style="--wrapper-max: var(--wrapper-m)">
-  <h1 class="text-center text-white uppercase font-head weight-bold text-step-4">Opensource Firmware Day at Ruhr University Bochum</h1>
-  <time class="tag tag-variation" datetime="2024-08-03">August 03 <span aria-hidden="true" class="line"></span> 2024</time>
+  <h1 class="text-center text-white uppercase font-head weight-bold text-step-4">{{ event.data.title }}</h1>
+  <time class="tag tag-variation" datetime="{{ event.data.date }}">{{ event.data.date | date("MMMM DD") }} <span aria-hidden="true" class="line"></span> {{ event.data.date | date("YYYY") }}</time>
 </div>
 
 <div class="sidebar-left wrapper" style="--wrapper-max: var(--wrapper-m); --sidebar-gap: var(--space-l);">
@@ -21,8 +24,8 @@ type: "hero-variation"
         <h2 class="uppercase font-head weight-regular">When</h2>
       </span>
       <p class="leading-loose">
-        May 2nd, <br>
-        09.00am PT / 6.00pm CET / 10.30pm IST
+        {{ event.data.date | date("MMMM DD, YYYY") }}, <br>
+        {{ event.data.time }}
       </p>
     </div>
 
@@ -35,102 +38,67 @@ type: "hero-variation"
         <h2 class="uppercase font-head weight-regular">Where</h2>
       </span>
       <p class="leading-loose">
-        Unversité Libre De Bruxelles <br>
-        Campus du Solbosch <br>
-        Av. F. D. Roosevelt 50 <br>
-        1050 Bruxelles <br>
+        {{ event.data.location.name }} <br>
+        {{ event.data.location.campus }} <br>
+        {{ event.data.location.address }} <br>
+        {{ event.data.location.postal_code }} {{ event.data.location.city }} <br>
       </p>
     </div>
 
     <span>
-      <a class="btn btn--small" href="#">Add to calendar</a>
+      <a class="btn btn--small" href="{{ event.data.registration.button_url }}">{{ event.data.registration.button_text }}</a>
     </span>
   </div>
 
   <div class="stack-m">
-    <p class="text-step-1">The Open Source Firmware Day @ RUB, held at Ruhr University Bochum, brought together students, industry experts, and the open-source community to explore and promote firmware development.</p>
+    <p class="text-step-1">{{ event.data.description }}</p>
 
-    <p class="alert">Attention: Places are limited, so act fast!</p>
+    {% if event.data.registration.text %}
+      <p class="alert">{{ event.data.registration.text }}</p>
+    {% endif %}
 
-    <p class="text-step-0">Organized by Fachschaft IT-Sicherheit, 9elements Cyber Security, and the Open Source Firmware Foundation, the event featured insightful talks by prominent figures such as Vincent Zimmer and Subrata Banik, hands-on workshops on coreboot with HARDKERNEL odroid, and interactive hacking sessions. Over 70 attendees participated in discussions, learned about firmware security, and connected with experienced developers, fostering a collaborative and supportive community atmosphere.</p>
+    {{ event.templateContent | safe }}
 
-    <div class="fancy-list-container">
-      <h2 class="font-head text-step-2 text-purple">Topics</h2>
-      <ul class="fancy-list text-step-0 text-purple" role="list">
-        <li class="done">getting started with open source firmware</li>
-        <li class="done">coreboot</li>
-        <li class="done">edk2</li>
-        <li class="done">deploying open source firmware on hardware</li>
-      </ul>
-    </div>
+    {% if event.data.topics %}
+      <div class="fancy-list-container">
+        <h2 class="font-head text-step-2 text-purple">Topics</h2>
+        <ul class="fancy-list text-step-0 text-purple" role="list">
+          {% for topic in event.data.topics %}
+            <li class="done">{{ topic }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
 
-    <p class="text-step-0">Organized by Fachschaft IT-Sicherheit, 9elements Cyber Security, and the Open Source Firmware Foundation, the event featured insightful talks by prominent figures such as Vincent Zimmer and Subrata Banik, hands-on workshops on coreboot with HARDKERNEL odroid, and interactive hacking sessions. Over 70 attendees participated in discussions, learned about firmware security, and connected with experienced developers, fostering a collaborative and supportive community atmosphere.</p>
+    {% if event.data.schedule %}
+      <div class="fancy-list-container stack-s">
+        {% for day, items in event.data.schedule %}
+          <h2 class="font-head text-step-2 text-purple">{{ day | capitalize }}</h2>
+          <ul class="fancy-timetable stack-xs" role="list">
+            {% for item in items %}
+              <li>
+                {% set timeHour = item.time | slice(0, 2) %}
+                <time datetime="{{ item.time }}">{{ timeHour }}<span>{% if timeHour < 12 %}AM{% else %}PM{% endif %}</span></time>
+                {{ item.event }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </div>
+    {% endif %}
 
-    <div class="fancy-list-container stack-s">
-      <h2 class="font-head text-step-2 text-purple">Friday/17 Nov</h2>
-      <ul class="fancy-timetable stack-xs" role="list">
-        <li>
-          <time datetime="12:00">12<span>PM</span></time>
-          Registration
-        </li>
-        <li>
-          <time datetime="15:00">3<span>PM</span></time>
-          The night ends
-        </li>
-        <li>
-          <time datetime="16:00">4<span>PM</span></time>
-          Introduction to OSF & Agenda Overview
-        </li>
-        <li>
-          <time datetime="19:00">7<span>PM</span></time>
-          Dinner
-        </li>
-        <li>
-          <time datetime="00:00">12<span>AM</span></time>
-          The night ends
-        </li>
-      </ul>
-
-      <h2 class="font-head text-step-2 text-purple">Saturday/18 Nov</h2>
-      <ul class="fancy-timetable stack-xs" role="list">
-        <li>
-          <time datetime="12:00">12<span>PM</span></time>
-          Registration
-        </li>
-        <li>
-          <time datetime="16:00">4<span>PM</span></time>
-          Introduction to OSF & Agenda Overview
-        </li>
-        <li>
-          <time datetime="19:00">7<span>PM</span></time>
-          Dinner
-        </li>
-        <li>
-          <time datetime="00:00">12<span>AM</span></time>
-          The night ends
-        </li>
-      </ul>
-    </div>
-
-    <p class="text-step-0">Aligned with the theme "Back to the Root," the event highlighted the importance of cultivating a new generation of open-source firmware enthusiasts. The collaborative efforts of sponsors like HGI, CASA, and the Max Planck Institute for Security and Privacy, alongside workshops led by Leon Groß and Maximilian Brune, underscored the community’s commitment to innovation and education. This initiative promises a brighter future for the open-source firmware landscape by empowering younger generations with knowledge, tools, and inspiration to shape the next 25 years of development.</p>
-
-    <div class="sponsor-section cluster" style="--cluster-alignment: baseline; --cluster-gap: var(--space-m);">
-      <h2 class="uppercase text-purple font-head weight-regular">Sponsors</h2>
-      <ul role="list">
-        <li>
-          <a class="link" href="#">Fachschaft IT-Sicherheit an der Ruhr-Universität Bochum</a>
-        </li>
-        <li>
-          <a class="link" href="#">Max Planck Institute for Security and Privacy (MPI-SP)</a>
-        </li>
-        <li>
-          <a class="link" href="#">CASA</a>
-        </li>
-        <li>
-          <a class="link" href="#">HGI</a>
-        </li>
-      </ul>
-    </div>
+    {% if event.data.sponsors %}
+      <div class="sponsor-section cluster" style="--cluster-alignment: baseline; --cluster-gap: var(--space-m);">
+        <h2 class="uppercase text-purple font-head weight-regular">Sponsors</h2>
+        <ul role="list">
+          {% for sponsor in event.data.sponsors %}
+            <li>
+              <a class="link" href="{{ sponsor.url }}">{{ sponsor.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
 
     <div class="text-white event-sidebar event-sidebar-bottom bg-salmon stack-s">
       <div class="stack-xxs">
@@ -142,8 +110,8 @@ type: "hero-variation"
           <h2 class="uppercase font-head weight-regular">When</h2>
         </span>
         <p class="leading-loose">
-          May 2nd, <br>
-          09.00am PT / 6.00pm CET / 10.30pm IST
+          {{ event.data.date | date("MMMM DD, YYYY") }}, <br>
+          {{ event.data.time }}
         </p>
       </div>
 
@@ -156,15 +124,15 @@ type: "hero-variation"
           <h2 class="uppercase font-head weight-regular">Where</h2>
         </span>
         <p class="leading-loose">
-          Unversité Libre De Bruxelles <br>
-          Campus du Solbosch <br>
-          Av. F. D. Roosevelt 50 <br>
-          1050 Bruxelles <br>
+          {{ event.data.location.name }} <br>
+          {{ event.data.location.campus }} <br>
+          {{ event.data.location.address }} <br>
+          {{ event.data.location.postal_code }} {{ event.data.location.city }} <br>
         </p>
       </div>
 
       <span>
-        <a class="btn btn--small" href="#">Add to calendar</a>
+        <a class="btn btn--small" href="{{ event.data.registration.button_url }}">{{ event.data.registration.button_text }}</a>
       </span>
     </div>
   </div>
@@ -178,11 +146,17 @@ type: "hero-variation"
   </div>
 
   <div class="image-teaser__content">
-    <div class="wrapper image-teaser__image"><img class="overlay" src="/assets/images/osfc-2024.jpeg" alt=""></div>
+    <div class="wrapper image-teaser__image">
+      {% if event.data.image %}
+        <img class="overlay" src="{{ event.data.image }}" alt="{{ event.data.title }}">
+      {% else %}
+        <img class="overlay" src="/assets/images/osfc-2024.jpeg" alt="{{ event.data.title }}">
+      {% endif %}
+    </div>
     <div class="image-teaser__cta stack-s">
-      <p class="uppercase text-purple font-head text-step--1 leading-flat ">Don’t miss the loremsum</p>
-      <h2 class="leading-normal weight-regular">OSFC 2024 - Open-Source Firmware Conference 2024</h2>
-      <a class="btn weight-regular" href="#">Info & Tickets</a>
+      <p class="uppercase text-purple font-head text-step--1 leading-flat ">Don't miss the next event</p>
+      <h2 class="leading-normal weight-regular">{{ event.data.title }}</h2>
+      <a class="btn weight-regular" href="{{ event.data.registration.button_url }}">{{ event.data.registration.button_text }}</a>
     </div>
   </div>
 </div>

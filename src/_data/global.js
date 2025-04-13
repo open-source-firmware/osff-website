@@ -5,4 +5,5 @@ export default {
     };
     return `${segment()}-${segment()}-${segment()}`;
   },
+  now: new Date()
 };

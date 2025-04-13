@@ -16,79 +16,70 @@ type: "hero-variation"
 </section>
 
 <div class="wrapper | stack-xl" style="--wrapper-max: var(--wrapper-m); margin-block-end: var(--space-l)">
-    <div class="stack-m">
-        <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Upcoming</h3>
-        <ul role="list" class="grid-switcher" style="
-      --gs-columns-medium: 1;
-      --gs-columns-large: 2;
-      --gs-gap: var(--space-m);
-            ">
-            <li class="round-card">
-                <div class="round-card__tagline">
-                    <p class="tag">September 05 –––– 2024</p>
-                </div>
-                <div class="round-card__header bg-purple">
-                    <h3 class="text-white uppercase text-step-3 font-head weight-bold">OSFC 2024 - Open-Source Firmware Conference 2024</h3>
-                </div>
-                <div class="round-card__content">
-                    <p class="text-step-0 text-gray-dark">The Open Source Firmware Foundation, in cooperation with 9elements and Google will host this years OSFC in Germany</p>
-                </div>
-                <div class="round-card__footer">
-                    <a href="/events/event/" class="link">More info</a>
-                </div>
-            </li>
-            <li class="round-card">
-                <div class="round-card__tagline">
-                    <p class="tag">September 05 –––– 2024</p>
-                </div>
-                <div class="round-card__header bg-purple">
-                    <h3 class="text-white uppercase text-step-3 font-head weight-bold">OSFC 2024 - Open-Source Firmware Conference 2024</h3>
-                </div>
-                <div class="round-card__content">
-                    <p class="text-step-0 text-gray-dark">The Open Source Firmware Foundation, in cooperation with 9elements and Google will host this years OSFC in Germany</p>
-                </div>
-                <div class="round-card__footer">
-                    <a href="/events/event/" class="link">More info</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+    {% set today = global.now %}
+    {% set upcomingEvents = collections.events | filterUpcomingEvents(today) %}
+    {% set pastEvents = collections.events | filterPastEvents(today) %}
 
+    {% if collections.events.length === 0 %}
     <div class="stack-m">
-        <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Previous</h3>
-        <ul role="list" class="grid-switcher" style="
-      --gs-columns-medium: 1;
-      --gs-columns-large: 2;
-      --gs-gap: var(--space-m);
-            ">
-            <li class="round-card">
-                <div class="round-card__tagline">
-                    <p class="tag">September 05 –––– 2024</p>
-                </div>
-                <div class="bg-black round-card__header">
-                    <h3 class="text-white uppercase text-step-3 font-head weight-bold">OSFC 2024 - Open-Source Firmware Conference 2024</h3>
-                </div>
-                <div class="round-card__content">
-                    <p class="text-step-0 text-gray-dark">The Open Source Firmware Foundation, in cooperation with 9elements and Google will host this years OSFC in Germany</p>
-                </div>
-                <div class="round-card__footer">
-                    <a href="/events/event/" class="link">More info</a>
-                </div>
-            </li>
-            <li class="round-card">
-                <div class="round-card__tagline">
-                    <p class="tag">September 05 –––– 2024</p>
-                </div>
-                <div class="bg-black round-card__header">
-                    <h3 class="text-white uppercase text-step-3 font-head weight-bold">OSFC 2024 - Open-Source Firmware Conference 2024</h3>
-                </div>
-                <div class="round-card__content">
-                    <p class="text-step-0 text-gray-dark">The Open Source Firmware Foundation, in cooperation with 9elements and Google will host this years OSFC in Germany</p>
-                </div>
-                <div class="round-card__footer">
-                    <a href="/events/event/" class="link">More info</a>
-                </div>
-            </li>
-        </ul>
+        <p class="text-center text-step-1">No events found. Please check your event files in src/content/events/.</p>
+        <p class="text-center text-step-0">Total events in collection: {{ collections.events.length }}</p>
     </div>
+    {% else %}
+        {% if upcomingEvents.length > 0 %}
+        <div class="stack-m">
+            <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Upcoming</h3>
+            <ul role="list" class="grid-switcher" style="
+          --gs-columns-medium: 1;
+          --gs-columns-large: 2;
+          --gs-gap: var(--space-m);
+                ">
+                {% for event in upcomingEvents %}
+                <li class="round-card">
+                    <div class="round-card__tagline">
+                        <p class="tag">{{ event.data.date | date("MMMM DD") }} –––– {{ event.data.date | date("YYYY") }}</p>
+                    </div>
+                    <div class="round-card__header bg-purple">
+                        <h3 class="text-white uppercase text-step-3 font-head weight-bold">{{ event.data.title }}</h3>
+                    </div>
+                    <div class="round-card__content">
+                        <p class="text-step-0 text-gray-dark">{{ event.data.description }}</p>
+                    </div>
+                    <div class="round-card__footer">
+                        <a href="/events/{{ event.fileSlug }}/" class="link">More info</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if pastEvents.length > 0 %}
+        <div class="stack-m">
+            <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Previous</h3>
+            <ul role="list" class="grid-switcher" style="
+          --gs-columns-medium: 1;
+          --gs-columns-large: 2;
+          --gs-gap: var(--space-m);
+                ">
+                {% for event in pastEvents %}
+                <li class="round-card">
+                    <div class="round-card__tagline">
+                        <p class="tag">{{ event.data.date | date("MMMM DD") }} –––– {{ event.data.date | date("YYYY") }}</p>
+                    </div>
+                    <div class="bg-black round-card__header">
+                        <h3 class="text-white uppercase text-step-3 font-head weight-bold">{{ event.data.title }}</h3>
+                    </div>
+                    <div class="round-card__content">
+                        <p class="text-step-0 text-gray-dark">{{ event.data.description }}</p>
+                    </div>
+                    <div class="round-card__footer">
+                        <a href="/events/{{ event.fileSlug }}/" class="link">More info</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    {% endif %}
 </div>
