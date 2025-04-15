@@ -3,6 +3,8 @@ title: "Events"
 layout: "layouts/base.njk"
 permalink: /events/index.html
 type: "hero-variation"
+eleventyImport:
+  collections: ["events"]
 ---
 
 <section class="image-hero">
@@ -17,13 +19,13 @@ type: "hero-variation"
 
 <div class="wrapper | stack-xl" style="--wrapper-max: var(--wrapper-m); margin-block-end: var(--space-l)">
     {% set today = global.now %}
-    {% set upcomingEvents = collections.events | filterUpcomingEvents(today) %}
-    {% set pastEvents = collections.events | filterPastEvents(today) %}
+    {% set upcomingEvents = collections.event | filterUpcomingEvents(today) %}
+    {% set pastEvents = collections.event | filterPastEvents(today) %}
 
-    {% if collections.events.length === 0 %}
+    {% if collections.event.length === 0 %}
     <div class="stack-m">
         <p class="text-center text-step-1">No events found. Please check your event files in src/content/events/.</p>
-        <p class="text-center text-step-0">Total events in collection: {{ collections.events.length }}</p>
+        <p class="text-center text-step-0">Total events in collection: {{ collections.event.length }}</p>
     </div>
     {% else %}
         {% if upcomingEvents.length > 0 %}

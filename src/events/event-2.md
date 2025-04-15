@@ -1,20 +1,21 @@
 ---
-title: "OSFC 2023 - Open-Source Firmware Conference 2023"
-date: "2023-10-12"
+tags: event
+title: "OSFC 2024 - Open-Source Firmware Conference 2024"
+date: "2024-09-05"
 time: "09.00am PT / 6.00pm CET / 10.30pm IST"
 location:
-  name: "TU Dresden"
-  campus: "Main Campus"
-  address: "Mommsenstraße 7"
-  city: "Dresden"
-  postal_code: "01069"
-description: "The 2023 edition of OSFC brought together firmware experts and enthusiasts to discuss trends and innovations in open-source firmware."
+  name: "Berlin Congress Center"
+  campus: "Main Building"
+  address: "Alexanderstraße 11"
+  city: "Berlin"
+  postal_code: "10178"
+description: "The Open Source Firmware Foundation, in cooperation with 9elements and Google will host this year's OSFC in Germany"
 topics:
-  - "open-source firmware"
+  - "open-source firmware development"
   - "coreboot"
-  - "TrenchBoot"
-  - "hardware security"
-  - "Secure Boot"
+  - "UEFI/EDK2"
+  - "LinuxBoot"
+  - "security"
 schedule:
   thursday:
     - time: "09:00"
@@ -27,6 +28,7 @@ schedule:
       event: "Parallel Sessions"
     - time: "18:00"
       event: "Welcome Reception"
+
   friday:
     - time: "09:00"
       event: "Morning Sessions"
@@ -43,13 +45,11 @@ sponsors:
     url: "#"
   - name: "Google"
     url: "#"
-  - name: "TU Dresden"
-    url: "#"
 image: "/assets/images/osfc-2024.jpeg"
 registration:
-  text: "Event has concluded"
-  button_text: "View Recordings"
+  text: "Early bird tickets available until July 31st!"
+  button_text: "Register Now"
   button_url: "#"
 ---
 
-OSFC 2023 was a great success with over 150 attendees from 20 countries. The conference featured 35 talks and workshops covering the latest developments in open-source firmware.
+alksjdflkashd

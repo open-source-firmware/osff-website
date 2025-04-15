@@ -1,15 +1,18 @@
 ---
 title: "Events"
 layout: "layouts/base.njk"
-permalink: /events/{{ pagination.items[0].fileSlug }}/index.html
 type: "hero-variation"
 pagination:
-  data: collections.events
+  data: collections.event
   size: 1
   alias: event
+permalink: /events/{{ event.data.title | slugify }}/index.html
+type: "hero-variation"
+eleventyImport:
+  collections: ["events"]
 ---
 <div class="hero-section hero-section__event wrapper" style="--wrapper-max: var(--wrapper-m)">
-  <h1 class="text-center text-white uppercase font-head weight-bold text-step-4">{{ event.data.title }}</h1>
+  <h1 class="text-center text-white uppercase font-head weixght-bold text-step-4">{{ event.data.title }}</h1>
   <time class="tag tag-variation" datetime="{{ event.data.date }}">{{ event.data.date | date("MMMM DD") }} <span aria-hidden="true" class="line"></span> {{ event.data.date | date("YYYY") }}</time>
 </div>
 
@@ -57,7 +60,9 @@ pagination:
       <p class="alert">{{ event.data.registration.text }}</p>
     {% endif %}
 
-    {{ event.templateContent | safe }}
+    {% if event.content %}
+      {{ event.content | safe }}
+    {% endif %}
 
     {% if event.data.topics %}
       <div class="fancy-list-container">
@@ -68,6 +73,10 @@ pagination:
           {% endfor %}
         </ul>
       </div>
+    {% endif %}
+
+    {% if event.data.descriptionUnderTopics %}
+      <p class="text-step-0">{{ event.data.descriptionUnderTopics }}</p>
     {% endif %}
 
     {% if event.data.schedule %}
@@ -85,6 +94,10 @@ pagination:
           </ul>
         {% endfor %}
       </div>
+    {% endif %}
+
+    {% if event.data.descriptionUnderSchedule %}
+      <p class="text-step-0">{{ event.data.descriptionUnderSchedule }}</p>
     {% endif %}
 
     {% if event.data.sponsors %}

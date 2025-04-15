@@ -1,4 +1,6 @@
 ---
+tags: event
+mainEvent: true
 title: "Open Source Firmware Day at Ruhr University Bochum"
 date: "2024-08-03"
 time: "09.00am PT / 6.00pm CET / 10.30pm IST"
@@ -14,6 +16,7 @@ topics:
   - "coreboot"
   - "edk2"
   - "deploying open source firmware on hardware"
+descriptionUnderTopics: "Hello world."
 schedule:
   friday:
     - time: "12:00"
@@ -35,6 +38,7 @@ schedule:
       event: "Dinner"
     - time: "00:00"
       event: "The night ends"
+descriptionUnderSchedule: "Hello under Schedule"
 sponsors:
   - name: "Fachschaft IT-Sicherheit an der Ruhr-Universität Bochum"
     url: "#"
@@ -51,4 +55,4 @@ registration:
   button_url: "#"
 ---
 
-Additional event details and content can be added here in markdown format.
+# ölaksjdölafsdf

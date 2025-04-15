@@ -171,10 +171,6 @@ export default function EleventyConfig(config) {
     },
   });
 
-  config.addCollection("events", (collectionApi) => {
-    return collectionApi.getFilteredByGlob("./src/content/events/*.md");
-  });
-
   // Only minify HTML if we are in production because it slows builds _right_ down
   if (isProduction) {
     config.addTransform("purgeCSS", purgeCSS);
