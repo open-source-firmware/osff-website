@@ -70,44 +70,30 @@ type: "hero-variation"
       --gs-columns-large: 2;
       --gs-gap: var(--space-m);
     ">
-    <li class="edge-card">
-      <div class="edge-card__header">
-        {% icon icon = "osff",
-        alt = "OSFF",
-        class = "edge-card__header-icon",
-        width = "clamp(4rem, 10vw, 8rem)" %}
-        <h3 class="uppercase text-step-2 font-head weight-bold">Covered Security Suite</h3>
-      </div>
-      <div class="edge-card__content">
-        <p class="weight-medium text-step--1">CSS is an open-source toolkit for provisioning and testing security features in firmware, specifically supporting Intel platform security.</p>
-      </div>
-      <div class="edge-card__footer">
-        <a href="#" class="btn btn--small">More info</a>
-        {% icon icon = "osff-sign",
-        alt = "OSFF",
-        class = "edge-card__footer-icon",
-        width = "var(--space-l)" %}
-      </div>
-    </li>
-    <li class="edge-card">
-      <div class="edge-card__header">
-        {% icon icon = "linuxboot",
-        alt = "LinusBoot",
-        class = "edge-card__header-icon",
-        width = "clamp(4rem, 10vw, 8rem)" %}
-        <h3 class="uppercase text-step-2 font-head weight-bold">LinuxBoot</h3>
-      </div>
-      <div class="edge-card__content">
-        <p class="weight-medium text-step--1">LinuxBoot is a firmware for modern servers that replaces specific firmware functionality like the UEFI DXE phase with a Linux kernel and runtime.</p>
-      </div>
-      <div class="edge-card__footer">
-        <a href="#" class="btn btn--small">More info</a>
-        {% icon icon = "osff-sign",
-        alt = "OSFF",
-        class = "edge-card__footer-icon",
-        width = "var(--space-l)" %}
-      </div>
-    </li>
+
+    {% for hotProject in collections.projects[0].data.projects %}
+      {% if hotProject.hot %}
+        <li class="edge-card">
+          <div class="edge-card__header">
+            {% icon icon = "osff",
+            alt = "OSFF",
+            class = "edge-card__header-icon",
+            width = "clamp(4rem, 10vw, 8rem)" %}
+            <h3 class="uppercase text-step-2 font-head weight-bold">{{ hotProject.title }}</h3>
+          </div>
+          <div class="edge-card__content">
+            <p class="weight-medium text-step--1">{{ hotProject.description }}</p>
+          </div>
+          <div class="edge-card__footer">
+            <a href="{{ hotProject.url }}" class="btn btn--small">More info</a>
+            {% icon icon = "osff-sign",
+            alt = "OSFF",
+            class = "edge-card__footer-icon",
+            width = "var(--space-l)" %}
+          </div>
+        </li>
+      {% endif %}
+    {% endfor %}
   </ul>
 </div>
 
@@ -166,94 +152,50 @@ type: "hero-variation"
       --gs-columns-large: 2;
       --gs-gap: var(--space-m);
       ">
-    <li class="round-card">
-      <div class="round-card__tagline">
-        <p class="tag">Founding member</p>
-      </div>
-      <div class="round-card__header bg-gray">
-        <h3 class="text-center uppercase text-step-2 font-head weight-bold">System76</h3>
-      </div>
-      <div class="round-card__content | stack-m">
-        <p class="weight-medium text-step--1">Stet clita kasd gubergren, no sea takimata sanctus est ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        <div class="cluster" style="--cluster-gap: var(--space-m);">
-          <div class="stack-xxs">
-            <h4 class="uppercase text-step--1">Projects</h4>
-            <div class="cluster" style="--cluster-gap: var(--space-xxs);">
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
+
+    {% for partner in collections.hardware[0].data.hardware %}
+      {% if partner.hot %}
+      <li class="round-card">
+        <div class="round-card__tagline">
+          <p class="tag">{{ partner.seller }}</p>
+        </div>
+
+        <div class="round-card__header bg-gray">
+          <h3 class="text-center uppercase text-step-2 font-head weight-bold">{{ partner.name }}</h3>
+        </div>
+
+        <div class="round-card__content | stack-m">
+          <p class="weight-medium text-step--1">{{ partner.description }}</p>
+          <div class="cluster" style="--cluster-gap: var(--space-m);">
+            <div class="stack-xxs">
+              <h4 class="uppercase text-step--1">Projects</h4>
+              <div class="cluster" style="--cluster-gap: var(--space-xxs);">
+                {% for logo in partner.projectLogos %}
+                  {% icon icon = logo,
+                  alt = "OSFF",
+                  width = "var(--space-s)" %}
+                {% endfor %}
+              </div>
             </div>
-          </div>
-          <div class="stack-xxs">
-            <h4 class="uppercase text-step--1">Supported Soc</h4>
-            <div class="cluster" style="--cluster-gap: var(--space-xxs);">
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
+            <div class="stack-xxs">
+              <h4 class="uppercase text-step--1">Supported Soc</h4>
+              <div class="cluster" style="--cluster-gap: var(--space-xxs);">
+                {% for logo in partner.supportedSocLogos %}
+                  {% icon icon = logo,
+                  alt = "OSFF",
+                  width = "var(--space-s)" %}
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="round-card__footer">
-        <a href="#" class="btn btn--small">More info</a>
-      </div>
-    </li>
-    <li class="round-card">
-      <div class="round-card__tagline">
-        <p class="tag">Founding member</p>
-      </div>
-      <div class="round-card__header bg-gray">
-        <h3 class="text-center uppercase text-step-2 font-head weight-bold">System76</h3>
-      </div>
-      <div class="round-card__content | stack-m">
-        <p class="weight-medium text-step--1">Stet clita kasd gubergren, no sea takimata sanctus est ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        <div class="cluster" style="--cluster-gap: var(--space-m);">
-          <div class="stack-xxs">
-            <h4 class="uppercase text-step--1">Projects</h4>
-            <div class="cluster" style="--cluster-gap: var(--space-xxs);">
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-            </div>
-          </div>
-          <div class="stack-xxs">
-            <h4 class="uppercase text-step--1">Supported Soc</h4>
-            <div class="cluster" style="--cluster-gap: var(--space-xxs);">
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-              {% icon icon = "twitter",
-            alt = "OSFF",
-            width = "var(--space-s)" %}
-            </div>
-          </div>
+
+        <div class="round-card__footer">
+          <a href="{{ partner.link }}" class="btn btn--small">More info</a>
         </div>
-      </div>
-      <div class="round-card__footer">
-        <a href="#" class="btn btn--small">More info</a>
-      </div>
-    </li>
+      </li>
+      {% endif %}
+    {% endfor %}
   </ul>
 </div>
 

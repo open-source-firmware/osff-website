@@ -35,48 +35,14 @@ permalink: /about-us/index.html
   </div>
   <p class="multiple-link-teaser__hint text-step--1">Open Source is not an alternative, but the best lorem ipsum dolor sit amet consteteur.</p>
   <div class="multiple-link-teaser__links">
-    <a href="#">
-      {% icon icon = "board-meeting",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Board Meeting Minutes
-            </a>
-    <a href="#">
-      {% icon icon = "articles",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Articles of Incorporation
-            </a>
-    <a href="#">
-      {% icon icon = "code-of-conduct",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Code of Conduct
-            </a>
-    <a href="#">
-      {% icon icon = "antitrust",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Antitrust Policy
-            </a>
-    <a href="#">
-      {% icon icon = "articles",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Articles of Incorporation
-            </a>
-    <a href="#">
-      {% icon icon = "code-of-conduct",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Code of Conduct
-            </a>
-    <a href="#">
-      {% icon icon = "antitrust",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Antitrust Policy
-            </a>
+    {% for document in collections.documents[0].data.documents %}
+      <a href="{{ document.download }}" target="_blank">
+        {% icon icon = document.icon,
+                alt = "",
+                width = "var(--space-s)" %}
+          {{ document.name }}
+      </a>
+    {% endfor %}
   </div>
   <a href="#" class="multiple-link-teaser__small-link link">Explore the Community</a>
 </div>
@@ -85,222 +51,75 @@ permalink: /about-us/index.html
   <div class="stack-m">
     <h2 class="text-center uppercase font-head text-purple weight-bold text-step-3">Officers</h2>
     <div class="cluster" style="--cluster-justification: center; --cluster-gap: var(--space-xxs);">
+      {% for officer in collections.team[0].data.officers %}
       <div class="person-card">
         <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Philipp deppenwiese</h3>
-          <p class="uppercase person-card__role text-step-0">President</p>
+          <h3 class="uppercase font-head text-purple weight-medium text-step-1">{{ officer.position }}</h3>
+          <p class="uppercase person-card__role text-step-0">{{ officer.position }}</p>
         </div>
         <div class="person-card__image-container">
-          <img src="/assets/images/people/philipp-deppenwiese.png" alt="">
+          <img src="/assets/images/people/{{ officer.portrait }}" alt="">
           <span>
             {% icon icon = "linkedin",
                             alt = "linkedin",
                             width = "var(--space-m)" %}
           </span>
         </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/philipp-deppenwiese-40a357111/">
+        <a class="person-card__link" target="_blank" href="{{ officer.linkedIn }}">
           <span class="sr-only">Visit LinkedIn</span>
         </a>
       </div>
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Martin Roth</h3>
-          <p class="uppercase person-card__role text-step-0">Secretary</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/martin-roth.png" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/martinlroth/">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
+      {% endfor %}
     </div>
   </div>
 
   <div class="stack-m">
     <h2 class="text-center uppercase font-head text-purple weight-bold text-step-3">Board of Directors</h2>
     <div class="cluster" style="--cluster-justification: center; --cluster-gap: var(--space-xxs);">
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Christian Walter</h3>
-          <p class="uppercase person-card__role text-step-0">Director</p>
+      {% for director in collections.team[0].data.boardOfDirectors %}
+        <div class="person-card">
+          <div class="person-card__info">
+            <h3 class="uppercase font-head text-purple weight-medium text-step-1">{{ director.position }}</h3>
+            <p class="uppercase person-card__role text-step-0">{{ director.position }}</p>
+          </div>
+          <div class="person-card__image-container">
+            <img src="/assets/images/people/{{ director.portrait }}" alt="">
+            <span>
+              {% icon icon = "linkedin",
+                              alt = "linkedin",
+                              width = "var(--space-m)" %}
+            </span>
+          </div>
+          <a class="person-card__link" target="_blank" href="{{ director.linkedIn }}">
+            <span class="sr-only">Visit LinkedIn</span>
+          </a>
         </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/christian-walter.png" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/christian-walter-45588b8b/">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Ron Minnich</h3>
-          <p class="uppercase person-card__role text-step-0">Director</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/ron-minnich.webp" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/ronminnich/">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Werner Zeh</h3>
-          <p class="uppercase person-card__role text-step-0">Director</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/werner-zeh.png" alt="">
-          {# <span>
-                        {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-                    </span> #}
-        </div>
-        {# <a class="person-card__link" target="_blank" href="#">
-                    <span class="sr-only">Visit LinkedIn</span>
-                </a> #}
-      </div>
+      {% endfor %}
     </div>
   </div>
 
   <div class="stack-m">
     <h2 class="text-center uppercase font-head text-purple weight-bold text-step-3">Volunteers</h2>
     <div class="cluster" style="--cluster-justification: center; --cluster-gap: var(--space-xxs);">
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">David Hendricks</h3>
-          <p class="uppercase person-card__role text-step-0">Ambassador</p>
+      {% for volunteer in collections.team[0].data.volunteers %}
+        <div class="person-card">
+          <div class="person-card__info">
+            <h3 class="uppercase font-head text-purple weight-medium text-step-1">{{ volunteer.position }}</h3>
+            <p class="uppercase person-card__role text-step-0">{{ volunteer.position }}</p>
+          </div>
+          <div class="person-card__image-container">
+            <img src="/assets/images/people/{{ volunteer.portrait }}" alt="">
+            <span>
+              {% icon icon = "linkedin",
+                              alt = "linkedin",
+                              width = "var(--space-m)" %}
+            </span>
+          </div>
+          <a class="person-card__link" target="_blank" href="{{ volunteer.linkedIn }}">
+            <span class="sr-only">Visit LinkedIn</span>
+          </a>
         </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/david-hendricks.webp" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/dhendrix/">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Subrata Banik</h3>
-          <p class="uppercase person-card__role text-step-0">Ambassador</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/subrata-banik.webp" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/subrata-banik-268b3317/">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Hancock Chang</h3>
-          <p class="uppercase person-card__role text-step-0">Ambassador</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/hancock-chang.webp" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://linkedin.com/in/hancock-chang-6a81a646">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Felix Singer</h3>
-          <p class="uppercase person-card__role text-step-0">Ambassador</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/felix-singer.png" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/felixsinger/">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Paul Grimes</h3>
-          <p class="uppercase person-card__role text-step-0">Ambassador</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/paul-grimes.jpg" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/paul-grimes-9631a92/">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Richard Hughes</h3>
-          <p class="uppercase person-card__role text-step-0">Ambassador</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/richard-hughes.webp" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/hughsient/">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">Kai Michaelis</h3>
-          <p class="uppercase person-card__role text-step-0">Ambassador</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/kai-michaelis.png" alt="">
-          <span>
-            {% icon icon = "linkedin",
-                            alt = "linkedin",
-                            width = "var(--space-m)" %}
-          </span>
-        </div>
-        <a class="person-card__link" target="_blank" href="https://www.linkedin.com/in/kai-michaelis-60319a196/">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -328,76 +147,22 @@ permalink: /about-us/index.html
       --gs-columns-large: 3;
       --gs-gap: var(--space-m);
     ">
+    {% for member in collections.members[0].data.members %}
     <li class="round-card">
       <div class="round-card__tagline">
-        <p class="tag">Founding Member</p>
+        <p class="tag">{{ member.type }}</p>
       </div>
       <div class="centerflex round-card__header bg-gray">
-        {% icon icon = "osff",
+        {% icon icon = member.logo,
         alt = "OSFF",
         class = "edge-card__header-icon",
         width = "clamp(4rem, 10vw, 8rem)" %}
       </div>
       <div class="round-card__footer">
-        <a href="#" class="link">More info</a>
+        <a href="{{ member.link }}" class="link">More info</a>
       </div>
     </li>
-    <li class="round-card">
-      <div class="round-card__tagline">
-        <p class="tag">Founding Member</p>
-      </div>
-      <div class="centerflex round-card__header bg-gray">
-        {% icon icon = "osff",
-        alt = "OSFF",
-        class = "edge-card__header-icon",
-        width = "clamp(4rem, 10vw, 8rem)" %}
-      </div>
-      <div class="round-card__footer">
-        <a href="#" class="link">More info</a>
-      </div>
-    </li>
-    <li class="round-card">
-      <div class="round-card__tagline">
-        <p class="tag">Founding Member</p>
-      </div>
-      <div class="centerflex round-card__header bg-gray">
-        {% icon icon = "osff",
-        alt = "OSFF",
-        class = "edge-card__header-icon",
-        width = "clamp(4rem, 10vw, 8rem)" %}
-      </div>
-      <div class="round-card__footer">
-        <a href="#" class="link">More info</a>
-      </div>
-    </li>
-    <li class="round-card">
-      <div class="round-card__tagline">
-        <p class="tag">Founding Member</p>
-      </div>
-      <div class="centerflex round-card__header bg-gray">
-        {% icon icon = "osff",
-        alt = "OSFF",
-        class = "edge-card__header-icon",
-        width = "clamp(4rem, 10vw, 8rem)" %}
-      </div>
-      <div class="round-card__footer">
-        <a href="#" class="link">More info</a>
-      </div>
-    </li>
-    <li class="round-card">
-      <div class="round-card__tagline">
-        <p class="tag">Founding Member</p>
-      </div>
-      <div class="centerflex round-card__header bg-gray">
-        {% icon icon = "osff",
-        alt = "OSFF",
-        class = "edge-card__header-icon",
-        width = "clamp(4rem, 10vw, 8rem)" %}
-      </div>
-      <div class="round-card__footer">
-        <a href="#" class="link">More info</a>
-      </div>
-    </li>
+    {% endfor %}
   </ul>
 </div>
 

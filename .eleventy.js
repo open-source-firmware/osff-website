@@ -55,6 +55,7 @@ export default function EleventyConfig(config) {
   config.addPassthroughCopy({ public: "/" });
   config.addPassthroughCopy("./src/assets/images/");
   config.addPassthroughCopy("./src/assets/fonts/");
+  config.addPassthroughCopy("./src/assets/downloads/");
 
   // Add filters
   config.addFilter("readableDate", readableDateFilter);
@@ -244,7 +245,9 @@ export default function EleventyConfig(config) {
     htmlTemplateEngine: "njk",
     dir: {
       input: "src",
-      output: "dist",
+      output: "dist"
     },
+    // Ignore the events directory for page generation
+    templateFormats: ["njk", "md"]
   };
 }

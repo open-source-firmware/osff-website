@@ -1,77 +1,91 @@
 ---
-title: "Workstream XY"
+title: "{{ workstream.data.title }}"
 layout: "layouts/workstream.njk"
-permalink: /workstreams/workstream/index.html
 color: "dark"
+pagination:
+  data: collections.workstream
+  size: 1
+  alias: workstream
+permalink: /workstreams/{{ workstream.data.title | slugify }}/
+eleventyImport:
+  collections: ["workstreams"]
 ---
 
 {% block content %}
-    <h1 class="text-center uppercase text-step-4 weight-bold font-head">silicon interface design</h1>
+    <h1 class="text-center uppercase text-step-4 weight-bold font-head">{{ workstream.data.title }}</h1>
     <div class="date" >
         {% icon icon = "calendar",
                     alt = "",
                     width = "calc(var(--text-step-0) * 2 + 1rem)" %}
         <div class="date__content">
-            <p>Kickoff Meeting: </p>
-            <p>December 12th, 7.00pm CST - 10.00AM ET</p>
+            <p>Kickoff Meeting: {{ workstream.data.date | date("MMMM DD, YYYY") }}</p>
+            <p>{{ workstream.data.time }}</p>
         </div>
         <a href="#" class="btn btn--small">Go to calendar</a>
     </div>
+
     <div class="content | stack-m">
-        <p>Integrating binary blobs that handle parts of the silicon initialization is a common technique within the open-source
-            firmware ecosystem to retain control over parts of the code, from a SoC vendor perspective. Within the last years multiple
-            SoC vendors defined different interfaces to communicate to those "silicon initialization code". Also different mechanisms
-            are in place to configures those.</p>
-        <p>The Silicon Interface Design workstream has the goal to unify these interfaces and define a specification around it so
-                that SoC vendors and (open-source) firmware projects, and their developers, have a fixed and common way to interact
-                and configure those silicon initialization code.</p>
+        {% for text in workstream.data.text %}
+            <p>{{ text }}</p>
+        {% endfor %}
     </div>
+
     <ul aria-label="The Goals:" class="fancy-list | text-step-0" role="list">
-        <li class="done">
-            <p>Develop a transparent, easy-to-follow workflow for feature requests.</p>
+      {% for goal in workstream.data.goals %}
+        <li class="{{ 'done' if goal.done else '' }}">
+          {{ goal.text }}
         </li>
-        <li class="done">
-            <p>Ensure businesses and the community can collaborate efficiently.</p>
-        </li>
-        <li class="done">
-            <p>Avoid the creation of fragmented forks by encouraging upstream development.</p>
-        </li>
-        <li>
-            <p>Balance business needs with the open-source ethos.</p>
-        </li>
+      {% endfor %}
     </ul>
+
     <ul aria-label="Resources" class="resources | auto-grid" role="list" style="
             --auto-grid-min-size: 25rem;
             --auto-grid-gap: var(--space-s);
         ">
+        {% for resource in workstream.data.resources %}
         <li class="resources__item">
-            <a href="#">Introduction slides</a>
+            <a href="/assets/downloads/{{ resource.file }}" target="_blank">{{ resource.text }}</a>
         </li>
-        <li class="resources__item">
-            <a href="#">Meeting Notes</a>
-        </li>
-        <li class="resources__item">
-            <a href="#">Apply for write access to guideline documentation</a>
-        </li>
+        {% endfor %}
     </ul>
     <div class="stack-s">
         <h3 class="weight-bold font-head text-step-2">Workstream Leads</h3>
-        <div class="workstream-lead">
-            <div class="workstream-lead__portrait">
-                <img src="/assets/images/people/werner-zeh.png" alt="">
-            </div>
-            <div class="workstream-lead__content">
-                <p class="uppercase text-step-1 weight-bold font-head">Werner Zeh</p>
-                <a href="mailto:werner.zeh@osfw.foundation">
-                    {% icon icon = "mail",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                    werner.zeh@osfw.foundation</a>
-            </div>
-        </div>
+        {% for lead in workstream.data.leads %}
+          <div class="workstream-lead">
+              <div class="workstream-lead__portrait">
+                  <img src="/assets/images/people/{{ lead.image }}" alt="">
+              </div>
+              <div class="workstream-lead__content">
+                  <p class="uppercase text-step-1 weight-bold font-head">{{ lead.name }}</p>
+                  <a href="mailto:{{ lead.email }}">
+                      {% icon icon = "mail",
+                      alt = "",
+                      width = "var(--space-s)" %}
+                      {{ lead.email }}</a>
+              </div>
+          </div>
+        {% endfor %}
     </div>
 {% endblock %}
 
 {% block relatedContent %}
-    <p>test</p>
+    <h2 class="text-center uppercase text-step-3 weight-bold font-head">Other Workstreams</h2>
+    <ul class="auto-grid" role="list" style="
+            --auto-grid-min-size: 22rem;
+            --auto-grid-gap: var(--space-m);
+        ">
+        {% for otherWs in collections.workstream %}
+            {% if otherWs.data.title != workstream.data.title %}
+                <li>
+                    <div class="card | stack-s">
+                        <h3 class="card__title weight-bold font-head text-step-1">{{ otherWs.data.title }}</h3>
+                        {% if otherWs.data.text and otherWs.data.text[0] %}
+                            <p class="card__excerpt">{{ otherWs.data.text[0] | truncate(120) }}</p>
+                        {% endif %}
+                        <a href="/workstreams/{{ otherWs.data.title | slugify }}/" class="card__link">Learn more</a>
+                    </div>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 {% endblock %}

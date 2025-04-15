@@ -26,11 +26,14 @@ permalink: /resources/index.html
     <h3 class="uppercase text-purple font-head weight-bold text-step-2">White paper</h3>
 
     <ul role="list">
+      {% for resource in collections.resources[0].data.whitePaper %}
       <li class="resource-list__item">
-        <a href="#">
+        <a href="/assets/downloads/{{ resource.file }}" target="_blank">
           <div>
-            {% icon icon="osff-sign" %}
-          Feature Request and Implementation Process
+            {% if resource.firmwareResource %}
+              {% icon icon="osff-sign" %}
+            {% endif %}
+            {{ resource.name }}
         </div>
           <div>
             <span class="tag">White paper</span>
@@ -38,58 +41,7 @@ permalink: /resources/index.html
           </div>
         </a>
       </li>
-
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Feature Request and Implementation Process
-        </div>
-          <div>
-            <span class="tag">White paper</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
-
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Feature Request and Implementation Process
-        </div>
-          <div>
-            <span class="tag">White paper</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
-
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Feature Request and Implementation Process
-        </div>
-          <div>
-            <span class="tag">White paper</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
-
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Feature Request and Implementation Process
-        </div>
-          <div>
-            <span class="tag">White paper</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
+      {% endfor %}
     </ul>
   </section>
 
@@ -97,57 +49,23 @@ permalink: /resources/index.html
     <h3 class="uppercase text-purple font-head weight-bold text-step-2">Resources</h3>
 
     <ul role="list">
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Breaking the Boundary: A Way to Create Your Own FSP Binary
-        </div>
-          <div>
-            <span class="tag">Resources</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
+      {% for resource in collections.resources[0].data.resources %}
+        <li class="resource-list__item">
+          <a href="/assets/downloads/{{ resource.file }}" target="_blank">
+            <div>
+              {% if resource.firmwareResource %}
+                {% icon icon="osff-sign" %}
+              {% endif %}
+              {{ resource.name }}
+            </div>
 
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Breaking the Boundary: A Way to Create Your Own FSP Binary
-        </div>
-          <div>
-            <span class="tag">Resources</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
-
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Breaking the Boundary: A Way to Create Your Own FSP Binary
-        </div>
-          <div>
-            <span class="tag">Resources</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
-
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Breaking the Boundary: A Way to Create Your Own FSP Binary
-        </div>
-          <div>
-            <span class="tag">Resources</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
+            <div>
+              <span class="tag">Resources</span>
+              {% icon icon="diagonal-arrow" %}
+            </div>
+          </a>
+        </li>
+      {% endfor %}
     </ul>
   </section>
 
@@ -155,11 +73,14 @@ permalink: /resources/index.html
     <h3 class="uppercase text-purple font-head weight-bold text-step-2">Specification</h3>
 
     <ul role="list">
+      {% for resource in collections.resources[0].data.specification %}
       <li class="resource-list__item">
-        <a href="#">
+        <a href="/assets/downloads/{{ resource.file }}" target="_blank">
           <div>
-            {% icon icon="osff-sign" %}
-          Feature Request and Implementation Process
+            {% if resource.firmwareResource %}
+              {% icon icon="osff-sign" %}
+            {% endif %}
+            {{ resource.name }}
         </div>
           <div>
             <span class="tag">Specification</span>
@@ -167,32 +88,7 @@ permalink: /resources/index.html
           </div>
         </a>
       </li>
-
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Feature Request and Implementation Process
-        </div>
-          <div>
-            <span class="tag">Specification</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
-
-      <li class="resource-list__item">
-        <a href="#">
-          <div>
-            {% icon icon="osff-sign" %}
-          Feature Request and Implementation Process
-        </div>
-          <div>
-            <span class="tag">Specification</span>
-            {% icon icon="diagonal-arrow" %}
-          </div>
-        </a>
-      </li>
+      {% endfor %}
     </ul>
 
   </section>

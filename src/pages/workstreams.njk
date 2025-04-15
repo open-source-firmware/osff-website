@@ -29,36 +29,25 @@ permalink: /workstreams/index.html
                 --gs-columns-large: 2;
                 --gs-gap: var(--space-m);
             ">
+            {% for workstream in collections.workstream %}
             <li class="edge-card edge-card--purple">
-                <div class="edge-card__header">
-                    <h3 class="uppercase text-step-2 font-head weight-bold">Covered Security Suite</h3>
-                </div>
-                <div class="edge-card__content">
-                    <p class="weight-medium text-step--1">CSS is an open-source toolkit for provisioning and testing security features in firmware, specifically supporting Intel platform security.</p>
-                </div>
-                <div class="edge-card__footer">
-                    <a href="#" class="btn btn--small">More info</a>
-                    {% icon icon = "osff-sign-white",
-                        alt = "OSFF",
-                        class = "edge-card__footer-icon",
-                        width = "var(--space-l)" %}
-                </div>
+              <div class="edge-card__header">
+                <h3 class="uppercase text-step-2 font-head weight-bold">{{ workstream.data.title }}</h3>
+              </div>
+
+              <div class="edge-card__content">
+                  <p class="weight-medium text-step--1">CSS is an open-source toolkit for provisioning and testing security features in firmware, specifically supporting Intel platform security.</p>
+              </div>
+
+              <div class="edge-card__footer">
+                <a href="/workstreams/{{ workstream.data.title | slugify }}/" class="btn btn--small">More info</a>
+                {% icon icon = "osff-sign-white",
+                    alt = "OSFF",
+                    class = "edge-card__footer-icon",
+                    width = "var(--space-l)" %}
+              </div>
             </li>
-            <li class="edge-card edge-card--purple">
-                <div class="edge-card__header">
-                    <h3 class="uppercase text-step-2 font-head weight-bold">LinuxBoot</h3>
-                </div>
-                <div class="edge-card__content">
-                    <p class="weight-medium text-step--1">LinuxBoot is a firmware for modern servers that replaces specific firmware functionality like the UEFI DXE phase with a Linux kernel and runtime.</p>
-                </div>
-                <div class="edge-card__footer">
-                    <a href="#" class="btn btn--small">More info</a>
-                    {% icon icon = "osff-sign-white",
-                        alt = "OSFF",
-                        class = "edge-card__footer-icon",
-                        width = "var(--space-l)" %}
-                </div>
-            </li>
+            {% endfor %}
         </ul>
     </div>
 </div>
@@ -70,11 +59,11 @@ permalink: /workstreams/index.html
       --sidebar-width: 25rem;
     ">
         <div class="stack-s">
-            <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Empowering Innovation through 
+            <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Empowering Innovation through
       Open-Source Projects</h3>
             <p class="text-highlight | text-step-0">
-        Explore our supported projects advancing open-source firmware solutions. 
-        Each initiative tackles real-world challenges, driving progress in security, 
+        Explore our supported projects advancing open-source firmware solutions.
+        Each initiative tackles real-world challenges, driving progress in security,
         performance, and accessibility for a more transparent digital future.
       </p>
         </div>
