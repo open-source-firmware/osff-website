@@ -48,7 +48,7 @@
   }
 }
 
-.edge-card__header-icon {
+picture:has(.edge-card__header-icon) {
   flex-shrink: 0;
 }
 

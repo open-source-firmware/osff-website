@@ -7,13 +7,14 @@ pagination:
   size: 1
   alias: event
 permalink: /events/{{ event.data.title | slugify }}/index.html
-type: "hero-variation"
 eleventyImport:
   collections: ["events"]
 ---
 <div class="hero-section hero-section__event wrapper" style="--wrapper-max: var(--wrapper-m)">
   <h1 class="text-center text-white uppercase font-head weixght-bold text-step-4">{{ event.data.title }}</h1>
-  <time class="tag tag-variation" datetime="{{ event.data.date }}">{{ event.data.date | date("MMMM DD") }} <span aria-hidden="true" class="line"></span> {{ event.data.date | date("YYYY") }}</time>
+  <time class="tag tag-variation" datetime="{{ event.data.date }}">{{ event.data.date | date("MMMM DD") }}
+    <span aria-hidden="true" class="line"></span>
+    {{ event.data.date | date("YYYY") }}</time>
 </div>
 
 <div class="sidebar-left wrapper" style="--wrapper-max: var(--wrapper-m); --sidebar-gap: var(--space-l);">
@@ -41,10 +42,15 @@ eleventyImport:
         <h2 class="uppercase font-head weight-regular">Where</h2>
       </span>
       <p class="leading-loose">
-        {{ event.data.location.name }} <br>
-        {{ event.data.location.campus }} <br>
-        {{ event.data.location.address }} <br>
-        {{ event.data.location.postal_code }} {{ event.data.location.city }} <br>
+        {{ event.data.location.name }}
+        <br>
+        {{ event.data.location.campus }}
+        <br>
+        {{ event.data.location.address }}
+        <br>
+        {{ event.data.location.postal_code }}
+        {{ event.data.location.city }}
+        <br>
       </p>
     </div>
 
@@ -56,12 +62,12 @@ eleventyImport:
   <div class="stack-m">
     <p class="text-step-1">{{ event.data.description }}</p>
 
-    {% if event.data.registration.text %}
-      <p class="alert">{{ event.data.registration.text }}</p>
+    {% if event.data.registration.alert %}
+      <p class="alert">{{ event.data.registration.alert }}</p>
     {% endif %}
 
-    {% if event.content %}
-      {{ event.content | safe }}
+    {% if event.data.intro %}
+      <p class="text-step-0">{{ event.data.intro }}</p>
     {% endif %}
 
     {% if event.data.topics %}
@@ -86,8 +92,12 @@ eleventyImport:
           <ul class="fancy-timetable stack-xs" role="list">
             {% for item in items %}
               <li>
-                {% set timeHour = item.time | slice(0, 2) %}
-                <time datetime="{{ item.time }}">{{ timeHour }}<span>{% if timeHour < 12 %}AM{% else %}PM{% endif %}</span></time>
+                {% set timeHour = item
+                  .time
+                  .split(':')[0] | int %}
+                <time datetime="{{ item.time }}">{{ timeHour }}
+                  <span>
+                    {% if timeHour < 12 %}AM{% else %}PM{% endif %}</span></time>
                 {{ item.event }}
               </li>
             {% endfor %}
@@ -137,10 +147,15 @@ eleventyImport:
           <h2 class="uppercase font-head weight-regular">Where</h2>
         </span>
         <p class="leading-loose">
-          {{ event.data.location.name }} <br>
-          {{ event.data.location.campus }} <br>
-          {{ event.data.location.address }} <br>
-          {{ event.data.location.postal_code }} {{ event.data.location.city }} <br>
+          {{ event.data.location.name }}
+          <br>
+          {{ event.data.location.campus }}
+          <br>
+          {{ event.data.location.address }}
+          <br>
+          {{ event.data.location.postal_code }}
+          {{ event.data.location.city }}
+          <br>
         </p>
       </div>
 

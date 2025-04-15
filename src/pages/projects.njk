@@ -3,6 +3,10 @@ title: "Projects"
 layout: "layouts/subpage.njk"
 permalink: /projects/index.html
 ---
+{% set projects = collections
+    .projectList[0]
+    .data
+    .projects %}
 
 <div class="stack-m">
     <div class="wrapper | stack-xl" style="--wrapper-max: var(--wrapper-m);">
@@ -142,65 +146,26 @@ permalink: /projects/index.html
                 --gs-columns-large: 2;
                 --gs-gap: var(--space-m);
             ">
-                <li class="edge-card">
-                    <div class="edge-card__header">
-                        {% icon icon = "osff",
-                    alt = "OSFF",
-                    class = "edge-card__header-icon",
-                    width = "var(--space-xl)" %}
-                        <h3 class="uppercase text-step-2 font-head weight-bold">Covered Security Suite</h3>
-                    </div>
-                    <div class="edge-card__content">
-                        <p class="weight-medium text-step--1">CSS is an open-source toolkit for provisioning and testing security features in firmware, specifically supporting Intel platform security.</p>
-                    </div>
-                    <div class="edge-card__footer">
-                        <a href="#" class="btn btn--small">More info</a>
-                        {% icon icon = "osff-sign",
-                    alt = "OSFF",
-                    class = "edge-card__footer-icon",
-                    width = "var(--space-l)" %}
-                    </div>
-                </li>
 
-                <li class="edge-card">
-                    <div class="edge-card__header">
-                        {% icon icon = "osff",
-                    alt = "OSFF",
-                    class = "edge-card__header-icon",
-                    width = "var(--space-xl)" %}
-                        <h3 class="uppercase text-step-2 font-head weight-bold">Covered Security Suite</h3>
-                    </div>
-                    <div class="edge-card__content">
-                        <p class="weight-medium text-step--1">CSS is an open-source toolkit for provisioning and testing security features in firmware, specifically supporting Intel platform security.</p>
-                    </div>
-                    <div class="edge-card__footer">
-                        <a href="#" class="btn btn--small">More info</a>
-                        {% icon icon = "osff-sign",
-                    alt = "OSFF",
-                    class = "edge-card__footer-icon",
-                    width = "var(--space-l)" %}
-                    </div>
-                </li>
+                {% for project in projects %}
 
-                <li class="edge-card">
-                    <div class="edge-card__header">
-                        {% icon icon = "osff",
-                    alt = "OSFF",
-                    class = "edge-card__header-icon",
-                    width = "var(--space-xl)" %}
-                        <h3 class="uppercase text-step-2 font-head weight-bold">Covered Security Suite</h3>
-                    </div>
-                    <div class="edge-card__content">
-                        <p class="weight-medium text-step--1">CSS is an open-source toolkit for provisioning and testing security features in firmware, specifically supporting Intel platform security.</p>
-                    </div>
-                    <div class="edge-card__footer">
-                        <a href="#" class="btn btn--small">More info</a>
-                        {% icon icon = "osff-sign",
-                    alt = "OSFF",
-                    class = "edge-card__footer-icon",
-                    width = "var(--space-l)" %}
-                    </div>
-                </li>
+                    <li class="edge-card">
+                        <div class="edge-card__header">
+                            <img eleventy:ignore src="{{ project.icon }}" alt="{{ project.title }}" class="edge-card__header-icon" width="var(--space-xl)">
+                            <h3 class="uppercase text-step-2 font-head weight-bold">{{ project.title }}</h3>
+                        </div>
+                        <div class="edge-card__content">
+                            <p class="weight-medium text-step--1">{{ project.description }}</p>
+                        </div>
+                        <div class="edge-card__footer">
+                            <a href="{{ project.url }}" class="btn btn--small">More info</a>
+                            {% icon icon = "osff-sign",
+                            alt = "OSFF",
+                            class = "edge-card__footer-icon",
+                            width = "var(--space-l)" %}
+                        </div>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

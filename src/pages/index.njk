@@ -9,12 +9,22 @@ type: "hero-variation"
   <h1 class="text-center text-white uppercase font-head weight-bold text-step-4">Shaping the future of firmware</h1>
   <p class="text-center text-white text-step-1">Open, Transparent and Collaborative.</p>
 
-  {% set nextEvent = events.upcoming[0] %}
-  <div class="bg-white hero-section__shoutout">
-    <h2 class="uppercase text-purple weight-bold text-step-1 font-head">{{ nextEvent.title }}</h2>
-    <p class="uppercase text-purple text-step-0 font-head">Up next: {{ nextEvent.date }}</p>
-    <a class="btn btn--small btn--primary text-step--1" href="{{ nextEvent.url }}">Join us</a>
-  </div>
+  {% set upcoming = collections.event | filterUpcomingEvents %}
+  {% set nextEvent = upcoming[0] %}
+
+  {% if nextEvent %}
+    <div class="bg-white hero-section__shoutout">
+      <h2 class="uppercase text-purple weight-bold text-step-1 font-head">{{ nextEvent.data.title }}</h2>
+      <p class="uppercase text-purple text-step-0 font-head">Up next</p>
+      <a class="btn btn--small btn--primary text-step--1" href="{{ nextEvent.data.title | slugify }}">Join us</a>
+    </div>
+  {% else %}
+    <div class="bg-white hero-section__shoutout">
+      <h2 class="uppercase text-purple weight-bold text-step-1 font-head">See our previous events</h2>
+      <p class="uppercase text-purple text-step-0 font-head">It was a blast!</p>
+      <a class="btn btn--small btn--primary text-step--1" href="/events">Explore</a>
+    </div>
+  {% endif %}
 </section>
 
 <div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
@@ -247,19 +257,26 @@ type: "hero-variation"
   </ul>
 </div>
 
-<div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
-  <div class="decoline-container">
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-  </div>
+{% set upcomingHotEvents = collections.event | filterHotEvent %}
+{% set nextEvent = upcomingHotEvents[0] %}
 
-  <div class="image-teaser__content">
-    <div class="wrapper image-teaser__image"><img class="overlay" src="/assets/images/osfc-2024.jpeg" alt=""></div>
-    <div class="image-teaser__cta stack-s">
-      <p class="uppercase text-purple font-head text-step--1 leading-flat ">Don’t miss the loremsum</p>
-      <h2 class="leading-normal weight-regular">OSFC 2024 - Open-Source Firmware Conference 2024</h2>
-      <a class="btn weight-regular" href="#">Info & Tickets</a>
+{% if nextEvent %}
+  <div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
+    <div class="decoline-container">
+      <span class="decoline" aria-hidden="true"></span>
+      <span class="decoline" aria-hidden="true"></span>
+      <span class="decoline" aria-hidden="true"></span>
+    </div>
+
+    <div class="image-teaser__content">
+      <div class="wrapper image-teaser__image">
+        <img class="overlay" src="{{ nextEvent.data.image }}" alt="{{ nextEvent.data.title }}">
+      </div>
+      <div class="image-teaser__cta stack-s">
+        <p class="uppercase text-purple font-head text-step--1 leading-flat">Don’t miss the loremsum</p>
+        <h2 class="leading-normal weight-regular">{{ nextEvent.data.title }}</h2>
+        <a class="btn weight-regular" href="/events/{{ nextEvent.data.title | slugify }}/">Info & Tickets</a>
+      </div>
     </div>
   </div>
-</div>
+{% endif %}

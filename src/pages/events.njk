@@ -23,65 +23,65 @@ eleventyImport:
     {% set pastEvents = collections.event | filterPastEvents(today) %}
 
     {% if collections.event.length === 0 %}
-    <div class="stack-m">
-        <p class="text-center text-step-1">No events found. Please check your event files in src/content/events/.</p>
-        <p class="text-center text-step-0">Total events in collection: {{ collections.event.length }}</p>
-    </div>
+        <div class="stack-m">
+            <p class="text-center text-step-1">No events found. Please check your event files in src/content/events/.</p>
+            <p class="text-center text-step-0">Total events in collection: {{ collections.event.length }}</p>
+        </div>
     {% else %}
         {% if upcomingEvents.length > 0 %}
-        <div class="stack-m">
-            <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Upcoming</h3>
-            <ul role="list" class="grid-switcher" style="
+            <div class="stack-m">
+                <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Upcoming</h3>
+                <ul role="list" class="grid-switcher" style="
           --gs-columns-medium: 1;
           --gs-columns-large: 2;
           --gs-gap: var(--space-m);
                 ">
-                {% for event in upcomingEvents %}
-                <li class="round-card">
-                    <div class="round-card__tagline">
-                        <p class="tag">{{ event.data.date | date("MMMM DD") }} –––– {{ event.data.date | date("YYYY") }}</p>
-                    </div>
-                    <div class="round-card__header bg-purple">
-                        <h3 class="text-white uppercase text-step-3 font-head weight-bold">{{ event.data.title }}</h3>
-                    </div>
-                    <div class="round-card__content">
-                        <p class="text-step-0 text-gray-dark">{{ event.data.description }}</p>
-                    </div>
-                    <div class="round-card__footer">
-                        <a href="/events/{{ event.fileSlug }}/" class="link">More info</a>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
+                    {% for event in upcomingEvents %}
+                        <li class="round-card">
+                            <div class="round-card__tagline">
+                                <p class="tag">{{ event.data.date | date("MMMM DD") }} –––– {{ event.data.date | date("YYYY") }}</p>
+                            </div>
+                            <div class="round-card__header bg-purple">
+                                <h3 class="text-white uppercase text-step-3 font-head weight-bold">{{ event.data.title }}</h3>
+                            </div>
+                            <div class="round-card__content">
+                                <p class="text-step-0 text-gray-dark">{{ event.data.description }}</p>
+                            </div>
+                            <div class="round-card__footer">
+                                <a href="/events/{{ event.data.title | slugify }}/" class="link">More info</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         {% endif %}
 
         {% if pastEvents.length > 0 %}
-        <div class="stack-m">
-            <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Previous</h3>
-            <ul role="list" class="grid-switcher" style="
+            <div class="stack-m">
+                <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Previous</h3>
+                <ul role="list" class="grid-switcher" style="
           --gs-columns-medium: 1;
           --gs-columns-large: 2;
           --gs-gap: var(--space-m);
                 ">
-                {% for event in pastEvents %}
-                <li class="round-card">
-                    <div class="round-card__tagline">
-                        <p class="tag">{{ event.data.date | date("MMMM DD") }} –––– {{ event.data.date | date("YYYY") }}</p>
-                    </div>
-                    <div class="bg-black round-card__header">
-                        <h3 class="text-white uppercase text-step-3 font-head weight-bold">{{ event.data.title }}</h3>
-                    </div>
-                    <div class="round-card__content">
-                        <p class="text-step-0 text-gray-dark">{{ event.data.description }}</p>
-                    </div>
-                    <div class="round-card__footer">
-                        <a href="/events/{{ event.fileSlug }}/" class="link">More info</a>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
+                    {% for event in pastEvents %}
+                        <li class="round-card">
+                            <div class="round-card__tagline">
+                                <p class="tag">{{ event.data.date | date("MMMM DD") }} –––– {{ event.data.date | date("YYYY") }}</p>
+                            </div>
+                            <div class="bg-black round-card__header">
+                                <h3 class="text-white uppercase text-step-3 font-head weight-bold">{{ event.data.title }}</h3>
+                            </div>
+                            <div class="round-card__content">
+                                <p class="text-step-0 text-gray-dark">{{ event.data.description }}</p>
+                            </div>
+                            <div class="round-card__footer">
+                                <a href="/events/{{ event.data.title | slugify }}/" class="link">More info</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         {% endif %}
     {% endif %}
 </div>

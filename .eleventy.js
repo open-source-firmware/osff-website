@@ -23,6 +23,7 @@ import { scriptShortcode } from "./src/utils/shortcodes/script.js";
 import buildSystem from "@cagov/11ty-build-system";
 import { globPlugin } from "esbuild-plugin-glob";
 import path from "path";
+import util from "util";
 
 // Get the current directory
 import { fileURLToPath } from "url";
@@ -62,43 +63,91 @@ export default function EleventyConfig(config) {
   config.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
   // Add capitalize filter
-  config.addFilter("capitalize", function(str) {
+  config.addFilter("capitalize", function (str) {
     if (!str) return "";
     return str.charAt(0).toUpperCase() + str.slice(1);
   });
 
   // Event filters
-  config.addFilter("filterUpcomingEvents", (events, today) => {
-    if (!today) {
-      today = new Date();
-    }
-    return events.filter(event => {
-      const eventDate = new Date(event.data.date);
-      return eventDate >= today;
-    }).sort((a, b) => {
-      return new Date(a.data.date) - new Date(b.data.date);
-    });
+  config.addFilter("filterUpcomingEvents", (events) => {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()); // 00:00 heute
+
+    return events
+      .filter((event) => {
+        const dateStr = event.data.date;
+
+        // Extra check: Datum parsen
+        const eventDate = new Date(dateStr);
+
+        if (isNaN(eventDate)) {
+          console.warn("Invalid event date:", event.data.title, dateStr);
+          return false;
+        }
+
+        const eventDateOnly = new Date(
+          eventDate.getFullYear(),
+          eventDate.getMonth(),
+          eventDate.getDate()
+        );
+
+        return eventDateOnly >= today;
+      })
+      .sort((a, b) => {
+        return new Date(a.data.date) - new Date(b.data.date);
+      });
   });
 
   config.addFilter("filterPastEvents", (events, today) => {
     if (!today) {
       today = new Date();
     }
-    return events.filter(event => {
-      const eventDate = new Date(event.data.date);
-      return eventDate < today;
-    }).sort((a, b) => {
-      return new Date(b.data.date) - new Date(a.data.date);
-    });
+    return events
+      .filter((event) => {
+        const eventDate = new Date(event.data.date);
+        return eventDate < today;
+      })
+      .sort((a, b) => {
+        return new Date(b.data.date) - new Date(a.data.date);
+      });
+  });
+
+  config.addFilter("filterHotEvent", (events) => {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()); // Heute um Mitternacht
+
+    return events
+      .filter((event) => {
+        const eventDate = new Date(event.data.date);
+
+        // Event muss in der Zukunft liegen und hotEvent muss true sein
+        if (isNaN(eventDate) || eventDate < today || !event.data.hotEvent) {
+          return false;
+        }
+
+        return true;
+      })
+      .sort((a, b) => new Date(a.data.date) - new Date(b.data.date)); // nach Datum sortieren
   });
 
   // Add a date filter to format dates
-  config.addFilter("date", function(date, format) {
+  config.addFilter("date", function (date, format) {
     if (!date) return "";
     const d = new Date(date);
 
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
     ];
 
     if (format === "YYYY") {
@@ -106,14 +155,24 @@ export default function EleventyConfig(config) {
     }
 
     if (format === "MMMM DD") {
-      return `${monthNames[d.getMonth()]} ${d.getDate().toString().padStart(2, '0')}`;
+      return `${monthNames[d.getMonth()]} ${d
+        .getDate()
+        .toString()
+        .padStart(2, "0")}`;
     }
 
     if (format === "MMMM DD, YYYY") {
-      return `${monthNames[d.getMonth()]} ${d.getDate().toString().padStart(2, '0')}, ${d.getFullYear()}`;
+      return `${monthNames[d.getMonth()]} ${d
+        .getDate()
+        .toString()
+        .padStart(2, "0")}, ${d.getFullYear()}`;
     }
 
     return date;
+  });
+
+  config.addFilter("console", function (value) {
+    return util.inspect(value);
   });
 
   // Add Shortcodes

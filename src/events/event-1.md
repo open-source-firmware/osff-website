@@ -1,6 +1,6 @@
 ---
 tags: event
-mainEvent: true
+hotEvent: true
 title: "Open Source Firmware Day at Ruhr University Bochum"
 date: "2024-08-03"
 time: "09.00am PT / 6.00pm CET / 10.30pm IST"
@@ -11,6 +11,7 @@ location:
   city: "Bruxelles"
   postal_code: "1050"
 description: "The Open Source Firmware Day @ RUB, held at Ruhr University Bochum, brought together students, industry experts, and the open-source community to explore and promote firmware development."
+intro: "Hello world."
 topics:
   - "getting started with open source firmware"
   - "coreboot"
@@ -50,9 +51,7 @@ sponsors:
     url: "#"
 image: "/assets/images/osfc-2024.jpeg"
 registration:
-  text: "Attention: Places are limited, so act fast!"
+  alert: "Attention: Places are limited, so act fast!"
   button_text: "Add to calendar"
   button_url: "#"
 ---
-
-# ölaksjdölafsdf

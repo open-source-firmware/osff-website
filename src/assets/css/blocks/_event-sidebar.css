@@ -25,10 +25,6 @@
     padding: var(--space-xxs);
   }
 
-  @media (--sm) {
-    justify-content: space-around;
-  }
-
   @media (--md) {
     top: 15rem;
     translate: 0 -10rem;
