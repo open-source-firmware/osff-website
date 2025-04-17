@@ -26,6 +26,12 @@ resources:
   - text: "test.pdf"
     file: "test.pdf"
 
+  - text: "test.pdf"
+    file: "test.pdf"
+
+  - text: "test.pdf"
+    file: "test.pdf"
+
 leads:
   - name: "Werner Zeh"
     email: "werner.zeh@osfw.foundation"

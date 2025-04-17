@@ -6,42 +6,42 @@ type: "hero-variation"
 ---
 
 <section class="hero-section wrapper" style="--wrapper-max: var(--wrapper-m)">
-  <h1 class="text-center text-white uppercase font-head weight-bold text-step-4">Shaping the future of firmware</h1>
-  <p class="text-center text-white text-step-1">Open, Transparent and Collaborative.</p>
+    <h1 class="text-center text-white uppercase font-head weight-bold text-step-4">Shaping the future of firmware</h1>
+    <p class="text-center text-white text-step-1">Open, Transparent and Collaborative.</p>
 
-  {% set upcoming = collections.event | filterUpcomingEvents %}
-  {% set nextEvent = upcoming[0] %}
+    {% set upcoming = collections.event | filterUpcomingEvents %}
+    {% set nextEvent = upcoming[0] %}
 
-  {% if nextEvent %}
-    <div class="bg-white hero-section__shoutout">
-      <h2 class="uppercase text-purple weight-bold text-step-1 font-head">{{ nextEvent.data.title }}</h2>
-      <p class="uppercase text-purple text-step-0 font-head">Up next</p>
-      <a class="btn btn--small btn--primary text-step--1" href="{{ nextEvent.data.title | slugify }}">Join us</a>
-    </div>
-  {% else %}
-    <div class="bg-white hero-section__shoutout">
-      <h2 class="uppercase text-purple weight-bold text-step-1 font-head">See our previous events</h2>
-      <p class="uppercase text-purple text-step-0 font-head">It was a blast!</p>
-      <a class="btn btn--small btn--primary text-step--1" href="/events">Explore</a>
-    </div>
-  {% endif %}
+    {% if nextEvent %}
+        <div class="bg-white hero-section__shoutout">
+            <h2 class="uppercase text-purple weight-bold text-step-1 font-head">{{ nextEvent.data.title }}</h2>
+            <p class="uppercase text-purple text-step-0 font-head">Up next</p>
+            <a class="btn btn--small btn--primary text-step--1" href="{{ nextEvent.data.title | slugify }}">Join us</a>
+        </div>
+    {% else %}
+        <div class="bg-white hero-section__shoutout">
+            <h2 class="uppercase text-purple weight-bold text-step-1 font-head">See our previous events</h2>
+            <p class="uppercase text-purple text-step-0 font-head">It was a blast!</p>
+            <a class="btn btn--small btn--primary text-step--1" href="/events">Explore</a>
+        </div>
+    {% endif %}
 </section>
 
 <div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
-  <h2 class="text-center uppercase font-head weight-bold text-step-4 text-purple">Companies transforming the Ecosystem with Open-Source Firmware</h2>
-  <ul role="list" class="logo-list | auto-grid" style="--auto-grid-min-size: clamp(8rem, 20vw, 12rem);">
-    {% for partner in partners %}
-      <li class="logo-list__item">
-        <div class="logo-list__logo" style="--width: {{ partner.width }}; --height: {{ partner.height }};">
-          <img src="{{ partner.logo }}" alt="{{ partner.name }}">
-        </div>
-        <a href="{{ partner.url }}" target="_blank">
-          <span class="sr-only">Checkout {{ partner.name }} Website</span>
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-  <a href="" class="btn btn--small" style="z-index: 2; position: relative;left: 50%; transform: translateX(-50%); margin-block-start: calc(var(--space-2xl) * -1)">Checkout all open source  driven Companies</a>
+    <h2 class="text-center uppercase font-head weight-bold text-step-4 text-purple">Companies transforming the Ecosystem with Open-Source Firmware</h2>
+    <ul role="list" class="logo-list | auto-grid" style="--auto-grid-min-size: clamp(8rem, 20vw, 12rem);">
+        {% for partner in partners %}
+            <li class="logo-list__item">
+                <div class="logo-list__logo" style="--width: {{ partner.width }}; --height: {{ partner.height }};">
+                    <img src="{{ partner.logo }}" alt="{{ partner.name }}">
+                </div>
+                <a href="{{ partner.url }}" target="_blank">
+                    <span class="sr-only">Checkout {{ partner.name }} Website</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="" class="btn btn--small" style="z-index: 2; position: relative;left: 50%; transform: translateX(-50%); margin-block-start: calc(var(--space-2xl) * -1)">Checkout all open source  driven Companies</a>
 </div>
 
 <div class="text-side-by-side sidebar-right wrapper" style="
@@ -50,175 +50,180 @@ type: "hero-variation"
   --sidebar-gap: var(--space-l);
   --sidebar-threshold: 40rem;
   ">
-  <div class="stack-m">
-    <p class="text-step-1">At the heart of a global movement, we unite developers, companies, and communities to create secure, transparent, and flexible firmware solutions for the future.
+    <div class="stack-m">
+        <p class="text-step-1">At the heart of a global movement, we unite developers, companies, and communities to create secure, transparent, and flexible firmware solutions for the future.
   <br><br>
   Join us in driving change through open collaboration and cutting-edge technology.
   </p>
-    <a href="/about-us" class="btn btn--primary">More info</a>
-  </div>
-  <aside class="stack-xs">
-    <p class="text-step-0 text-gray-dark">The entire logo selection of the Open-Source Firmware Foundation.</p>
-    <a href="/assets/images/downloads/osff_logos.zip" download class="link text-step--1">Zum Download</a>
-  </aside>
+        <a href="/about-us" class="btn btn--primary">More info</a>
+    </div>
+    <aside class="stack-xs">
+        <p class="text-step-0 text-gray-dark">The entire logo selection of the Open-Source Firmware Foundation.</p>
+        <a href="/assets/images/downloads/osff_logos.zip" download class="link text-step--1">Zum Download</a>
+    </aside>
 </div>
 
 <div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
-  <h2 class="text-center uppercase font-head weight-bold text-step-4 text-purple">hot firmware projects</h2>
-  <ul role="list" class="grid-switcher" style="
+    <h2 class="text-center uppercase font-head weight-bold text-step-4 text-purple">hot firmware projects</h2>
+    <ul role="list" class="grid-switcher" style="
       --gs-columns-medium: 1;
       --gs-columns-large: 2;
       --gs-gap: var(--space-m);
     ">
 
-    {% for hotProject in collections.projects[0].data.projects %}
-      {% if hotProject.hot %}
-        <li class="edge-card">
-          <div class="edge-card__header">
-            {% icon icon = "osff",
+        {% for hotProject in collections
+            .projects[0]
+            .data
+            .projects
+            .supportedByUs %}
+            {% if hotProject.hot %}
+                <li class="edge-card">
+                    <div class="edge-card__header">
+                        {% icon icon = "osff",
             alt = "OSFF",
             class = "edge-card__header-icon",
             width = "clamp(4rem, 10vw, 8rem)" %}
-            <h3 class="uppercase text-step-2 font-head weight-bold">{{ hotProject.title }}</h3>
-          </div>
-          <div class="edge-card__content">
-            <p class="weight-medium text-step--1">{{ hotProject.description }}</p>
-          </div>
-          <div class="edge-card__footer">
-            <a href="{{ hotProject.url }}" class="btn btn--small">More info</a>
-            {% icon icon = "osff-sign",
+                        <h3 class="uppercase text-step-2 font-head weight-bold">{{ hotProject.title }}</h3>
+                    </div>
+                    <div class="edge-card__content">
+                        <p class="weight-medium text-step--1">{{ hotProject.description }}</p>
+                    </div>
+                    <div class="edge-card__footer">
+                        <a href="{{ hotProject.url }}" class="btn btn--small">More info</a>
+                        {% icon icon = "osff-sign",
             alt = "OSFF",
             class = "edge-card__footer-icon",
             width = "var(--space-l)" %}
-          </div>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+                    </div>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 </div>
 
 <div class="wrapper stories-slider bg-gray" style="--wrapper-max: var(--wrapper-m)">
-  <div class="decoline-container">
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-  </div>
-
-  <div class="bg-white stories-slider__header stack-xs">
-    <p class="uppercase text-purple font-head text-step--1 leading-flat ">Real-world impact</p>
-    <h2 class="leading-normal weight-regular">Explore transformative Successes in Open Source</h2>
-  </div>
-
-  <div class="stories-slider__content swiper stack-s">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide stack-m">
-        <h3 class="tag">Mozilla Firefox</h3>
-        <p class="text-center stories-slider__content-text font-head text-step-3 text-purple">Mozilla <span class="weight-bold">transformed web browsing</span> with Firebox, promoting user privacy and security. This project has fostered a <span class="weight-bold">strong open-source</span> community.</p>
-
-        <a class="text-center btn" href="#">Read more</a>
-      </div>
-
-      <div class="swiper-slide stack-m">
-        <h3 class="tag">Mozilla Firefox</h3>
-        <p class="text-center stories-slider__content-text font-head text-step-3 text-purple">Mozilla <span class="weight-bold">transformed web browsing</span> with Firebox, promoting user privacy and security. This project has fostered a <span class="weight-bold">strong open-source</span> community.</p>
-
-        <a class="text-center btn" href="#">Read more</a>
-      </div>
+    <div class="decoline-container">
+        <span class="decoline" aria-hidden="true"></span>
+        <span class="decoline" aria-hidden="true"></span>
+        <span class="decoline" aria-hidden="true"></span>
     </div>
 
-    <button class="stories-slider__content-button swiper-button-prev">{% icon icon = "arrowhead-left", alt="previous slide"%}</button>
-    <button class="stories-slider__content-button swiper-button-next">{% icon icon = "arrowhead-right", alt="next slide"%}</button>
+    <div class="bg-white stories-slider__header stack-xs">
+        <p class="uppercase text-purple font-head text-step--1 leading-flat ">Real-world impact</p>
+        <h2 class="leading-normal weight-regular">Explore transformative Successes in Open Source</h2>
+    </div>
 
-    <div class="swiper-pagination"></div>
-  </div>
+    <div class="stories-slider__content swiper stack-s">
+        <div class="swiper-wrapper">
+            {% for teaser in collections
+                .blogTeaser[0]
+                .data
+                .blogTeaser %}
+                <div class="swiper-slide stack-m">
+                    <h3 class="tag">{{ teaser.label }}</h3>
+                    <p class="text-center stories-slider__content-text font-head text-step-3 text-purple">{{ teaser.text }}</p>
+
+                    <a class="text-center btn" target="blank" href="{{ teaser.linkUrl }}">Read more</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <button class="stories-slider__content-button swiper-button-prev">{% icon icon = "arrowhead-left", alt="previous slide"%}</button>
+        <button class="stories-slider__content-button swiper-button-next">{% icon icon = "arrowhead-right", alt="next slide"%}</button>
+
+        <div class="swiper-pagination"></div>
+    </div>
 </div>
 
 <div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
-  <div class="sidebar-left" style="
+    <div class="sidebar-left" style="
       --sidebar-threshold: 30rem;
       --sidebar-gap-vertical: var(--space-xs);
       --sidebar-gap: var(--space-l);
       --sidebar-width: 35ch;
     ">
-    <div class="stack-xs">
-      <h2 class="uppercase text-purple font-head text-step-0 weight-regular">Hardware Partners</h2>
-      <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Powering Open Source Possibilities</h3>
-    </div>
-    <p class="text-step-1">Discover industry-leading hardware solutions optimized for open-source projects. From servers to processors,
+        <div class="stack-xs">
+            <h2 class="uppercase text-purple font-head text-step-0 weight-regular">Hardware Partners</h2>
+            <h3 class="uppercase text-purple font-head text-step-3 weight-bold">Powering Open Source Possibilities</h3>
+        </div>
+        <p class="text-step-1">Discover industry-leading hardware solutions optimized for open-source projects. From servers to processors,
       explore the partners enabling next-generation innovation.</p>
-  </div>
-  <ul role="list" class="grid-switcher" style="
+    </div>
+    <ul role="list" class="grid-switcher" style="
       --gs-columns-medium: 1;
       --gs-columns-large: 2;
       --gs-gap: var(--space-m);
       ">
 
-    {% for partner in collections.hardware[0].data.hardware %}
-      {% if partner.hot %}
-      <li class="round-card">
-        <div class="round-card__tagline">
-          <p class="tag">{{ partner.seller }}</p>
-        </div>
+        {% for partner in collections
+            .hardware[0]
+            .data
+            .hardware %}
+            {% if partner.hot %}
+                <li class="round-card">
+                    <div class="round-card__tagline">
+                        <p class="tag">{{ partner.seller }}</p>
+                    </div>
 
-        <div class="round-card__header bg-gray">
-          <h3 class="text-center uppercase text-step-2 font-head weight-bold">{{ partner.name }}</h3>
-        </div>
+                    <div class="round-card__header bg-gray">
+                        <h3 class="text-center uppercase text-step-2 font-head weight-bold">{{ partner.name }}</h3>
+                    </div>
 
-        <div class="round-card__content | stack-m">
-          <p class="weight-medium text-step--1">{{ partner.description }}</p>
-          <div class="cluster" style="--cluster-gap: var(--space-m);">
-            <div class="stack-xxs">
-              <h4 class="uppercase text-step--1">Projects</h4>
-              <div class="cluster" style="--cluster-gap: var(--space-xxs);">
-                {% for logo in partner.projectLogos %}
-                  {% icon icon = logo,
+                    <div class="round-card__content | stack-m">
+                        <p class="weight-medium text-step--1">{{ partner.description }}</p>
+                        <div class="cluster" style="--cluster-gap: var(--space-m);">
+                            <div class="stack-xxs">
+                                <h4 class="uppercase text-step--1">Projects</h4>
+                                <div class="cluster" style="--cluster-gap: var(--space-xxs);">
+                                    {% for logo in partner.projectLogos %}
+                                        {% icon icon = logo,
                   alt = "OSFF",
                   width = "var(--space-s)" %}
-                {% endfor %}
-              </div>
-            </div>
-            <div class="stack-xxs">
-              <h4 class="uppercase text-step--1">Supported Soc</h4>
-              <div class="cluster" style="--cluster-gap: var(--space-xxs);">
-                {% for logo in partner.supportedSocLogos %}
-                  {% icon icon = logo,
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="stack-xxs">
+                                <h4 class="uppercase text-step--1">Supported Soc</h4>
+                                <div class="cluster" style="--cluster-gap: var(--space-xxs);">
+                                    {% for logo in partner.supportedSocLogos %}
+                                        {% icon icon = logo,
                   alt = "OSFF",
                   width = "var(--space-s)" %}
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="round-card__footer">
-          <a href="{{ partner.link }}" class="btn btn--small">More info</a>
-        </div>
-      </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+                    <div class="round-card__footer">
+                        <a href="{{ partner.link }}" class="btn btn--small">More info</a>
+                    </div>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 </div>
 
 {% set upcomingHotEvents = collections.event | filterHotEvent %}
 {% set nextEvent = upcomingHotEvents[0] %}
 
 {% if nextEvent %}
-  <div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
-    <div class="decoline-container">
-      <span class="decoline" aria-hidden="true"></span>
-      <span class="decoline" aria-hidden="true"></span>
-      <span class="decoline" aria-hidden="true"></span>
-    </div>
+    <div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
+        <div class="decoline-container">
+            <span class="decoline" aria-hidden="true"></span>
+            <span class="decoline" aria-hidden="true"></span>
+            <span class="decoline" aria-hidden="true"></span>
+        </div>
 
-    <div class="image-teaser__content">
-      <div class="wrapper image-teaser__image">
-        <img class="overlay" src="{{ nextEvent.data.image }}" alt="{{ nextEvent.data.title }}">
-      </div>
-      <div class="image-teaser__cta stack-s">
-        <p class="uppercase text-purple font-head text-step--1 leading-flat">Don’t miss the loremsum</p>
-        <h2 class="leading-normal weight-regular">{{ nextEvent.data.title }}</h2>
-        <a class="btn weight-regular" href="/events/{{ nextEvent.data.title | slugify }}/">Info & Tickets</a>
-      </div>
+        <div class="image-teaser__content">
+            <div class="wrapper image-teaser__image">
+                <img class="overlay" src="{{ nextEvent.data.image }}" alt="{{ nextEvent.data.title }}">
+            </div>
+            <div class="image-teaser__cta stack-s">
+                <p class="uppercase text-purple font-head text-step--1 leading-flat">Dont't miss our next event</p>
+                <h2 class="leading-normal weight-regular">{{ nextEvent.data.title }}</h2>
+                <a class="btn weight-regular" href="/events/{{ nextEvent.data.title | slugify }}/">Info & Tickets</a>
+            </div>
+        </div>
     </div>
-  </div>
 {% endif %}

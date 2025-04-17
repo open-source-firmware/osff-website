@@ -32,7 +32,7 @@ permalink: /community/index.html
             </div>
             <aside class="stack-xs">
                 <p class="text-step-0 text-gray-dark">Interested in supporting the Open-Source Firmware Foundation as an IBV?</p>
-                <a href="#" class="link text-step--1">Contact us</a>
+                <a href="mailto:contact@opensourcefirmware.foundation" class="link text-step--1">Contact us</a>
             </aside>
         </div>
     </div>
@@ -43,27 +43,30 @@ permalink: /community/index.html
       --gs-columns-large: 2;
           --gs-gap: var(--space-m);
         ">
-        {% for ibv in collections.ibvs[0].data.ibvs %}
-            <li class="edge-card">
-                <div class="edge-card__header">
-                    {% icon icon = ibv.logo,
+            {% for ibv in collections
+                .ibvs[0]
+                .data
+                .ibvs %}
+                <li class="edge-card">
+                    <div class="edge-card__header">
+                        {% icon icon = ibv.logo,
                       alt = "OSFF",
                       class = "edge-card__header-icon",
                       width = "clamp(4rem, 10vw, 8rem)" %}
-                    <h3 class="uppercase text-step-2 font-head weight-bold">{{ ibv.name }}</h3>
-                </div>
-                <div class="edge-card__content">
-                    <p class="weight-medium text-step--1">"{{ ibv.quote }}"</p>
-                </div>
-                <div class="edge-card__footer">
-                    <a href="{{ ibv.link }}" class="btn btn--small">More info</a>
-                    {% icon icon = "osff-sign",
+                        <h3 class="uppercase text-step-2 font-head weight-bold">{{ ibv.name }}</h3>
+                    </div>
+                    <div class="edge-card__content">
+                        <p class="weight-medium text-step--1">"{{ ibv.quote }}"</p>
+                    </div>
+                    <div class="edge-card__footer">
+                        <a href="{{ ibv.link }}" class="btn btn--small">More info</a>
+                        {% icon icon = "osff-sign",
         alt = "OSFF",
         class = "edge-card__footer-icon",
         width = "var(--space-l)" %}
-                </div>
-            </li>
-        {% endfor %}
+                    </div>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 
@@ -88,81 +91,82 @@ permalink: /community/index.html
       --gs-columns-large: 2;
       --gs-gap: var(--space-m);
       ">
-        {% for partner in collections.hardware[0].data.hardware %}
-        <li class="round-card">
-            <div class="round-card__tagline">
-                <p class="tag">{{ partner.seller }}</p>
-            </div>
-            <div class="round-card__header bg-gray">
-                <h3 class="text-center uppercase text-step-2 font-head weight-bold">{{ partner.name }}</h3>
-            </div>
-            <div class="round-card__content | stack-m">
-                <p class="weight-medium text-step--1">{{ partner.description }}</p>
-                <div class="cluster" style="--cluster-gap: var(--space-m);">
-                    <div class="stack-xxs">
-                        <h4 class="uppercase text-step--1">Projects</h4>
-                        <div class="cluster" style="--cluster-gap: var(--space-xxs);">
-                          {% for logo in partner.projectLogos %}
-                            {% icon icon = logo,
+        {% for partner in collections
+            .hardware[0]
+            .data
+            .hardware %}
+            <li class="round-card">
+                <div class="round-card__tagline">
+                    <p class="tag">{{ partner.seller }}</p>
+                </div>
+                <div class="round-card__header bg-gray">
+                    <h3 class="text-center uppercase text-step-2 font-head weight-bold">{{ partner.name }}</h3>
+                </div>
+                <div class="round-card__content | stack-m">
+                    <p class="weight-medium text-step--1">{{ partner.description }}</p>
+                    <div class="cluster" style="--cluster-gap: var(--space-m);">
+                        <div class="stack-xxs">
+                            <h4 class="uppercase text-step--1">Projects</h4>
+                            <div class="cluster" style="--cluster-gap: var(--space-xxs);">
+                                {% for logo in partner.projectLogos %}
+                                    {% icon icon = logo,
                                 alt = "OSFF",
                                 width = "var(--space-s)" %}
-                          {% endfor %}
+                                {% endfor %}
+                            </div>
                         </div>
-                    </div>
-                    <div class="stack-xxs">
-                        <h4 class="uppercase text-step--1">Supported Soc</h4>
-                        <div class="cluster" style="--cluster-gap: var(--space-xxs);">
-                          {% for logo in partner.supportedSocLogos %}
-                            {% icon icon = logo,
+                        <div class="stack-xxs">
+                            <h4 class="uppercase text-step--1">Supported Soc</h4>
+                            <div class="cluster" style="--cluster-gap: var(--space-xxs);">
+                                {% for logo in partner.supportedSocLogos %}
+                                    {% icon icon = logo,
                                 alt = "OSFF",
                                 width = "var(--space-s)" %}
-                          {% endfor %}
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="round-card__footer">
-                <a href="{{ partner.link }}" class="btn btn--small">More info</a>
-            </div>
-        </li>
+                <div class="round-card__footer">
+                    <a href="{{ partner.link }}" class="btn btn--small">More info</a>
+                </div>
+            </li>
         {% endfor %}
     </ul>
 </div>
 
 <div class="wrapper stories-slider bg-gray" style="--wrapper-max: var(--wrapper-m)">
-  <div class="decoline-container">
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-  </div>
-
-  <div class="bg-white stories-slider__header stack-xs">
-    <p class="uppercase text-purple font-head text-step--1 leading-flat ">Real-world impact</p>
-    <h2 class="leading-normal weight-regular">Explore transformative Successes in Open Source</h2>
-  </div>
-
-  <div class="stories-slider__content swiper stack-s">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide stack-m">
-        <h3 class="tag">Mozilla Firefox</h3>
-        <p class="text-center stories-slider__content-text font-head text-step-3 text-purple">Mozilla <span class="weight-bold">transformed web browsing</span> with Firebox, promoting user privacy and security. This project has fostered a <span class="weight-bold">strong open-source</span> community.</p>
-
-        <a class="text-center btn" href="#">Read more</a>
-      </div>
-
-      <div class="swiper-slide stack-m">
-        <h3 class="tag">Mozilla Firefox</h3>
-        <p class="text-center stories-slider__content-text font-head text-step-3 text-purple">Mozilla <span class="weight-bold">transformed web browsing</span> with Firebox, promoting user privacy and security. This project has fostered a <span class="weight-bold">strong open-source</span> community.</p>
-
-        <a class="text-center btn" href="#">Read more</a>
-      </div>
+    <div class="decoline-container">
+        <span class="decoline" aria-hidden="true"></span>
+        <span class="decoline" aria-hidden="true"></span>
+        <span class="decoline" aria-hidden="true"></span>
     </div>
 
-    <button class="stories-slider__content-button swiper-button-prev">{% icon icon = "arrowhead-left", alt="previous slide"%}</button>
-    <button class="stories-slider__content-button swiper-button-next">{% icon icon = "arrowhead-right", alt="next slide"%}</button>
+    <div class="bg-white stories-slider__header stack-xs">
+        <p class="uppercase text-purple font-head text-step--1 leading-flat ">Real-world impact</p>
+        <h2 class="leading-normal weight-regular">Explore transformative Successes in Open Source</h2>
+    </div>
 
-    <div class="swiper-pagination"></div>
-  </div>
+    <div class="stories-slider__content swiper stack-s">
+        <div class="swiper-wrapper">
+            {% for teaser in collections
+                .blogTeaser[0]
+                .data
+                .blogTeaser %}
+                <div class="swiper-slide stack-m">
+                    <h3 class="tag">{{ teaser.label }}</h3>
+                    <p class="text-center stories-slider__content-text font-head text-step-3 text-purple">{{ teaser.text }}</p>
+
+                    <a class="text-center btn" target="blank" href="{{ teaser.linkUrl }}">Read more</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <button class="stories-slider__content-button swiper-button-prev">{% icon icon = "arrowhead-left", alt="previous slide"%}</button>
+        <button class="stories-slider__content-button swiper-button-next">{% icon icon = "arrowhead-right", alt="next slide"%}</button>
+
+        <div class="swiper-pagination"></div>
+    </div>
 </div>
 
 <div class="multiple-link-teaser | wrapper" style="--wrapper-max: var(--wrapper-m);">
@@ -173,65 +177,41 @@ permalink: /community/index.html
     </div>
     <p class="multiple-link-teaser__hint text-step--1">Open Source is not an alternative, but the best lorem ipsum dolor sit amet consteteur.</p>
     <div class="multiple-link-teaser__links">
-        <a href="#">
-            {% icon icon = "board-meeting",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Board Meeting Minutes
+        {% for document in collections
+            .documents[0]
+            .data
+            .documents %}
+            <a href="{{ document.download }}" target="_blank">
+                {% icon icon = document.icon,
+                alt = "",
+                width = "var(--space-s)" %}
+                {{ document.name }}
             </a>
-        <a href="#">
-            {% icon icon = "articles",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Articles of Incorporation
-            </a>
-        <a href="#">
-            {% icon icon = "code-of-conduct",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Code of Conduct
-            </a>
-        <a href="#">
-            {% icon icon = "antitrust",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Antitrust Policy
-            </a>
-        <a href="#">
-            {% icon icon = "articles",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Articles of Incorporation
-            </a>
-        <a href="#">
-            {% icon icon = "code-of-conduct",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Code of Conduct
-            </a>
-        <a href="#">
-            {% icon icon = "antitrust",
-                    alt = "",
-                    width = "var(--space-s)" %}
-                Antitrust Policy
-            </a>
+        {% endfor %}
     </div>
-    <a href="#" class="multiple-link-teaser__small-link link">Explore the Community</a>
+    <a href="/community" class="multiple-link-teaser__small-link link">Explore the Community</a>
 </div>
 
-<div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
-    <div class="decoline-container">
-        <span class="decoline" aria-hidden="true"></span>
-        <span class="decoline" aria-hidden="true"></span>
-        <span class="decoline" aria-hidden="true"></span>
-    </div>
+{% set upcomingHotEvents = collections.event | filterHotEvent %}
+{% set nextEvent = upcomingHotEvents[0] %}
 
-    <div class="image-teaser__content">
-        <div class="wrapper image-teaser__image"><img class="overlay" src="/assets/images/osfc-2024.jpeg" alt=""></div>
-        <div class="image-teaser__cta stack-s">
-            <p class="uppercase text-purple font-head text-step--1 leading-flat ">Don’t miss the loremsum</p>
-            <h2 class="leading-normal weight-regular">OSFC 2024 - Open-Source Firmware Conference 2024</h2>
-            <a class="btn weight-regular" href="#">Info & Tickets</a>
+{% if nextEvent %}
+    <div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
+        <div class="decoline-container">
+            <span class="decoline" aria-hidden="true"></span>
+            <span class="decoline" aria-hidden="true"></span>
+            <span class="decoline" aria-hidden="true"></span>
+        </div>
+
+        <div class="image-teaser__content">
+            <div class="wrapper image-teaser__image">
+                <img class="overlay" src="{{ nextEvent.data.image }}" alt="{{ nextEvent.data.title }}">
+            </div>
+            <div class="image-teaser__cta stack-s">
+                <p class="uppercase text-purple font-head text-step--1 leading-flat">Dont't miss our next event</p>
+                <h2 class="leading-normal weight-regular">{{ nextEvent.data.title }}</h2>
+                <a class="btn weight-regular" href="/events/{{ nextEvent.data.title | slugify }}/">Info & Tickets</a>
+            </div>
         </div>
     </div>
-</div>
+{% endif %}

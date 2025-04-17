@@ -8,7 +8,7 @@ hardware:
       - twitter
     supportedSocLogos:
       - twitter
-    link: "/hello-world"
+    link: "https://www.google.de/"
     hot: true
 
   - seller: "custom seller"

@@ -21,7 +21,7 @@ eleventyImport:
             <p>Kickoff Meeting: {{ workstream.data.date | date("MMMM DD, YYYY") }}</p>
             <p>{{ workstream.data.time }}</p>
         </div>
-        <a href="#" class="btn btn--small">Go to calendar</a>
+        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text={{ workstream.data.title | replace(" ", "+") }}&dates={{ workstream.data.date | date("YYYYMMDD") }}T{{ workstream.data.time | replace(':', '') }}00Z/{{ workstream.data.date | date("YYYYMMDD") }}T{{ workstream.data.time | replace(':', '') }}00Z&details=Kickoff+Meeting&sf=true&output=xml" class="btn btn--small">Go to calendar</a>
     </div>
 
     <div class="content | stack-m">
@@ -31,11 +31,11 @@ eleventyImport:
     </div>
 
     <ul aria-label="The Goals:" class="fancy-list | text-step-0" role="list">
-      {% for goal in workstream.data.goals %}
-        <li class="{{ 'done' if goal.done else '' }}">
-          {{ goal.text }}
-        </li>
-      {% endfor %}
+        {% for goal in workstream.data.goals %}
+            <li class="{{ 'done' if goal.done else '' }}">
+                {{ goal.text }}
+            </li>
+        {% endfor %}
     </ul>
 
     <ul aria-label="Resources" class="resources | auto-grid" role="list" style="
@@ -43,31 +43,32 @@ eleventyImport:
             --auto-grid-gap: var(--space-s);
         ">
         {% for resource in workstream.data.resources %}
-        <li class="resources__item">
-            <a href="/assets/downloads/{{ resource.file }}" target="_blank">{{ resource.text }}</a>
-        </li>
+            <li class="resources__item">
+                <a href="/assets/downloads/{{ resource.file }}" target="_blank">{{ resource.text }}</a>
+            </li>
         {% endfor %}
     </ul>
     <div class="stack-s">
         <h3 class="weight-bold font-head text-step-2">Workstream Leads</h3>
         {% for lead in workstream.data.leads %}
-          <div class="workstream-lead">
-              <div class="workstream-lead__portrait">
-                  <img src="/assets/images/people/{{ lead.image }}" alt="">
-              </div>
-              <div class="workstream-lead__content">
-                  <p class="uppercase text-step-1 weight-bold font-head">{{ lead.name }}</p>
-                  <a href="mailto:{{ lead.email }}">
-                      {% icon icon = "mail",
+            <div class="workstream-lead">
+                <div class="workstream-lead__portrait">
+                    <img src="/assets/images/people/{{ lead.image }}" alt="">
+                </div>
+                <div class="workstream-lead__content">
+                    <p class="uppercase text-step-1 weight-bold font-head">{{ lead.name }}</p>
+                    <a href="mailto:{{ lead.email }}">
+                        {% icon icon = "mail",
                       alt = "",
                       width = "var(--space-s)" %}
-                      {{ lead.email }}</a>
-              </div>
-          </div>
+                        {{ lead.email }}</a>
+                </div>
+            </div>
         {% endfor %}
     </div>
 {% endblock %}
 
+<!--
 {% block relatedContent %}
     <h2 class="text-center uppercase text-step-3 weight-bold font-head">Other Workstreams</h2>
     <ul class="auto-grid" role="list" style="
@@ -89,3 +90,4 @@ eleventyImport:
         {% endfor %}
     </ul>
 {% endblock %}
+-->

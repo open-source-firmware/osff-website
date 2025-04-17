@@ -22,7 +22,7 @@ permalink: /about-us/index.html
     </div>
     <aside class="stack-xs">
       <p class="text-step-0 text-gray-dark">The entire logo selection of the Open-Source Firmware Foundation.</p>
-      <a href="#" class="link text-step--1">Zum Download</a>
+      <a href="/assets/images/downloads/osff_logos.zip" download class="link text-step--1">Zum Download</a>
     </aside>
   </div>
 </div>
@@ -35,40 +35,46 @@ permalink: /about-us/index.html
   </div>
   <p class="multiple-link-teaser__hint text-step--1">Open Source is not an alternative, but the best lorem ipsum dolor sit amet consteteur.</p>
   <div class="multiple-link-teaser__links">
-    {% for document in collections.documents[0].data.documents %}
+    {% for document in collections
+      .documents[0]
+      .data
+      .documents %}
       <a href="{{ document.download }}" target="_blank">
         {% icon icon = document.icon,
                 alt = "",
                 width = "var(--space-s)" %}
-          {{ document.name }}
+        {{ document.name }}
       </a>
     {% endfor %}
   </div>
-  <a href="#" class="multiple-link-teaser__small-link link">Explore the Community</a>
+  <a href="/community" class="multiple-link-teaser__small-link link">Explore the Community</a>
 </div>
 
 <div class="wrapper stack-xl --stack-space-2xl" style="--wrapper-max: var(--wrapper-m);">
   <div class="stack-m">
     <h2 class="text-center uppercase font-head text-purple weight-bold text-step-3">Officers</h2>
     <div class="cluster" style="--cluster-justification: center; --cluster-gap: var(--space-xxs);">
-      {% for officer in collections.team[0].data.officers %}
-      <div class="person-card">
-        <div class="person-card__info">
-          <h3 class="uppercase font-head text-purple weight-medium text-step-1">{{ officer.position }}</h3>
-          <p class="uppercase person-card__role text-step-0">{{ officer.position }}</p>
-        </div>
-        <div class="person-card__image-container">
-          <img src="/assets/images/people/{{ officer.portrait }}" alt="">
-          <span>
-            {% icon icon = "linkedin",
+      {% for officer in collections
+        .team[0]
+        .data
+        .officers %}
+        <div class="person-card">
+          <div class="person-card__info">
+            <h3 class="uppercase font-head text-purple weight-medium text-step-1">{{ officer.position }}</h3>
+            <p class="uppercase person-card__role text-step-0">{{ officer.position }}</p>
+          </div>
+          <div class="person-card__image-container">
+            <img src="/assets/images/people/{{ officer.portrait }}" alt="">
+            <span>
+              {% icon icon = "linkedin",
                             alt = "linkedin",
                             width = "var(--space-m)" %}
-          </span>
+            </span>
+          </div>
+          <a class="person-card__link" target="_blank" href="{{ officer.linkedIn }}">
+            <span class="sr-only">Visit LinkedIn</span>
+          </a>
         </div>
-        <a class="person-card__link" target="_blank" href="{{ officer.linkedIn }}">
-          <span class="sr-only">Visit LinkedIn</span>
-        </a>
-      </div>
       {% endfor %}
     </div>
   </div>
@@ -76,7 +82,10 @@ permalink: /about-us/index.html
   <div class="stack-m">
     <h2 class="text-center uppercase font-head text-purple weight-bold text-step-3">Board of Directors</h2>
     <div class="cluster" style="--cluster-justification: center; --cluster-gap: var(--space-xxs);">
-      {% for director in collections.team[0].data.boardOfDirectors %}
+      {% for director in collections
+        .team[0]
+        .data
+        .boardOfDirectors %}
         <div class="person-card">
           <div class="person-card__info">
             <h3 class="uppercase font-head text-purple weight-medium text-step-1">{{ director.position }}</h3>
@@ -101,7 +110,10 @@ permalink: /about-us/index.html
   <div class="stack-m">
     <h2 class="text-center uppercase font-head text-purple weight-bold text-step-3">Volunteers</h2>
     <div class="cluster" style="--cluster-justification: center; --cluster-gap: var(--space-xxs);">
-      {% for volunteer in collections.team[0].data.volunteers %}
+      {% for volunteer in collections
+        .team[0]
+        .data
+        .volunteers %}
         <div class="person-card">
           <div class="person-card__info">
             <h3 class="uppercase font-head text-purple weight-medium text-step-1">{{ volunteer.position }}</h3>
@@ -137,7 +149,7 @@ permalink: /about-us/index.html
     <div class="stack-s">
       <hr>
       <p class="text-step-1 text-gray-dark">Want to know more about the benefits being an OSFF Member?</p>
-      <a href="#" class="link">Checkout OSFF Slides</a>
+      <a href="https://osfw.foundation/slides/Open-Source-Firmware-Foundation_public.pdf" class="link">Checkout OSFF Slides</a>
     </div>
   </div>
 
@@ -147,38 +159,48 @@ permalink: /about-us/index.html
       --gs-columns-large: 3;
       --gs-gap: var(--space-m);
     ">
-    {% for member in collections.members[0].data.members %}
-    <li class="round-card">
-      <div class="round-card__tagline">
-        <p class="tag">{{ member.type }}</p>
-      </div>
-      <div class="centerflex round-card__header bg-gray">
-        {% icon icon = member.logo,
+    {% for member in collections
+      .members[0]
+      .data
+      .members %}
+      <li class="round-card">
+        <div class="round-card__tagline">
+          <p class="tag">{{ member.type }}</p>
+        </div>
+        <div class="centerflex round-card__header bg-gray">
+          {% icon icon = member.logo,
         alt = "OSFF",
         class = "edge-card__header-icon",
         width = "clamp(4rem, 10vw, 8rem)" %}
-      </div>
-      <div class="round-card__footer">
-        <a href="{{ member.link }}" class="link">More info</a>
-      </div>
-    </li>
+        </div>
+        <div class="round-card__footer">
+          <a href="{{ member.link }}" class="link">More info</a>
+        </div>
+      </li>
     {% endfor %}
   </ul>
 </div>
 
-<div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
-  <div class="decoline-container">
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-    <span class="decoline" aria-hidden="true"></span>
-  </div>
+{% set upcomingHotEvents = collections.event | filterHotEvent %}
+{% set nextEvent = upcomingHotEvents[0] %}
 
-  <div class="image-teaser__content">
-    <div class="wrapper image-teaser__image"><img class="overlay" src="/assets/images/osfc-2024.jpeg" alt=""></div>
-    <div class="image-teaser__cta stack-s">
-      <p class="uppercase text-purple font-head text-step--1 leading-flat ">Don’t miss the loremsum</p>
-      <h2 class="leading-normal weight-regular">OSFC 2024 - Open-Source Firmware Conference 2024</h2>
-      <a class="btn weight-regular" href="#">Info & Tickets</a>
+{% if nextEvent %}
+  <div class="image-teaser wrapper" style="--wrapper-max: var(--wrapper-m)">
+    <div class="decoline-container">
+      <span class="decoline" aria-hidden="true"></span>
+      <span class="decoline" aria-hidden="true"></span>
+      <span class="decoline" aria-hidden="true"></span>
+    </div>
+
+    <div class="image-teaser__content">
+      <div class="wrapper image-teaser__image">
+        <img class="overlay" src="{{ nextEvent.data.image }}" alt="{{ nextEvent.data.title }}">
+      </div>
+      <div class="image-teaser__cta stack-s">
+        <p class="uppercase text-purple font-head text-step--1 leading-flat">Dont't miss our next event</p>
+        <h2 class="leading-normal weight-regular">{{ nextEvent.data.title }}</h2>
+        <a class="btn weight-regular" href="/events/{{ nextEvent.data.title | slugify }}/">Info & Tickets</a>
+      </div>
     </div>
   </div>
-</div>
+{% endif %}

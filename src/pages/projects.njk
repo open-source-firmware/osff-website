@@ -23,7 +23,7 @@ permalink: /projects/index.html
                 </div>
                 <aside class="stack-xs">
                     <p class="text-step-0 text-gray-dark">Interested in joining the Open-Source Firmware Foundation?</p>
-                    <a href="#" class="link text-step--1">Contact us</a>
+                    <a href="mailto:contact@opensourcefirmware.foundation" class="link text-step--1">Contact us</a>
                 </aside>
             </div>
         </div>
@@ -37,25 +37,25 @@ permalink: /projects/index.html
                 --gs-gap: var(--space-m);
             ">
                 {% for project in projects.supportedByUs %}
-                  <li class="edge-card">
-                      <div class="edge-card__header">
-                          {% icon icon = project.logo,
+                    <li class="edge-card">
+                        <div class="edge-card__header">
+                            {% icon icon = project.logo,
                       alt = "OSFF",
                       class = "edge-card__header-icon",
                       width = "var(--space-xl)" %}
-                          <h3 class="uppercase text-step-2 font-head weight-bold">{{ project.title }}</h3>
-                      </div>
-                      <div class="edge-card__content">
-                          <p class="weight-medium text-step--1">{{ project.description }}</p>
-                      </div>
-                      <div class="edge-card__footer">
-                          <a href="{{ project.url }}" class="btn btn--small" target="_blank">More info</a>
-                          {% icon icon = "osff-sign",
+                            <h3 class="uppercase text-step-2 font-head weight-bold">{{ project.title }}</h3>
+                        </div>
+                        <div class="edge-card__content">
+                            <p class="weight-medium text-step--1">{{ project.description }}</p>
+                        </div>
+                        <div class="edge-card__footer">
+                            <a href="{{ project.url }}" class="btn btn--small" target="_blank">More info</a>
+                            {% icon icon = "osff-sign",
                       alt = "OSFF",
                       class = "edge-card__footer-icon",
                       width = "var(--space-l)" %}
-                      </div>
-                  </li>
+                        </div>
+                    </li>
                 {% endfor %}
             </ul>
         </div>
@@ -107,7 +107,7 @@ permalink: /projects/index.html
         </div>
         <div class="info-box | stack-s">
             <h4 class="leading-tight weight-regular text-step-0">Ready to dive into groundbreaking solutions? Our workstreams are where ideas become impact.</h4>
-            <a class="btn btn--small" href="#">Let's go!</a>
+            <a class="btn btn--small" href="/workstreams">Let's go!</a>
         </div>
     </div>
 </div>
