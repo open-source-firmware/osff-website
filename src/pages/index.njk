@@ -16,7 +16,7 @@ type: "hero-variation"
         <div class="bg-white hero-section__shoutout">
             <h2 class="uppercase text-purple weight-bold text-step-1 font-head">{{ nextEvent.data.title }}</h2>
             <p class="uppercase text-purple text-step-0 font-head">Up next</p>
-            <a class="btn btn--small btn--primary text-step--1" href="{{ nextEvent.data.title | slugify }}">Join us</a>
+            <a class="btn btn--small btn--primary text-step--1" href="/events/{{ nextEvent.data.title | slugify }}">Join us</a>
         </div>
     {% else %}
         <div class="bg-white hero-section__shoutout">
