@@ -22,7 +22,7 @@ permalink: /about-us/index.html
     </div>
     <aside class="stack-xs">
       <p class="text-step-0 text-gray-dark">The entire logo selection of the Open-Source Firmware Foundation.</p>
-      <a href="/assets/images/downloads/osff_logos.zip" download class="link text-step--1">Zum Download</a>
+      <a href="/assets/images/downloads/osff_logos.zip" download class="link text-step--1">Download</a>
     </aside>
   </div>
 </div>
@@ -65,15 +65,19 @@ permalink: /about-us/index.html
           </div>
           <div class="person-card__image-container">
             <img src="/assets/images/people/{{ officer.portrait }}" alt="">
+            {% if officer.linkedIn %}
             <span>
               {% icon icon = "linkedin",
                             alt = "linkedin",
                             width = "var(--space-m)" %}
             </span>
+            {% endif %}
           </div>
+          {% if officer.linkedIn %}
           <a class="person-card__link" target="_blank" href="{{ officer.linkedIn }}">
             <span class="sr-only">Visit LinkedIn</span>
           </a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
@@ -93,15 +97,19 @@ permalink: /about-us/index.html
           </div>
           <div class="person-card__image-container">
             <img src="/assets/images/people/{{ director.portrait }}" alt="">
+            {% if director.linkedIn %}
             <span>
               {% icon icon = "linkedin",
-                              alt = "linkedin",
-                              width = "var(--space-m)" %}
+                            alt = "linkedin",
+                            width = "var(--space-m)" %}
             </span>
+            {% endif %}
           </div>
+          {% if director.linkedIn %}
           <a class="person-card__link" target="_blank" href="{{ director.linkedIn }}">
             <span class="sr-only">Visit LinkedIn</span>
           </a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
@@ -121,15 +129,19 @@ permalink: /about-us/index.html
           </div>
           <div class="person-card__image-container">
             <img src="/assets/images/people/{{ volunteer.portrait }}" alt="">
+            {% if volunteer.linkedIn %}
             <span>
               {% icon icon = "linkedin",
-                              alt = "linkedin",
-                              width = "var(--space-m)" %}
+                            alt = "linkedin",
+                            width = "var(--space-m)" %}
             </span>
+            {% endif %}
           </div>
+          {% if volunteer.linkedIn %}
           <a class="person-card__link" target="_blank" href="{{ volunteer.linkedIn }}">
             <span class="sr-only">Visit LinkedIn</span>
           </a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
@@ -168,10 +180,7 @@ permalink: /about-us/index.html
           <p class="tag">{{ member.type }}</p>
         </div>
         <div class="centerflex round-card__header bg-gray">
-          {% icon icon = member.logo,
-        alt = "OSFF",
-        class = "edge-card__header-icon",
-        width = "clamp(4rem, 10vw, 8rem)" %}
+          <img class="round-card__img" src="{{ member.logo }}" alt="{{ member.name }}">
         </div>
         <div class="round-card__footer">
           <a href="{{ member.link }}" class="link">More info</a>

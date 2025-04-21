@@ -2,37 +2,56 @@
 tags: team
 
 officers:
-  - portrait: "christian-walter.png"
-    position: "director"
-    linkedIn: "https://linkedin.com"
+  - portrait: "philipp-deppenwiese.png"
+    position: "President"
+    linkedIn: "https://www.linkedin.com/in/philipp-deppenwiese-40a357111/"
 
-  - portrait: "christian-walter.png"
-    position: "director"
-    linkedIn: "https://linkedin.com"
+  - portrait: "mustamin-mustaffa.jpeg"
+    position: "Secretary"
+    linkedIn: "https://www.linkedin.com/in/mustamin-mustaffa/"
+
+  - portrait: "david-hendricks.webp"
+    position: "Treasurer"
+    linkedIn: "https://www.linkedin.com/in/dhendrix/"
 
 boardOfDirectors:
   - portrait: "christian-walter.png"
     position: "director"
-    linkedIn: "https://linkedin.com"
+    linkedIn: "https://www.linkedin.com/in/christian-walter-45588b8b/"
 
-  - portrait: "christian-walter.png"
+  - portrait: "ron-minnich.webp"
     position: "director"
-    linkedIn: "https://linkedin.com"
+    linkedIn: "https://www.linkedin.com/in/ronminnich/"
 
-  - portrait: "christian-walter.png"
+  - portrait: "werner-zeh.png"
     position: "director"
-    linkedIn: "https://linkedin.com"
 
 volunteers:
-  - portrait: "christian-walter.png"
-    position: "director"
+  - portrait: "felix-singer.png"
+    position: "Ambassador"
     linkedIn: "https://linkedin.com"
 
-  - portrait: "christian-walter.png"
-    position: "director"
+  - portrait: "hancock-chang.webp"
+    position: "Ambassador"
     linkedIn: "https://linkedin.com"
 
-  - portrait: "christian-walter.png"
-    position: "director"
+  - portrait: "kai-michaelis.png"
+    position: "Ambassador"
+    linkedIn: "https://linkedin.com"
+
+  - portrait: "martin-roth.png"
+    position: "Ambassador"
+    linkedIn: "https://linkedin.com"
+
+  - portrait: "paul-grimes.jpg"
+    position: "Ambassador"
+    linkedIn: "https://linkedin.com"
+
+  - portrait: "richard-hughes.webp"
+    position: "Ambassador"
+    linkedIn: "https://linkedin.com"
+
+  - portrait: "subrata-banik.webp"
+    position: "Ambassador"
     linkedIn: "https://linkedin.com"
 ---

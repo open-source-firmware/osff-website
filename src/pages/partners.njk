@@ -1,0 +1,23 @@
+---
+title: "Partners"
+layout: "layouts/subpage.njk"
+permalink: /partners/index.html
+---
+
+<section class="wrapper | stack-l" style="--wrapper-max: var(--wrapper-m)">
+  <h1 class="text-center uppercase font-head weight-bold text-step-4 text-purple">Open Source Driven Companies</h1>
+  <ul role="list" class="auto-grid" style="--auto-grid-min-size: clamp(8rem, 20vw, 12rem);">
+    {% for partner in partners %}
+      <li class="logo-list__item">
+        <div class="logo-list__logo">
+          <img src="{{ partner.logo }}" alt="{{ partner.name }}">
+        </div>
+        {% if partner.url %}
+          <a href="{{ partner.url }}" target="_blank" rel="noopener">
+            <span class="sr-only">Checkout {{ partner.name }} Website</span>
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
