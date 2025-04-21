@@ -12,6 +12,11 @@
 
 .round-card__header {
   padding: var(--card-padding);
+  height: 120px;
+  overflow: hidden; /* Prevent image overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &.centerflex::before {
     display: none;
@@ -20,6 +25,14 @@
 
 .round-card__content {
   padding: var(--card-padding);
+}
+
+.round-card__img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain; /* Ensure the image stays inside boundaries */
 }
 
 .round-card__footer {

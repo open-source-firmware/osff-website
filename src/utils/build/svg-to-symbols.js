@@ -16,6 +16,11 @@ export async function svgToSymbols() {
     const files = await fs.promises.readdir(inputDir);
     const svgFiles = files.filter((file) => file.endsWith(".svg"));
 
+    if (svgFiles.length === 0) {
+      console.log("No SVG files found in the input directory.");
+      return;
+    }
+
     const symbols = await Promise.all(
       svgFiles.map(async (file) => {
         const filePath = path.join(inputDir, file);
@@ -23,7 +28,11 @@ export async function svgToSymbols() {
         const dom = new JSDOM(data);
         const svg = dom.window.document.querySelector("svg");
 
-        // Replace black color with currentColor
+        if (!svg) {
+          console.warn(`No <svg> element found in ${file}. Skipping.`);
+          return "";
+        }
+
         const svgContent = svg.innerHTML
           .replace(/fill="black"/gi, 'fill="currentColor"')
           .replace(/fill="#000"/gi, 'fill="currentColor"')
