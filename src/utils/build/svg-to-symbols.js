@@ -33,6 +33,7 @@ export async function svgToSymbols() {
           return "";
         }
 
+        // Replace black color with currentColor
         const svgContent = svg.innerHTML
           .replace(/fill="black"/gi, 'fill="currentColor"')
           .replace(/fill="#000"/gi, 'fill="currentColor"')
@@ -43,7 +44,16 @@ export async function svgToSymbols() {
 
         const viewBox = svg.getAttribute("viewBox") || "0 0 32 32";
         const id = `svg-${path.basename(file, ".svg")}`;
-        const symbol = `<symbol viewBox="${viewBox}" id="${id}" xmlns="http://www.w3.org/2000/svg">${svgContent}</symbol>`;
+
+        // Check if the SVG uses the sketch namespace
+        const usesSketch = svgContent.includes('sketch:');
+
+        // Add the sketch namespace if needed
+        const namespaces = usesSketch ?
+          'xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"' :
+          'xmlns="http://www.w3.org/2000/svg"';
+
+        const symbol = `<symbol viewBox="${viewBox}" id="${id}" ${namespaces}>${svgContent}</symbol>`;
         return symbol;
       })
     );
