@@ -1,4 +1,3 @@
-
 {
   "items": [
     {
@@ -20,6 +19,10 @@
         {
           "text": "Resources",
           "url": "/resources/"
+        },
+        {
+          "text": "Get funded",
+          "url": "/funding/"
         }
       ]
     },

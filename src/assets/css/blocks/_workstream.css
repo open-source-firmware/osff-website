@@ -62,9 +62,8 @@
         font-size: unset;
         opacity: 0.5;
       }
+
       &::before {
-        background-color: var(--color-salmon);
-        outline-color: var(--color-white);
         opacity: 0.5;
       }
 

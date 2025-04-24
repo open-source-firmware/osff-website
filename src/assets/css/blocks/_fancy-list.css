@@ -33,6 +33,15 @@
   }
 }
 
+.fancy-list--light {
+  li {
+    &::before {
+      background-color: var(--color-salmon);
+      outline-color: var(--color-white);
+    }
+  }
+}
+
 .fancy-list-container {
   padding-block: var(--space-s);
   border-top: 2px solid var(--color-purple);

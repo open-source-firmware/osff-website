@@ -30,7 +30,7 @@ eleventyImport:
         {% endfor %}
     </div>
 
-    <ul aria-label="The Goals:" class="fancy-list | text-step-0" role="list">
+    <ul aria-label="The Goals:" class="fancy-list fancy-list--light | text-step-0" role="list">
         {% for goal in workstream.data.goals %}
             <li class="{{ 'done' if goal.done else '' }}">
                 {{ goal.text }}

@@ -86,22 +86,24 @@ eleventyImport:
     {% endif %}
 
     {% if event.data.schedule %}
-      <div class="fancy-list-container stack-s">
+      <div class="fancy-list-container stack-m">
         {% for day, items in event.data.schedule %}
-          <h2 class="font-head text-step-2 text-purple">{{ day | capitalize }}</h2>
-          <ul class="fancy-timetable stack-xs" role="list">
-            {% for item in items %}
-              <li>
-                {% set timeHour = item
-                  .time
-                  .split(':')[0] | int %}
-                <time datetime="{{ item.time }}">{{ timeHour }}
-                  <span>
-                    {% if timeHour < 12 %}AM{% else %}PM{% endif %}</span></time>
-                {{ item.event }}
-              </li>
-            {% endfor %}
-          </ul>
+          <div class="stack-xs">
+            <h2 class="font-head text-step-2 text-purple">{{ day | capitalize }}</h2>
+            <ul class="fancy-timetable stack-xxs" role="list">
+              {% for item in items %}
+                <li>
+                  {% set timeHour = item
+                    .time
+                    .split(':')[0] | int %}
+                  <time datetime="{{ item.time }}">{{ timeHour }}
+                    <span>
+                      {% if timeHour < 12 %}AM{% else %}PM{% endif %}</span></time>
+                  {{ item.event }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         {% endfor %}
       </div>
     {% endif %}

@@ -1,7 +1,7 @@
 .fancy-timetable {
   li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-xs);
     font-size: var(--text-step-0);
     color: var(--color-purple);
