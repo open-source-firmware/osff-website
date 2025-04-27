@@ -1,7 +1,13 @@
 ---
 title: "Open Call"
 layout: "layouts/subpage.njk"
-permalink: /funding/open-call/index.html
+pagination:
+  data: collections.funding
+  size: 1
+  alias: funding
+permalink: /funding/{{ funding.data.title | slugify }}/
+eleventyImport:
+  collections: ["funding"]
 ---
 
 <div class="wrapper" style="--wrapper-max: 110rem">
@@ -11,44 +17,27 @@ permalink: /funding/open-call/index.html
         ">
         <div class="open-call | stack-m">
             <div class="stack-xs">
-                <h1 class="uppercase font-head text-purple weight-bold text-step-4">Small-Scale, High-Impact Firmware Contributions</h1>
-                <p class="text-step-1">Empowering Small-Scale Contributions to the Open-Source Firmware Ecosystem</p>
+                <h1 class="uppercase font-head text-purple weight-bold text-step-4">{{funding.data.title}}</h1>
+                <p class="text-step-1">{{funding.data.subtitle}}</p>
             </div>
             <div class="open-call__info">
                 <div class="stack-xxs">
                     <h4 class="uppercase font-head text-step--1 weight-bold">Status</h4>
                     <div class="text-purple text-step-0" style="display: flex; gap: var(--space-xxs);">
-                        <span class="border-label" style="width: 5rem">Open</span>May 1st, 2025
-                                    </div>
+                        <span class="border-label" style="width: 5rem">Open</span>{{ funding.data.open}}
+                    </div>
                     <div class="text-purple text-step-0" style="display: flex; gap: var(--space-xxs);">
-                        <span class="border-label" style="width: 5rem">Closes</span>June 30th, 2025
-                                    </div>
+                        <span class="border-label" style="width: 5rem">Closes</span>{{ funding.data.closes}}
+                    </div>
                 </div>
                 <div class="stack-xxs">
                     <h4 class="uppercase font-head text-step--1 weight-bold">Funding Range</h4>
-                    <p class="text-salmon text-step-2 font-head weight-bold">1.000 – 5.000€</p>
+                    <p class="text-salmon text-step-2 font-head weight-bold">{{ funding.data.fundingRange}}</p>
                 </div>
             </div>
             <hr>
             <div class="plain-html">
-                <p>
-                    The Open-Source Firmware Foundation is calling for small-scale, high-impact proposals that help grow and strengthen the open-source firmware ecosystem.
-                <br><br>
-                We’re looking to support contributions that improve transparency, auditability, security, interoperability, and sustainability in firmware. Whether you're developing new features, improving tooling, writing documentation, or researching real-world issues—if your work supports the open-source firmware space, we want to hear from you.
-                <br><br>
-                This call is not tied to pre-allocated funding, but we aim to fund selected proposals in the range of 1,000 EUR to 5,000 EUR.
-                </p>
-                <h2>What We're Looking For</h2>
-                <p>We <a href="#">encourage proposals</a> that focus on (but are not limited to):</p>
-                <ul>
-                    <li>Development work on core firmware projects</li>
-                    <li>Enhancements to testing frameworks, tooling, or CI/CD pipelines</li>
-                </ul>
-
-                <ol>
-                    <li>Development work on core firmware projects</li>
-                    <li>Enhancements to testing frameworks, tooling, or CI/CD pipelines</li>
-                </ol>
+                {{ funding.content | safe }}
             </div>
         </div>
         <div class="open-call__sidebar | stack-m">

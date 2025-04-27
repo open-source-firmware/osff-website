@@ -28,82 +28,46 @@ permalink: /funding/index.html
         <div class="stack-m">
             <h3 class="text-center uppercase text-step-3 text-purple font-head">Open Calls</h3>
             <ul role="list" class="stack-m">
-                <li class="edge-card">
-                    <div class="sidebar-right" style="
+                {% for funding in collections.funding %}
+                    <li class="edge-card">
+                        <div class="sidebar-right" style="
                             --sidebar-threshold: 30rem;
                             --sidebar-gap: var(--space-l);
                             --sidebar-gap-vertical: var(--space-m);
                         ">
-                        <div>
-                            <div class="edge-card__header">
-                                <h3 class="uppercase text-step-2 font-head weight-bold">Small-Scale, High-Impact Firmware Contributions</h3>
+                            <div>
+                                <div class="edge-card__header">
+                                    <h3 class="uppercase text-step-2 font-head weight-bold">{{funding.data.title}}</h3>
+                                </div>
+                                <div class="edge-card__content">
+                                    <p class="weight-medium text-step--1">{{funding.data.subtitle}}</p>
+                                </div>
                             </div>
-                            <div class="edge-card__content">
-                                <p class="weight-medium text-step--1">Support for lean, impactful work that strengthens the open-source firmware ecosystem—ranging from dev work and tooling to documentation and research.</p>
+                            <div class="stack-m">
+                                <div class="stack-xxs">
+                                    <h4 class="uppercase font-head text-step--1 weight-bold">Status</h4>
+                                    <div class="text-purple text-step-0" style="display: flex; gap: var(--space-xxs);">
+                                        <span class="border-label" style="width: 5rem">Open</span>{{ funding.data.open }}
+                                    </div>
+                                    <div class="text-purple text-step-0" style="display: flex; gap: var(--space-xxs);">
+                                        <span class="border-label" style="width: 5rem">Closes</span>{{ funding.data.closes }}
+                                    </div>
+                                </div>
+                                <div class="stack-xxs">
+                                    <h4 class="uppercase font-head text-step--1 weight-bold">Category / Focus</h4>
+                                    <p class="weight-medium text-step--1">{{ funding.data.categories | join(' · ') }}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="stack-m">
-                            <div class="stack-xxs">
-                                <h4 class="uppercase font-head text-step--1 weight-bold">Status</h4>
-                                <div class="text-purple text-step-0" style="display: flex; gap: var(--space-xxs);">
-                                    <span class="border-label" style="width: 5rem">Open</span>May 1st, 2025
-                                    </div>
-                                <div class="text-purple text-step-0" style="display: flex; gap: var(--space-xxs);">
-                                    <span class="border-label" style="width: 5rem">Closes</span>June 30th, 2025
-                                    </div>
-                            </div>
-                            <div class="stack-xxs">
-                                <h4 class="uppercase font-head text-step--1 weight-bold">Category / Focus</h4>
-                                <p class="weight-medium text-step--1">Firmware Development · Tooling · Security · Docs · Research</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="edge-card__footer">
-                        <a href="open-call" class="btn btn--small">More Info & Application</a>
-                        {% icon icon = "osff-sign",
+                        <div class="edge-card__footer">
+                            <a href="/funding/{{ funding.data.title | slugify }}/" class="btn btn--small">More Info & Application</a>
+                            {% icon icon = "osff-sign",
                             alt = "OSFF",
                             class = "edge-card__footer-icon",
                             width = "var(--space-m)" %}
-                    </div>
-                </li>
-                <li class="edge-card">
-                    <div class="sidebar-right" style="
-                            --sidebar-threshold: 30rem;
-                            --sidebar-gap: var(--space-l);
-                            --sidebar-gap-vertical: var(--space-m);
-                        ">
-                        <div>
-                            <div class="edge-card__header">
-                                <h3 class="uppercase text-step-2 font-head weight-bold">Small-Scale, High-Impact Firmware Contributions</h3>
-                            </div>
-                            <div class="edge-card__content">
-                                <p class="weight-medium text-step--1">Support for lean, impactful work that strengthens the open-source firmware ecosystem—ranging from dev work and tooling to documentation and research.</p>
-                            </div>
                         </div>
-                        <div class="stack-m">
-                            <div class="stack-xxs">
-                                <h4 class="uppercase font-head text-step--1 weight-bold">Status</h4>
-                                <div class="text-purple text-step-0" style="display: flex; gap: var(--space-xxs);">
-                                    <span class="border-label" style="width: 5rem">Open</span>May 1st, 2025
-                                    </div>
-                                <div class="text-purple text-step-0" style="display: flex; gap: var(--space-xxs);">
-                                    <span class="border-label" style="width: 5rem">Closes</span>June 30th, 2025
-                                    </div>
-                            </div>
-                            <div class="stack-xxs">
-                                <h4 class="uppercase font-head text-step--1 weight-bold">Category / Focus</h4>
-                                <p class="weight-medium text-step--1">Firmware Development · Tooling · Security · Docs · Research</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="edge-card__footer">
-                        <a href="open-call" class="btn btn--small" target="_blank">More Info & Application</a>
-                        {% icon icon = "osff-sign",
-                            alt = "OSFF",
-                            class = "edge-card__footer-icon",
-                            width = "var(--space-m)" %}
-                    </div>
-                </li>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
