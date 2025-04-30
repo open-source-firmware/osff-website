@@ -43,13 +43,20 @@
   svg + h2,
   svg + h3,
   svg + h4,
-  svg + h5 {
+  svg + h5,
+  picture + h2,
+  picture + h3,
+  picture + h4,
+  picture + h5 {
     margin-inline-start: 0;
   }
 }
 
-picture:has(.edge-card__header-icon) {
+.edge-card__header-icon {
   flex-shrink: 0;
+  width: clamp(4rem, 10vw, 8rem);
+  height: clamp(4rem, 10vw, 8rem);
+  object-fit: contain;
 }
 
 .edge-card__header {
