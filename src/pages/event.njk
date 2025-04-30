@@ -96,9 +96,9 @@ eleventyImport:
                   {% set timeHour = item
                     .time
                     .split(':')[0] | int %}
-                  <time datetime="{{ item.time }}">{{ timeHour }}
-                    <span>
-                      {% if timeHour < 12 %}AM{% else %}PM{% endif %}</span></time>
+                  {{ timeHour < 12 | dump }}
+                  <time datetime="{{ item.time }}">{% if timeHour < 12 %}{{ timeHour }}{% else %}{{ timeHour - 12 }}{% endif %}
+                  <span>{% if timeHour < 12 %}AM{% else %}PM{% endif %}</span></time>
                   {{ item.event }}
                 </li>
               {% endfor %}
