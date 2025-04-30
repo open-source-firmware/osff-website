@@ -9,27 +9,45 @@ const writeFile = promisify(fs.writeFile);
 const inputDir = "src/assets/icons";
 const outputFile = "dist/assets/icons.svg";
 
+// Function to recursively find all SVG files in a directory and its subdirectories
+async function findSvgFiles(dir) {
+  let results = [];
+  const items = await fs.promises.readdir(dir, { withFileTypes: true });
+
+  for (const item of items) {
+    const itemPath = path.join(dir, item.name);
+    if (item.isDirectory()) {
+      const subDirResults = await findSvgFiles(itemPath);
+      results = [...results, ...subDirResults];
+    } else if (item.name.endsWith('.svg')) {
+      results.push(itemPath);
+    }
+  }
+
+  return results;
+}
+
 export async function svgToSymbols() {
   console.log("SVG to Symbols running...");
 
   try {
-    const files = await fs.promises.readdir(inputDir);
-    const svgFiles = files.filter((file) => file.endsWith(".svg"));
+    // Find all SVG files in the input directory and subdirectories
+    const svgFilePaths = await findSvgFiles(inputDir);
 
-    if (svgFiles.length === 0) {
-      console.log("No SVG files found in the input directory.");
+    if (svgFilePaths.length === 0) {
+      console.log("No SVG files found in the input directory or subdirectories.");
       return;
     }
 
     const symbols = await Promise.all(
-      svgFiles.map(async (file) => {
-        const filePath = path.join(inputDir, file);
+      svgFilePaths.map(async (filePath) => {
         const data = await readFile(filePath, "utf8");
         const dom = new JSDOM(data);
         const svg = dom.window.document.querySelector("svg");
+        const fileName = path.basename(filePath);
 
         if (!svg) {
-          console.warn(`No <svg> element found in ${file}. Skipping.`);
+          console.warn(`No <svg> element found in ${fileName}. Skipping.`);
           return "";
         }
 
@@ -43,7 +61,9 @@ export async function svgToSymbols() {
           .replace(/stroke="#000000"/gi, 'stroke="currentColor"');
 
         const viewBox = svg.getAttribute("viewBox") || "0 0 32 32";
-        const id = `svg-${path.basename(file, ".svg")}`;
+
+        // Create simple ID without folder path
+        const id = `svg-${path.basename(fileName, ".svg")}`;
 
         // Check if the SVG uses the sketch namespace
         const usesSketch = svgContent.includes('sketch:');
@@ -65,6 +85,7 @@ export async function svgToSymbols() {
 
     await writeFile(outputFile, svgContent);
     console.log("SVG to Symbols completed successfully.");
+    console.log(`Processed ${symbols.filter(s => s !== "").length} SVG files.`);
   } catch (error) {
     console.error("Error processing SVG files:", error);
   }
