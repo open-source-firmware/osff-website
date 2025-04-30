@@ -39,15 +39,21 @@ permalink: /projects/index.html
                 {% for project in projects.supportedByUs %}
                     <li class="edge-card">
                         <div class="edge-card__header">
+                          {% if project.logo.includes(".png") %}
+                            <img src="{{ project.logo }}" alt="{{ project.title }}" class="edge-card__header-icon" width="var(--space-xl)">
+                          {% else %}
                             {% icon icon = project.logo,
-                      alt = "OSFF",
-                      class = "edge-card__header-icon",
-                      width = "var(--space-xl)" %}
-                            <h3 class="uppercase text-step-2 font-head weight-bold">{{ project.title }}</h3>
+                              alt = "OSFF",
+                              class = "edge-card__header-icon",
+                              width = "var(--space-xl)" %}
+                          {% endif %}
+                          <h3 class="uppercase text-step-2 font-head weight-bold">{{ project.title }}</h3>
                         </div>
+
                         <div class="edge-card__content">
                             <p class="weight-medium text-step--1">{{ project.description }}</p>
                         </div>
+
                         <div class="edge-card__footer">
                             <a href="{{ project.url }}" class="btn btn--small" target="_blank">More info</a>
                             {% icon icon = "osff-sign",

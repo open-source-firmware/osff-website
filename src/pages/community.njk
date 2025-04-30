@@ -49,10 +49,15 @@ permalink: /community/index.html
                 .ibvs %}
                 <li class="edge-card">
                     <div class="edge-card__header">
-                        {% icon icon = ibv.logo,
-                      alt = "OSFF",
-                      class = "edge-card__header-icon",
-                      width = "clamp(4rem, 10vw, 8rem)" %}
+                      {% if ibv.logo.includes(".png") %}
+                        <img src="{{ ibv.logo }}" alt="{{ ibv.name }}" class="edge-card__header-icon" width="clamp(4rem, 10vw, 8rem)">
+                      {% else %}
+                          {% icon icon = ibv.logo,
+                              alt = "OSFF",
+                              class = "edge-card__header-icon",
+                              width = "clamp(4rem, 10vw, 8rem)"
+                          %}
+                      {% endif %}
                         <h3 class="uppercase text-step-2 font-head weight-bold">{{ ibv.name }}</h3>
                     </div>
                     <div class="edge-card__content">

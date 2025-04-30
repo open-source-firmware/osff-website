@@ -56,6 +56,7 @@ export default function EleventyConfig(config) {
   config.addPassthroughCopy("./src/assets/images/");
   config.addPassthroughCopy("./src/assets/fonts/");
   config.addPassthroughCopy("./src/assets/downloads/");
+  config.addPassthroughCopy("./src/assets/icons/");
 
   // Add filters
   config.addFilter("readableDate", readableDateFilter);

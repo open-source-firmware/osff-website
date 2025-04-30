@@ -14,7 +14,7 @@ projects:
     - title: "flashrom"
       description: Utility for identifying, reading, writing, verifying, and erasing flash chips, supporting many chipsets and programmers.
       url: https://flashrom.org/
-      logo: "flashrom"
+      logo: "/assets/icons/projects/flashrom.png"
     - title: LinuxBoot
       description: Project to replace proprietary firmware with a Linux kernel and initramfs, improving boot reliability, security, and flexibility.
       url: https://linuxboot.org/
@@ -25,7 +25,7 @@ projects:
       logo: "u-boot"
     - title: oreboot
       description: Rust-based open source firmware project focused on minimalism and security, aiming to replace coreboot in some use cases.
-      url: https://github.com/oreboot/oreboot                                
+      url: https://github.com/oreboot/oreboot
       logo: "oreboot"
   notAffiliated:
     - title: Tianocore EDK II
