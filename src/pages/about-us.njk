@@ -66,17 +66,17 @@ permalink: /about-us/index.html
           <div class="person-card__image-container">
             <img src="/assets/images/people/{{ officer.portrait }}" alt="">
             {% if officer.linkedIn %}
-            <span>
-              {% icon icon = "linkedin",
+              <span>
+                {% icon icon = "linkedin",
                             alt = "linkedin",
                             width = "var(--space-m)" %}
-            </span>
+              </span>
             {% endif %}
           </div>
           {% if officer.linkedIn %}
-          <a class="person-card__link" target="_blank" href="{{ officer.linkedIn }}">
-            <span class="sr-only">Visit LinkedIn</span>
-          </a>
+            <a class="person-card__link" target="_blank" href="{{ officer.linkedIn }}">
+              <span class="sr-only">Visit LinkedIn</span>
+            </a>
           {% endif %}
         </div>
       {% endfor %}
@@ -98,17 +98,17 @@ permalink: /about-us/index.html
           <div class="person-card__image-container">
             <img src="/assets/images/people/{{ director.portrait }}" alt="">
             {% if director.linkedIn %}
-            <span>
-              {% icon icon = "linkedin",
+              <span>
+                {% icon icon = "linkedin",
                             alt = "linkedin",
                             width = "var(--space-m)" %}
-            </span>
+              </span>
             {% endif %}
           </div>
           {% if director.linkedIn %}
-          <a class="person-card__link" target="_blank" href="{{ director.linkedIn }}">
-            <span class="sr-only">Visit LinkedIn</span>
-          </a>
+            <a class="person-card__link" target="_blank" href="{{ director.linkedIn }}">
+              <span class="sr-only">Visit LinkedIn</span>
+            </a>
           {% endif %}
         </div>
       {% endfor %}
@@ -130,17 +130,17 @@ permalink: /about-us/index.html
           <div class="person-card__image-container">
             <img src="/assets/images/people/{{ volunteer.portrait }}" alt="">
             {% if volunteer.linkedIn %}
-            <span>
-              {% icon icon = "linkedin",
+              <span>
+                {% icon icon = "linkedin",
                             alt = "linkedin",
                             width = "var(--space-m)" %}
-            </span>
+              </span>
             {% endif %}
           </div>
           {% if volunteer.linkedIn %}
-          <a class="person-card__link" target="_blank" href="{{ volunteer.linkedIn }}">
-            <span class="sr-only">Visit LinkedIn</span>
-          </a>
+            <a class="person-card__link" target="_blank" href="{{ volunteer.linkedIn }}">
+              <span class="sr-only">Visit LinkedIn</span>
+            </a>
           {% endif %}
         </div>
       {% endfor %}
@@ -179,7 +179,7 @@ permalink: /about-us/index.html
         <div class="round-card__tagline">
           <p class="tag">{{ member.type }}</p>
         </div>
-        <div class="centerflex round-card__header bg-gray">
+        <div class="round-card__header bg-gray">
           <img class="round-card__img" src="{{ member.logo }}" alt="{{ member.name }}">
         </div>
         <div class="round-card__footer">
