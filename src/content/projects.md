@@ -27,15 +27,15 @@ projects:
       description: Rust-based open source firmware project focused on minimalism and security, aiming to replace coreboot in some use cases.
       url: https://github.com/oreboot/oreboot
       logo: "../assets/images/projects/oreboot.svg"
-      title: u-bmc
+    - title: u-bmc
       description: u-bmc is a linux os distribution that is fully open-source and tailor-made for baseboard management controllers. u-bmc, like LinuxBoot, sacrifices classical industry compatibility in order to offer a solution that is genuinely tailored for the mission.
       url: https://u-bmc.org/
       logo: "../assets/images/projects/u-bmc.svg"
-      title: USB armory
+    - title: USB armory
       description: The USB armory is an open source hardware design, implementing a compact secure computer and open tools for secure boot signing, OTP fusing and firmware development.
       url: https://github.com/usbarmory/usbarmory
       logo: "../assets/images/projects/usbarmory-tamago.svg"
-      title: TamaGo
+    - title: TamaGo
       description: The TamaGo project enables compilation and execution of unencumbered Go applications on bare metal AMD64/ARM/RISC-V processors. It leverages this capability to implement pure Go smartcards, encrypted drives, KVMs, ARM and UEFI bootloaders and a TrustZone TEE framework.
       url: https://github.com/usbarmory/tamago
       logo: "../assets/images/projects/usbarmory-tamago.svg"
