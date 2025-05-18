@@ -7,10 +7,12 @@ projects:
         barebox is a free bootloader and bring-up toolkit for embedded systems that focuses on interoperability and compatibility with Linux. Key strengths are Linux-compatible driver frameworks and a UNIX-like environment in the preboot stage.
       logo: "barebox"
       url: https://barebox.org/
+      hot: true
     - title: coreboot
       description: Open source firmware platform aimed at replacing proprietary BIOS/UEFI firmware, supporting a wide range of hardware.
       url: https://coreboot.org/
       logo: "coreboot"
+      hot: true
     - title: "flashrom"
       description: Utility for identifying, reading, writing, verifying, and erasing flash chips, supporting many chipsets and programmers.
       url: https://flashrom.org/
@@ -27,10 +29,12 @@ projects:
       description: u-bmc is a linux os distribution that is fully open-source and tailor-made for baseboard management controllers. u-bmc, like LinuxBoot, sacrifices classical industry compatibility in order to offer a solution that is genuinely tailored for the mission.
       url: https://u-bmc.org/
       logo: "/assets/images/projects/u-bmc.png"
+      hot: true
     - title: USB armory
       description: The USB armory is an open source hardware design, implementing a compact secure computer and open tools for secure boot signing, OTP fusing and firmware development.
       url: https://github.com/usbarmory/usbarmory
       logo: "/assets/images/projects/armory.png"
+      hot: true
     - title: TamaGo
       description: The TamaGo project enables compilation and execution of unencumbered Go applications on bare metal AMD64/ARM/RISC-V processors. It leverages this capability to implement pure Go smartcards, encrypted drives, KVMs, ARM and UEFI bootloaders and a TrustZone TEE framework.
       url: https://github.com/usbarmory/tamago

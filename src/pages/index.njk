@@ -79,10 +79,16 @@ type: "hero-variation"
             {% if hotProject.hot %}
                 <li class="edge-card">
                     <div class="edge-card__header">
-                        {% icon icon = "osff",
-            alt = "OSFF",
-            class = "edge-card__header-icon",
-            width = "clamp(4rem, 10vw, 8rem)" %}
+                        {% if hotProject
+                            .logo
+                            .includes(".png") %}
+                            <img src="{{ hotProject.logo }}" alt="{{ hotProject.title }}" class="edge-card__header-icon">
+                        {% else %}
+                            {% icon icon = hotProject.logo,
+                        alt = "OSFF",
+                        class = "edge-card__header-icon"
+                        %}
+                        {% endif %}
                         <h3 class="uppercase text-step-2 font-head weight-bold">{{ hotProject.title }}</h3>
                     </div>
                     <div class="edge-card__content">
@@ -101,6 +107,7 @@ type: "hero-variation"
     </ul>
 </div>
 
+<!-- // Skip this for now
 <div class="wrapper stories-slider bg-gray" style="--wrapper-max: var(--wrapper-m)">
     <div class="decoline-container">
         <span class="decoline" aria-hidden="true"></span>
@@ -134,7 +141,9 @@ type: "hero-variation"
         <div class="swiper-pagination"></div>
     </div>
 </div>
+-->
 
+<!--
 <div class="wrapper | stack-m" style="--wrapper-max: var(--wrapper-m)">
     <div class="sidebar-left" style="
       --sidebar-threshold: 30rem;
@@ -203,6 +212,7 @@ type: "hero-variation"
         {% endfor %}
     </ul>
 </div>
+-->
 
 {% set upcomingHotEvents = collections.event | filterHotEvent %}
 {% set nextEvent = upcomingHotEvents[0] %}
