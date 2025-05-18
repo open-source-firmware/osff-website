@@ -1,8 +1,9 @@
 ---
 tags: event
 title: "OSFC 2025 - Open-Source Firmware Conference 2025"
+image: /assets/images/osfc-2024.jpeg
 date: "2025-10-07"
-hotevent: true
+hotEvent: true
 location:
   name: "Google MP4"
   address: "1190 Bordeaux Dr"
