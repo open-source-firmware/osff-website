@@ -1,5 +1,5 @@
 ---
-title: "{{ workstream.data.title }}"
+title: "Workstream Details"
 layout: "layouts/workstream.njk"
 color: "dark"
 pagination:
@@ -18,10 +18,12 @@ eleventyImport:
                     alt = "",
                     width = "calc(var(--text-step-0) * 2 + 1rem)" %}
         <div class="date__content">
-            <p>Kickoff Meeting: {{ workstream.data.date | date("MMMM DD, YYYY") }}</p>
-            <p>{{ workstream.data.time }}</p>
+            <p>Regular Meeting: {{ workstream.data.dateString }}</p>
+            <p>{{ workstream.data.timeString }}</p>
         </div>
-        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text={{ workstream.data.title | replace(" ", "+") }}&dates={{ workstream.data.date | date("YYYYMMDD") }}T{{ workstream.data.time | replace(':', '') }}00Z/{{ workstream.data.date | date("YYYYMMDD") }}T{{ workstream.data.time | replace(':', '') }}00Z&details=Kickoff+Meeting&sf=true&output=xml" class="btn btn--small">Go to calendar</a>
+        {% if workstream.data.calendarLink %}
+            <a href="{{ workstream.data.calendarLink}}" class="btn btn--small">Go to calendar</a>
+        {% endif %}
     </div>
 
     <div class="content | stack-m">
