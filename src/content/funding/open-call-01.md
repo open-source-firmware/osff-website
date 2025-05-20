@@ -3,9 +3,9 @@ tags: funding
 
 title: Small-Scale, High-Impact Firmware Contributions
 subtitle: Empowering Small-Scale Contributions to the Open-Source Firmware Ecosystem
-fundingRange: 1.000 – 5.030€
-open: May 1st, 2025
-closes: June 30th, 2025
+fundingRange: 1.000 – 5.000€
+open: June 1st, 2025
+closes: July 31st, 2025
 categories:
   - Firmware Development
   - Tooling
@@ -22,11 +22,11 @@ This call is not tied to pre-allocated funding, but we aim to fund selected prop
 
 ## What We're Looking For
 
-We [encourage proposals](#) that focus on (but are not limited to):
+We encourage proposals that focus on (but are not limited to):
 
 - Development work on core firmware projects
+- Enhancements to testing frameworks, tooling, or CI/CD pipelines
+- Security and compliance (e.g., SBOM, reproducibility, Secure Boot)
+- Developer experience, documentation, or onboarding improvements
+- Practical research with implementation outcomes
 
-- Development work on core firmware projects
-
-1. Development work on core firmware projects
-2. Enhancements to testing frameworks, tooling, or CI/CD pipelines

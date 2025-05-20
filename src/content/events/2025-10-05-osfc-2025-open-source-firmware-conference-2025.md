@@ -10,7 +10,7 @@ location:
   city: "Sunnyvale, CA 94089"
   country: "United States"
   map: "https://maps.app.goo.gl/QTBLKqGsSpR1R1Rm8"
-description: "The Open Source Firmware Foundation, in cooperation with 9elements, Google and the UEFI Forum will host this years OSFC in the USA. "
+description: "The OSFC 2025 is heading back to California, from October 7th to 10th, hosted at Google’s Sunnyvale campus. A vibrant tech hub in the San Francisco Bay Area. This year, we’re bringing something extra special: OSFC and UEFI Plugfest are joining forces for the first time!"
 schedule:
   Day 1:
     - time: "09:00"
@@ -33,26 +33,24 @@ schedule:
     - time: "18:00"
       event: "UEFI Developer Conference & Plugfest Closing"
 sponsors:
-  - name: "Open Source Firmware Foundation"
-    url: "#"
   - name: "9elements"
-    url: "#"
+    url: "https://www.9esec.io"
   - name: "Google"
-    url: "#"
+    url: "https://www.google.com"
   - name: "UEFI Forum"
-    url: "#"
+    url: "https://www.uefi.org"
   - name: "HPE"
-    url: "#"
-  - name: "Trusted Firmware"
-    url: "#"
+    url: "https://www.osfc.io/sponsors/hpe/"
   - name: "AWS"
-    url: "#"
+    url: "https://www.osfc.io/sponsors/aws/"
+  - name: "Meta"
+    url: "https://www.osfc.io/sponsors/meta/"
+  - name: "Trusted Firmware"
+    url: "https://www.osfc.io/sponsors/trusted-firmware/"
+  - name: "0xide"
+    url: "https://www.osfc.io/sponsors/oxide/"
 registration:
     alert: "Attention: Places are limited, so act fast!"
     button_text: "Check out the OSFC'25 Website"
     button_url: "https://osfc.io"
 ---
-
-The OSFC 2025 is heading back to California, from October 7th to 10th, hosted at Google’s Sunnyvale campus. A vibrant tech hub in the San Francisco Bay Area. This year, we’re bringing something extra special: OSFC and UEFI Plugfest are joining forces for the first time!
-
-Stay tuned for more information including important dates, and check out [osfc.io](https://www.osfc.io/).
