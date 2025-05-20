@@ -1,25 +1,30 @@
-
 ---
 title: Resources
 description: Useful resources and references for open source firmware.
+whitePaper:
+  - name: "Refining Open-Source Firmware Support for Intel Platforms (by Subrata Banik)"
+    url: "https://blog.osfw.foundation/osf-intel-reduce-fsp-boundary/"
+    firmwareResource: true
 resources:
-  - title: Open-Source Firmware Foundation Presentation Slides
-    description: Official OSFF introductory slides for presentations and outreach.
-    link: /assets/downloads/Open-Source-Firmware-Foundation_public.pdf
-    icon: pdf
-  - title: OSFF Blog
-    description: Updates, news, and technical articles from the Open-Source Firmware Foundation.
-    link: https://blog.osfw.foundation/
-  - title: OSFF Slack Channel
-    description: Join the OSFF Slack workspace to connect with the community.
-    link: https://slack.osfw.dev/
-  - title: OSFF Mailing List
-    description: Subscribe to the OSFF mailing list for announcements and discussions.
-    link: https://lists.osfw.foundation/
-  - title: Official Website
-    description: Main OSFF website with organization details and resources.
-    link: https://opensourcefirmware.foundation/
+  - name: "OSFF Blog"
+    url: "https://blog.osfw.foundation/"
+    firmwareResource: true
+specification:
+  - name: "OSFF Feature Request Flow"
+    url: "https://drive.google.com/file/d/1su3s93xNgqy9AixDfHEWGrB_1nxYbQoz/view?usp=drive_link"
+    firmwareResource: true
+tags: resources
 ---
+
 # Resources
 
-Below are resources and references for open source firmware, provided and maintained by the Open-Source Firmware Foundation (OSFF).
+The Open-Source Firmware Foundation (OSFF) provides various resources to support the open source firmware community. These resources are organized into three main categories:
+
+## White Papers
+Detailed technical documents and research papers about open source firmware technologies and methodologies.
+
+## Resources
+Practical guides, documentation, and tools to help you work with open source firmware.
+
+## Specifications
+Technical specifications and standards documentation for firmware implementations.

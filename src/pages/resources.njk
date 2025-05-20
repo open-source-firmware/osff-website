@@ -28,7 +28,11 @@ permalink: /resources/index.html
     <ul role="list">
       {% for resource in collections.resources[0].data.whitePaper %}
       <li class="resource-list__item">
+      {% if resource.file %}
         <a href="/assets/downloads/{{ resource.file }}" target="_blank">
+      {% elif resource.url %}
+        <a href="{{ resource.url }}" target="_blank">
+      {% endif %}
           <div>
             {% if resource.firmwareResource %}
               {% icon icon="osff-sign" %}
@@ -51,7 +55,11 @@ permalink: /resources/index.html
     <ul role="list">
       {% for resource in collections.resources[0].data.resources %}
         <li class="resource-list__item">
-          <a href="/assets/downloads/{{ resource.file }}" target="_blank">
+          {% if resource.file %}
+            <a href="/assets/downloads/{{ resource.file }}" target="_blank">
+          {% elif resource.url %}
+            <a href="{{ resource.url }}" target="_blank">
+          {% endif %}
             <div>
               {% if resource.firmwareResource %}
                 {% icon icon="osff-sign" %}
@@ -75,7 +83,11 @@ permalink: /resources/index.html
     <ul role="list">
       {% for resource in collections.resources[0].data.specification %}
       <li class="resource-list__item">
-        <a href="/assets/downloads/{{ resource.file }}" target="_blank">
+        {% if resource.file %}
+          <a href="/assets/downloads/{{ resource.file }}" target="_blank">
+        {% elif resource.url %}
+          <a href="{{ resource.url }}" target="_blank">
+        {% endif %}
           <div>
             {% if resource.firmwareResource %}
               {% icon icon="osff-sign" %}
