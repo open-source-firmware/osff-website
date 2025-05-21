@@ -106,7 +106,23 @@ permalink: /community/index.html
                     <p class="tag">{{ partner.seller }}</p>
                 </div>
                 <div class="round-card__header bg-gray">
-                    <h3 class="text-center uppercase text-step-2 font-head weight-bold">{{ partner.name }}</h3>
+                    {% if partner.logo %}
+                        {% if partner
+                            .logo
+                            .includes(".png") %}
+                            <img src="{{ partner.logo }}" alt="{{ partner.name }}" class="edge-card__header-icon">
+                        {% elif partner
+                            .logo
+                            .includes(".svg") %}
+                            <img src="{{ partner.logo }}" alt="{{ partner.name }}" class="edge-card__header-icon">
+                        {% else %}
+                            {% icon icon = partner.logo,
+                                alt = "OSFF",
+                                class = "edge-card__header-icon"
+                            %}
+                        {% endif %}
+                    {% endif %}
+                    <h3 class="uppercase text-step-2 font-head weight-bold">{{ partner.name }}</h3>
                 </div>
                 <div class="round-card__content | stack-m">
                     <p class="weight-medium text-step--1">{{ partner.description }}</p>

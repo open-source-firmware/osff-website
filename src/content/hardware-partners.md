@@ -34,7 +34,7 @@ hardware:
     projectLogos:
       - coreboot
       - edk2
-    link: "https://de.starlabs.systems/"
+    link: "https://www.starlabs.systems/"
 
   - seller: "Consumer"
     name: "System76"
