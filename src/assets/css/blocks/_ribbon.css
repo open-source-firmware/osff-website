@@ -1,13 +1,13 @@
 .ribbon {
     font-family: var(--font-head);
-    font-size: .75rem;
+    font-size: .90rem;
     text-transform: uppercase;
     background: var(--color-salmon);
     color: var(--color-white);
-    padding: .2rem .1rem .15rem .3rem;
+    padding: .4rem .2rem .30rem .6rem;
     transform: rotate(45deg);
     position: absolute;
-    top: 3.2rem;
+    top: 4.8rem;
     transform-origin: top right;
     right: -.1rem;
     display: flex;
@@ -28,7 +28,7 @@
     
 
     svg {
-        height: 1.2rem;
-        width: 1.2rem;
+        height: 2.8rem;
+        width: 2.8rem;
     }
 }

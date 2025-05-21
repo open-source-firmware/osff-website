@@ -3,7 +3,7 @@ tags: hardware
 hardware:
   - seller: "Consumer"
     name: "Frame.work"
-    isMember: true
+    isMember: false
     description: "Consumer electronics is broken. We’ve all had the experience of a busted screen, button, or connector that can’t be fixed, battery life degrading without a path for replacement, or being unable to add more storage when full. Individually, this is irritating and requires us to make unnecessary and expensive purchases of new products to get around what should be easy problems to solve. Globally though, it’s much worse. We create over fifty million tons of e-waste each year. That’s 6 kg or 13 lb per person on earth per year, made up of our former devices. We need to improve recyclability, but the biggest impact we can make is generating less waste to begin with by making our products last longer."
     link: "https://frame.work/"
 
