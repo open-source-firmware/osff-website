@@ -37,7 +37,7 @@ hardware:
     isMember: false
     description: "Raptor Computing Systems was the first vendor to come to market with POWER9, and will be the only source for POWER9 machines in this market segment for the forseeable future. We are the only vendor to offer a full lineup of whitebox-type parts and accessories for POWER9, and are the only vendor to offer a fully libre firmware and hardware solution. Furthermore, we are not just shipping a stock reference design, like other vendors did with POWER8; rather, Talos™ II contains numerous unique features that increase usability, promote openness, and boost system security. Talos™ II is truly one of a kind and is additionally protected against unauthorized hardware clones by patents and/or patents pending, so if you want the benefits of a truly open POWER9 system, be sure to get your Talos™ II today!"
     projectLogos:
-      - openbmc
+      - "/assets/images/projects/openbmc.png"
     link: "https://www.raptorcs.com/"
 
   - seller: "Consumer"
