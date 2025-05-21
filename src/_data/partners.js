@@ -28,7 +28,7 @@ const partners = [
   },
   {
     "name": "MiTAC Computing",
-    "url": "https://www.mitac.com",
+    "url": "https://www.mitaccomputing.com/",
     "logo": "/assets/images/partner-logos/mitac.png"
   },
   {
@@ -83,7 +83,7 @@ const partners = [
   },
   {
     "name": "SysPro",
-    "url": "https://www.sysproiconsulting.com",
+    "url": "https://www.sysproconsulting.com",
     "logo": "/assets/images/partner-logos/syspro.png"
   },
   {

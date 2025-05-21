@@ -25,6 +25,8 @@ import { globPlugin } from "esbuild-plugin-glob";
 import path from "path";
 import util from "util";
 
+import eleventyPluginBrokenLinks from "eleventy-plugin-broken-links";
+
 // Get the current directory
 import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -34,6 +36,13 @@ const isProduction = process.env.NODE_ENV === "production";
 
 /** @param {import("./node_modules/@11ty/eleventy/src/UserConfig.js").default} config */
 export default function EleventyConfig(config) {
+  config.addPlugin(eleventyPluginBrokenLinks, {
+    broken: "error",
+    loggingLevel: 2,
+    excludeUrls: ["https://www.mitaccomputing.com*"],
+    excludeInputs: [],
+    callback: null,
+  });
   const cssDir = path.join(__dirname, "/dist/assets/css/");
   if (!fs.existsSync(cssDir)) {
     fs.mkdirSync(cssDir, {
