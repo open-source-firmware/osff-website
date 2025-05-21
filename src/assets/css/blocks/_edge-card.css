@@ -59,6 +59,13 @@
   object-fit: contain;
 }
 
+.edge-card__header_icon_small {
+  flex-shrink: 0;
+  width: var(--space-m);
+  height: var(--space-m);
+  object-fit: contain;
+}
+
 .edge-card__header {
   & + .edge-card__content {
     margin-block-start: var(--space-xs);
