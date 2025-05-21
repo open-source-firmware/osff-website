@@ -7,7 +7,9 @@ const partners = [
   {
     "name": "AMD",
     "url": "https://amd.com",
-    "logo": "/assets/images/partner-logos/amd.png"
+    "logo": "/assets/images/partner-logos/amd.png",
+    "logoWidth": "82px",
+    "logoHeight": "197px"
   },
   {
     "name": "Eltan",
@@ -102,7 +104,9 @@ const partners = [
   {
     "name": "Mullvad",
     "url": "https://www.mullvad.com",
-    "logo": "/assets/images/partner-logos/mullvad.svg"
+    "logo": "/assets/images/partner-logos/mullvad.svg",
+    "logoWidth": "178px",
+    "logoHeight": "209px"
   },
   {
     "name": "Siemens",

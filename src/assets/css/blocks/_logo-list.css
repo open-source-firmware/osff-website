@@ -1,6 +1,4 @@
 .logo-list {
-  --base-height: clamp(4rem, 10vw, 7rem);
-  --scale-factor: 0.05;
   position: relative;
   margin-block-end: calc(var(--space-xl) * -1);
 
@@ -37,15 +35,8 @@
 }
 
 .logo-list__logo {
-  --base-ratio: calc(var(--width) / var(--height));
-  --factor: calc(
-    var(--scale-factor) * -1 * var(--base-ratio) + var(--scale-factor) + 1
-  );
-  aspect-ratio: var(--base-ratio);
-  height: calc(var(--base-height) * var(--factor));
-  min-height: clac(var(--base-height) / 2);
-  max-height: calc(var(--base-height) * 1.25);
   max-width: 100%;
+  aspect-ratio: 1;
 }
 
 .logo-list__item {
