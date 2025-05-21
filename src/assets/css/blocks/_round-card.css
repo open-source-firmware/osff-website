@@ -4,6 +4,8 @@
   --card-padding: var(--space-s);
   z-index: 2;
   background-color: var(--color-white);
+  position: relative;
+  overflow: clip;
 }
 
 .round-card__tagline {

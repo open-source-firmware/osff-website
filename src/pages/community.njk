@@ -60,6 +60,9 @@ permalink: /community/index.html
                           %}
                         {% endif %}
                         <h3 class="uppercase text-step-2 font-head weight-bold">{{ ibv.name }}</h3>
+                        {% if ibv.isMember %}
+                            {% include "partials/ribbon.njk" %}
+                        {% endif %}
                     </div>
                     <div class="edge-card__content">
                         <p class="weight-medium text-step--1">"{{ ibv.quote }}"</p>
@@ -123,6 +126,9 @@ permalink: /community/index.html
                         {% endif %}
                     {% endif %}
                     <h3 class="uppercase text-step-2 font-head weight-bold">{{ partner.name }}</h3>
+                    {% if partner.isMember %}
+                        {% include "partials/ribbon.njk" %}
+                    {% endif %}
                 </div>
                 <div class="round-card__content | stack-m">
                     <p class="weight-medium text-step--1">{{ partner.description }}</p>

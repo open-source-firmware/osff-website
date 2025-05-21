@@ -3,6 +3,7 @@
   color: var(--color-black);
   padding: var(--space-m) var(--space-s) var(--space-m) var(--space-m);
   position: relative;
+  overflow: clip;
 
   &::before {
     content: "";
@@ -50,6 +51,7 @@
   picture + h5 {
     margin-inline-start: 0;
   }
+    padding-inline-end: var(--space-s);
 }
 
 .edge-card__header-icon {
