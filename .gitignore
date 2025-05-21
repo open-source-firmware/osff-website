@@ -8,6 +8,7 @@ Thumbs.db
 .env
 .cache
 .ra-aid
+.vscode
 
 # Node modules and output
 node_modules
