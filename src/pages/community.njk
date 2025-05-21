@@ -112,16 +112,23 @@ permalink: /community/index.html
                     <p class="weight-medium text-step--1">{{ partner.description }}</p>
                     <div class="cluster" style="--cluster-gap: var(--space-m);">
                         <div class="stack-xxs">
+                            {% if partner.projectLogos %}
                             <h4 class="uppercase text-step--1">Projects</h4>
                             <div class="cluster" style="--cluster-gap: var(--space-xxs);">
                                 {% for logo in partner.projectLogos %}
-                                    {% icon icon = logo,
-                                alt = "OSFF",
-                                width = "var(--space-s)" %}
+                                    {% if logo.includes(".png") %}
+                                        <img src="{{ logo }}" class="edge-card__header_icon_small" alt = "OSFF">
+                                    {% else %}
+                                        {% icon icon = logo,
+                                            alt = "OSFF",
+                                            width = "var(--space-m)" %}
+                                    {% endif %}
                                 {% endfor %}
                             </div>
+                            {% endif %}
                         </div>
                         <div class="stack-xxs">
+                            {% if partner.supportedSocLogos %}
                             <h4 class="uppercase text-step--1">Supported Soc</h4>
                             <div class="cluster" style="--cluster-gap: var(--space-xxs);">
                                 {% for logo in partner.supportedSocLogos %}
@@ -130,6 +137,7 @@ permalink: /community/index.html
                                 width = "var(--space-s)" %}
                                 {% endfor %}
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
