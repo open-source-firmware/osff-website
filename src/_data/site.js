@@ -1,4 +1,4 @@
-const productionUrl = "https://osfw.foundation";
+const productionUrl = "https://opensourcefirmware.foundation";
 const developmentUrl = "http://localhost:8080";
 
 export default {
