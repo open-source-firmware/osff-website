@@ -35,36 +35,36 @@ boardOfDirectors:
 volunteers:
   - portrait: "felix-singer.png"
     position: "Ambassador"
-    linkedIn: "https://linkedin.com"
+    linkedIn: "https://linkedin.com](https://www.linkedin.com/in/felixsinger/"
     name:     "Felix Singer"
 
   - portrait: "hancock-chang.webp"
     position: "Ambassador"
-    linkedIn: "https://linkedin.com"
+    linkedIn: "https://linkedin.com/in/hancock-chang-6a81a646"
     name:     "Hancock Chang"
 
   - portrait: "kai-michaelis.png"
     position: "Ambassador"
-    linkedIn: "https://linkedin.com"
+    linkedIn: "https://www.linkedin.com/in/kai-michaelis-60319a196"
     name:     "Kai Michaelis"
 
   - portrait: "martin-roth.png"
     position: "Ambassador"
-    linkedIn: "https://linkedin.com"
+    linkedIn: "https://www.linkedin.com/in/martinlroth/"
     name:     "Martin Roth"
 
   - portrait: "paul-grimes.jpg"
     position: "Ambassador"
-    linkedIn: "https://linkedin.com"
+    linkedIn: "https://www.linkedin.com/in/paul-grimes-9631a92/"
     name:     "Paul Grimes"
 
   - portrait: "richard-hughes.webp"
     position: "Ambassador"
-    linkedIn: "https://linkedin.com"
+    linkedIn: "https://www.linkedin.com/in/hughsient/"
     name:     "Richard Hughes"
 
   - portrait: "subrata-banik.webp"
     position: "Ambassador"
-    linkedIn: "https://linkedin.com"
+    linkedIn: "https://www.linkedin.com/in/subrata-banik-268b3317"
     name:     "Subrata Banik"
 ---
