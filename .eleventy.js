@@ -219,7 +219,7 @@ export default function EleventyConfig(config) {
       esbuild: {
         watch: ["src/assets/scripts/**/*"],
         options: {
-          entryPoints: [path.resolve(__dirname, "src/assets/scripts/**/*")],
+          entryPoints: [path.resolve(__dirname, "src/assets/scripts/global.js")],
           bundle: true,
           minify: isProduction,
           outdir: "dist/assets/scripts",
