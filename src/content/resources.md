@@ -13,6 +13,9 @@ specification:
   - name: "OSFF Feature Request Flow"
     url: "https://drive.google.com/file/d/1su3s93xNgqy9AixDfHEWGrB_1nxYbQoz/view?usp=drive_link"
     firmwareResource: true
+  - name: "Flattened Image Tree Specification"
+    url: "https://fitspec.osfw.foundation/"
+    firmwareResource: true
 tags: resources
 ---
 
