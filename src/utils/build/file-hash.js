@@ -9,12 +9,19 @@ import crypto from "crypto";
  * @returns {string}
  */
 export const getFileHash = (src) => {
-  const fileContent = fs.readFileSync(src, "utf8");
-  const fileHash = crypto
-    .createHash("sha256")
-    .update(fileContent)
-    .digest("hex")
-    .slice(0, 8);
+  try {
+    const fileContent = fs.readFileSync(src, "utf8");
+    const fileHash = crypto
+      .createHash("sha256")
+      .update(fileContent)
+      .digest("hex")
+      .slice(0, 8);
 
-  return fileHash;
+    return fileHash;
+  } catch (error) {
+    // If file doesn't exist yet (during build process), return a default hash
+    // This will be updated once the file is actually built
+    console.warn(`File ${src} not found during build, using default hash`);
+    return "build";
+  }
 };
