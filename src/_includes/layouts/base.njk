@@ -20,10 +20,7 @@
 
     {# When using fonts, load them via fonts.css before the critical CSS so they are rendered ASAP #}
     {# <link rel="stylesheet" href="/assets/css/fonts/fonts.css?{{ assetHash }}" /> #}
-    {% if env.nodeenv !== 'production' %}
-      <!-- We're not in production mode -->
       <link rel="stylesheet" href="/assets/css/global.css"/>
-    {% endif %}
   </head>
 
   <body>

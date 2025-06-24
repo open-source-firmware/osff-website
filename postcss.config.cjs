@@ -9,8 +9,6 @@ const tailwind = require("tailwindcss");
 /** @type {import('postcss-load-config').Config} */
 module.exports = {
   map: process.env.NODE_ENV === "production" ? false : { inline: true },
-  from: "src/assets/css/global.css",
-  to: "dist/assets/css/global.css",
   plugins: [
     postcssImportGlob(),
     postcssImport(),
