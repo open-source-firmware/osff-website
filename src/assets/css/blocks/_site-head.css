@@ -194,6 +194,12 @@
   }
 }
 
+.site-head.light {
+  @media(--md) {
+    background-color: var(--color-purple);
+  }
+}
+
 .dark.site-head {
   background-color: var(--color-purple);
 
@@ -265,6 +271,7 @@
 }
 
 .site-head__logo {
+
   @media (prefers-reduced-motion: no-preference) {
     transition: 0.25s ease-out;
   }

@@ -21,6 +21,7 @@
   position: absolute;
   height: var(--decoline-height);
   width: 100%;
+  aspect-ratio: auto;
 
   &::before,
   &::after {
@@ -42,5 +43,6 @@
     height: 100%;
     aspect-ratio: 1;
     right: 0;
+    display: flex;
   }
 }
