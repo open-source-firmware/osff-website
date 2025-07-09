@@ -195,8 +195,12 @@
 }
 
 .site-head.light {
+  background-color: var(--color-purple);
+  color: var(--color-white);
+
   @media(--md) {
-    background-color: var(--color-purple);
+    background-color: transparent;
+    color: var(--color-black);
   }
 }
 
