@@ -35,7 +35,7 @@ boardOfDirectors:
 volunteers:
   - portrait: "felix-singer.png"
     position: "Ambassador"
-    linkedIn: "https://linkedin.com](https://www.linkedin.com/in/felixsinger/"
+    linkedIn: "https://www.linkedin.com/in/felixsinger/"
     name:     "Felix Singer"
 
   - portrait: "hancock-chang.webp"

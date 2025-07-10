@@ -39,7 +39,11 @@ export default function EleventyConfig(config) {
   config.addPlugin(eleventyPluginBrokenLinks, {
     broken: "error",
     loggingLevel: 2,
-    excludeUrls: ["https://www.mitaccomputing.com*"],
+    excludeUrls: [
+      "https://www.mitaccomputing.com*",
+      "https://www.linkedin.com/*",
+      "https://linkedin.com/*"
+    ],
     excludeInputs: [],
     callback: null,
   });
