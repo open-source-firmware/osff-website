@@ -18,7 +18,7 @@ const partners = [
   },
   {
     "name": "Framework",
-    "url": "https://frame.work",
+    "url": "https://www.frame.work",
     "logo": "/assets/images/partner-logos/framework_logo.svg"
   },
   {
