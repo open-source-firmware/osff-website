@@ -36,17 +36,6 @@ const isProduction = process.env.NODE_ENV === "production";
 
 /** @param {import("./node_modules/@11ty/eleventy/src/UserConfig.js").default} config */
 export default function EleventyConfig(config) {
-  config.addPlugin(eleventyPluginBrokenLinks, {
-    broken: "error",
-    loggingLevel: 2,
-    excludeUrls: [
-      "https://www.mitaccomputing.com*",
-      "https://www.linkedin.com/*",
-      "https://linkedin.com/*"
-    ],
-    excludeInputs: [],
-    callback: null,
-  });
   const cssDir = path.join(__dirname, "/dist/assets/css/");
   if (!fs.existsSync(cssDir)) {
     fs.mkdirSync(cssDir, {

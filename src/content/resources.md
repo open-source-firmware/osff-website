@@ -16,6 +16,9 @@ specification:
   - name: "Flattened Image Tree Specification"
     url: "https://fitspec.osfw.foundation/"
     firmwareResource: true
+  - name: "SBOM Specification"
+    url: "https://sbomspec.osfw.foundation/"
+    firmwareResource: true
 tags: resources
 ---
 
