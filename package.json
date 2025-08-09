@@ -6,7 +6,7 @@
   "scripts": {
     "start": "eleventy --serve --incremental",
     "start-production": "NODE_ENV=production eleventy --serve --incremental",
-    "production": "NODE_ENV=production eleventy",
+    "production": "npm run build:js && npm run build:css && NODE_ENV=production eleventy",
     "build:js": "esbuild src/assets/scripts/global.js --bundle --outdir=dist/assets/scripts --format=esm --minify",
     "build:css": "postcss src/assets/css/global.css --output dist/assets/css/global.css",
     "serve": "npx serve dist -p 8080"
