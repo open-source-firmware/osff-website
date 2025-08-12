@@ -96,13 +96,19 @@ eleventyImport:
                   {% set timeHour = item
                     .time
                     .split(':')[0] | int %}
+		  {% set timeMinutes = item
+		    .time
+		    .split(':')[1] %}
                   <time datetime="{{ item.time }}">
-                    {% if timeHour < 12 %}{{ timeHour }}
-                    {% else %}{{ timeHour - 12 }}
+                    {% if timeHour < 13 %}
+                      {%- if timeHour < 10 %}&nbsp;{% endif -%}{{ timeHour }}:{{ timeMinutes }}
+                    {% else %}
+                      {%- set displayHour = timeHour - 12 -%}
+                      {%- if displayHour < 10 %}&nbsp;{% endif -%}{{ displayHour }}:{{ timeMinutes }}
                     {% endif %}
                     <span>
                       {% if timeHour < 12 %}AM{% else %}PM{% endif %}</span></time>
-                  {{ item.event }}
+                  {{ item.event }}{% if item.slides %} <a href="{{ item.slides }}" class="link" target="_blank" rel="noopener">(Slides)</a>{% endif %}
                 </li>
               {% endfor %}
             </ul>
