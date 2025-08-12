@@ -32,6 +32,7 @@ schedule:
       slides: "https://docs.google.com/presentation/d/1h64jZWe4xoCGIIGITQuX2KRCF3yGqWs1/edit?usp=drive_link&ouid=107885478394155527399&rtpof=true&sd=true"
     - time: "14:30"
       event: "Tracing embedded systems for holistic debugging"
+      slides: "https://docs.google.com/presentation/d/11n3u7vDVnKX8tGVlNdfijJwdlRxkFodeHW5zTXa6QSU"
     - time: "15:00"
       event: "How to do cross-debugging on OpenBMC and Yocto Project."
       slides: "https://drive.google.com/file/d/1pMfV2NyekS4XCDJmw25RW1Xv8QDR-zWG/view?usp=drive_link"
