@@ -31,4 +31,11 @@ ibvs:
     quote: >
       Eltan offers a robust development environment for crafting and debugging firmware solutions. With our advanced tools and extensive knowledge, we assist our customers in optimizing their operating systems and implementing specialized functions.
     link: "https://eltan.com"
+
+  - logo: "/assets/images/partner-logos/newfw.png"
+    name: "NewFW"
+    isMember: false
+    quote: >
+      NewFW Technology Pte. Ltd was established to deliver advanced solutions for managing and optimizing modern computing infrastructures. We focus on bridging the gap between firmware innovation and workload orchestration, supporting environments across multi-cloud, hybrid, bare metal, and edge. Our solutions help clients — from startups to large enterprises — improve efficiency, reduce costs, and accelerate deployment cycles
+    link: "https://www.newfw.com/"
 ---
