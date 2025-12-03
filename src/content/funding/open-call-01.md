@@ -1,17 +1,26 @@
 ---
 tags: funding
 
-title: Small-Scale, High-Impact Firmware Contributions
+title: Small-Scale, High-Impact Firmware Contributions 2025
 subtitle: Empowering Small-Scale Contributions to the Open-Source Firmware Ecosystem
 fundingRange: 1.000 – 5.000€
 open: June 1st, 2025
 closes: July 31st, 2025
+status: closed
+email: cfp+2025oc1@osfw.foundation
 categories:
   - Firmware Development
   - Tooling
   - Security
   - Docs
   - Research
+include:
+  - Title and brief summary
+  - Target project(s) and expected impact
+  - Deliverables and milestone ideas
+  - Estimated timeline
+  - Requested amount (EUR)
+  - Plan for integration (e.g., via upstream PRs)
 ---
 
 The Open-Source Firmware Foundation is calling for small-scale, high-impact proposals that help grow and strengthen the open-source firmware ecosystem.
