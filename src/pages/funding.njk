@@ -1,8 +1,12 @@
 ---
-title: "Fundings"
+title: "Funding"
 layout: "layouts/subpage.njk"
 permalink: /funding/index.html
 ---
+{% set fundedProjects = collections
+    .fundedProjects[0]
+    .data
+    .fundedProjects %}
 
 <div class="stack-m">
     <div class="wrapper | stack-xl" style="--wrapper-max: var(--wrapper-m);">
@@ -27,8 +31,17 @@ permalink: /funding/index.html
 
         <div class="stack-m">
             <h3 class="text-center uppercase text-step-3 text-purple font-head">Open Calls</h3>
+            {% set hasOpenCalls = false %}
+            {% for funding in collections.funding %}
+                {% if funding.data.status != 'closed' %}
+                    {% set hasOpenCalls = true %}
+                {% endif %}
+            {% endfor %}
+
+            {% if hasOpenCalls %}
             <ul role="list" class="stack-m">
                 {% for funding in collections.funding %}
+                    {% if funding.data.status != 'closed' %}
                     <li class="edge-card">
                         <div class="sidebar-right" style="
                             --sidebar-threshold: 30rem;
@@ -67,9 +80,117 @@ permalink: /funding/index.html
                             width = "var(--space-m)" %}
                         </div>
                     </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            {% else %}
+            <div class="info-box | stack-s" style="max-width: 50rem; margin: 0 auto;">
+                <p class="text-step-0">There are currently no open funding calls. However, we're always interested in supporting impactful open source firmware projects.</p>
+                <p class="text-step-0">If you have a proposal, please reach out to us at <a href="mailto:cfp+open@osfw.foundation" class="link">cfp+open@osfw.foundation</a> and we'll be happy to discuss your project.</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="stack-m">
+            <h3 class="text-center uppercase text-step-3 text-purple font-head">Closed Calls</h3>
+            <ul role="list" class="stack-m">
+                {% for funding in collections.funding %}
+                    {% if funding.data.status == 'closed' %}
+                    <li class="edge-card">
+                        <div class="sidebar-right" style="
+                            --sidebar-threshold: 30rem;
+                            --sidebar-gap: var(--space-l);
+                            --sidebar-gap-vertical: var(--space-m);
+                        ">
+                            <div>
+                                <div class="edge-card__header">
+                                    <h3 class="uppercase text-step-2 font-head weight-bold">{{funding.data.title}}</h3>
+                                </div>
+                                <div class="edge-card__content">
+                                    <p class="weight-medium text-step--1">{{funding.data.subtitle}}</p>
+                                </div>
+                            </div>
+                            <div class="stack-m">
+                                <div class="stack-xxs">
+                                    <h4 class="uppercase font-head text-step--1 weight-bold">Status</h4>
+                                    <div class="text-gray-dark text-step-0" style="display: flex; gap: var(--space-xxs);">
+                                        <span class="border-label" style="width: 5rem">Opened</span>{{ funding.data.open }}
+                                    </div>
+                                    <div class="text-gray-dark text-step-0" style="display: flex; gap: var(--space-xxs);">
+                                        <span class="border-label" style="width: 5rem">Closed</span>{{ funding.data.closes }}
+                                    </div>
+                                </div>
+                                <div class="stack-xxs">
+                                    <h4 class="uppercase font-head text-step--1 weight-bold">Category / Focus</h4>
+                                    <p class="weight-medium text-step--1">{{ funding.data.categories | join(' · ') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edge-card__footer">
+                            <a href="/funding/{{ funding.data.title | slugify }}/" class="btn btn--small">View Details</a>
+                            {% icon icon = "osff-sign",
+                            alt = "OSFF",
+                            class = "edge-card__footer-icon",
+                            width = "var(--space-m)" %}
+                        </div>
+                    </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </div>
+
+        {% if fundedProjects and fundedProjects.length > 0 %}
+        <div class="stack-m">
+            <h3 class="uppercase text-step-2 text-purple font-head">Funded Projects</h3>
+            <p class="text-step-0">Projects that have received funding from the Open Source Firmware Foundation.</p>
+
+            <ul role="list" class="grid-switcher" style="
+                --gs-columns-medium: 1;
+                --gs-columns-large: 2;
+                --gs-gap: var(--space-m);
+            ">
+                {% for project in fundedProjects %}
+                    <li class="edge-card">
+                        <div class="edge-card__header">
+                            {% if project.logo %}
+                                {% if project.logo.includes(".png") or project.logo.includes(".jpg") or project.logo.includes(".svg") %}
+                                    <img src="{{ project.logo }}" alt="{{ project.title }}" class="edge-card__header-icon">
+                                {% else %}
+                                    {% icon icon = project.logo,
+                                  alt = project.title,
+                                  class = "edge-card__header-icon"
+                                  %}
+                                {% endif %}
+                            {% endif %}
+                            <h3 class="uppercase text-step-2 font-head weight-bold">{{ project.title }}</h3>
+                        </div>
+
+                        <div class="edge-card__content">
+                            <p class="weight-medium text-step--1">{{ project.description }}</p>
+                            <div class="stack-xxs" style="margin-top: var(--space-s);">
+                                {% if project.project %}
+                                <p class="text-step--1"><strong>Project:</strong> {{ project.project }}</p>
+                                {% endif %}
+                                {% if project.fundingRound %}
+                                <p class="text-step--1"><strong>Funding Round:</strong> <a href="/funding/{{ project.fundingRound | slugify }}/" class="link">{{ project.fundingRound }}</a></p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="edge-card__footer">
+                            {% if project.url %}
+                            <a href="{{ project.url }}" class="btn btn--small" target="_blank">More info</a>
+                            {% endif %}
+                            {% icon icon = "osff-sign",
+                      alt = "OSFF",
+                      class = "edge-card__footer-icon",
+                      width = "var(--space-l)" %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </div>
 </div>
 

@@ -1,0 +1,148 @@
+---
+title: "Donate"
+layout: "layouts/subpage.njk"
+permalink: /donate/index.html
+---
+
+<div class="stack-m">
+    <div class="wrapper | stack-xl" style="--wrapper-max: var(--wrapper-m);">
+        <div class="stack-s">
+            <h1 class="uppercase font-head text-purple weight-bold text-step-4">Support Open Source Firmware</h1>
+
+            <div class="text-side-by-side sidebar-right" style="
+                --sidebar-width: clamp(22rem, 30vw, 30rem);
+                --sidebar-gap: var(--space-l);
+                --sidebar-threshold: 40rem;
+                ">
+                <div class="stack-m">
+                    <p class="text-step-1">Your support helps us advance open source firmware innovation and build a more secure, transparent digital future.</p>
+                    <p class="text-step-1">By donating to the Open Source Firmware Foundation, you're directly contributing to projects that enhance security, promote transparency, and foster innovation in firmware development.</p>
+                </div>
+                <aside class="stack-xs">
+                    <p class="text-step-0 text-gray-dark">See how we support the community</p>
+                    <a href="/funding/" class="link text-step--1">View Funding Programs</a>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-white funding-teaser bg-purple">
+    <div class="wrapper | stack-l">
+        <div class="stack-m">
+            <h2 class="text-center uppercase font-head text-salmon weight-bold text-step-4">Why Your Support Matters</h2>
+            <p class="text-center text-step-1">Open source firmware is the foundation of trustworthy computing. Your donation helps us fund critical projects, support developers, and build a more secure digital infrastructure.</p>
+        </div>
+        <hr>
+        <div class="stack-m">
+            <h3 class="text-step-3 font-head">Your contribution supports:</h3>
+            <ul class="fancy-list fancy-list--light | text-step-0" role="list">
+                <li>Direct funding for open source firmware projects and developers</li>
+                <li>Community events, conferences, and educational initiatives</li>
+                <li>Technical infrastructure and development resources</li>
+                <li>Security research and vulnerability disclosure programs</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper | stack-xl" style="--wrapper-max: var(--wrapper-m);">
+    <div class="stack-m">
+        <h2 class="text-center uppercase font-head text-purple weight-bold text-step-3">Ways to Donate</h2>
+        
+        <div class="grid-switcher" style="
+            --gs-columns-small: 1;
+            --gs-columns-medium: 2;
+            --gs-columns-large: 2;
+            --gs-gap: var(--space-l);
+        ">
+            <div class="edge-card">
+                <div class="edge-card__header">
+                    <h3 class="uppercase text-step-2 font-head weight-bold">Individual Donations</h3>
+                </div>
+                <div class="edge-card__content stack-s">
+                    <p class="weight-medium text-step--1">Support our mission with a one-time or recurring donation</p>
+                    <ul class="fancy-list | text-step-0" role="list">
+                        <li>Flexible donation amounts</li>
+                        <li>Secure online payment processing</li>
+                        <li>Tax-deductible contributions</li>
+                        <li>Regular updates on impact</li>
+                    </ul>
+                </div>
+                <div class="edge-card__footer">
+                    <a href="#donate-form" class="btn btn--small">Donate Now</a>
+                    {% icon icon = "osff-sign",
+                    alt = "OSFF",
+                    class = "edge-card__footer-icon",
+                    width = "var(--space-m)" %}
+                </div>
+            </div>
+
+            <div class="edge-card">
+                <div class="edge-card__header">
+                    <h3 class="uppercase text-step-2 font-head weight-bold">Corporate Sponsorship</h3>
+                </div>
+                <div class="edge-card__content stack-s">
+                    <p class="weight-medium text-step--1">Partner with us for greater impact and visibility</p>
+                    <ul class="fancy-list | text-step-0" role="list">
+                        <li>Multiple sponsorship tiers available</li>
+                        <li>Brand visibility at events and online</li>
+                        <li>Direct project funding opportunities</li>
+                        <li>Technical collaboration possibilities</li>
+                    </ul>
+                </div>
+                <div class="edge-card__footer">
+                    <a href="mailto:info@osfw.foundation" class="btn btn--small">Contact Us</a>
+                    {% icon icon = "osff-sign",
+                    alt = "OSFF",
+                    class = "edge-card__footer-icon",
+                    width = "var(--space-m)" %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stack-m" id="donate-form">
+        <h2 class="text-center uppercase font-head text-purple weight-bold text-step-3">Make a Donation</h2>
+        <div class="wrapper bg-gray" style="--wrapper-max: 40rem; padding: var(--space-l); border-radius: var(--space-xs);">
+            <div class="stack-m text-center">
+                <p class="text-step-0">We're setting up secure donation processing. In the meantime, you can support us by:</p>
+                <div class="stack-s">
+                    <a href="mailto:info@osfw.foundation?subject=Donation Inquiry" class="btn">Contact Us About Donating</a>
+                    <p class="text-step--1 text-gray-dark">or</p>
+                    <a href="/community/" class="link">Join Our Community</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="multiple-link-teaser | wrapper" style="--wrapper-max: var(--wrapper-m);">
+    <div class="multiple-link-teaser__content | stack-s">
+        <h2 class="uppercase font-head text-purple weight-bold text-step-3">Other Ways to Help</h2>
+        <p class="text-step-0">Can't donate right now? There are many other ways to support our mission</p>
+        <div class="multiple-link-teaser__image"></div>
+    </div>
+    <p class="multiple-link-teaser__hint text-step--1"></p>
+    <div class="multiple-link-teaser__links">
+        <a href="/community/">
+            {% icon icon = "osff-sign",
+                    alt = "",
+                    width = "var(--space-s)" %}
+            Join the Community
+        </a>
+        <a href="/projects/">
+            {% icon icon = "github",
+                    alt = "",
+                    width = "var(--space-s)" %}
+            Contribute Code
+        </a>
+        <a href="/events/">
+            {% icon icon = "calendar",
+                    alt = "",
+                    width = "var(--space-s)" %}
+            Attend Events
+        </a>
+    </div>
+    <a href="/projects/" class="multiple-link-teaser__small-link link">Explore Our Projects</a>
+</div>

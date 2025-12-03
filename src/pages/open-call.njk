@@ -41,21 +41,26 @@ eleventyImport:
             </div>
         </div>
         <div class="open-call__sidebar | stack-m">
+            {% if funding.data.email %}
             <div class="stack-xxs">
                 <h4 class="uppercase font-head text-step--1 weight-bold text-purple">How to apply</h4>
                 <p class="text-step--1 text-gray-dark">Send your one-page proposal to: </p>
-                <a href="mailto:cfp+2025oc1@osfw.foundation" class="text-step--1">cfp+2025oc1@osfw.foundation</a>
+                <a href="mailto:{{ funding.data.email }}" class="text-step--1">{{ funding.data.email }}</a>
             </div>
+            {% endif %}
+            {% if funding.data.include %}
             <div class="stack-xxs">
                 <h4 class="uppercase font-head text-step--1 weight-bold text-purple">Include</h4>
                 <ul class="stack-xxs" role="list">
-                    <li>Title and brief summary</li>
-                    <li>Target project(s) and expected impact</li>
-                    <li>Deliverables and milestone ideas</li>
-                    <li>Estimated timeline</li>
-                    <li>Requested amount (EUR)</li>
-                    <li>Plan for integration (e.g., via upstream PRs)</li>
+                    {% for item in funding.data.include %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
                 </ul>
+            </div>
+            {% endif %}
+            <div class="stack-xxs">
+                <h4 class="uppercase font-head text-step--1 weight-bold text-purple">Category / Focus</h4>
+                <p class="weight-medium text-step--1">{{ funding.data.categories | join(' · ') }}</p>
             </div>
         </div>
     </div>
