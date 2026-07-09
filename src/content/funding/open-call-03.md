@@ -1,13 +1,13 @@
 ---
 tags: funding
 
-title: Small-Scale, High-Impact Firmware Contributions 2026/1
+title: Small-Scale, High-Impact Firmware Contributions 2026/2
 subtitle: Empowering Small-Scale Contributions to the Open-Source Firmware Ecosystem
 fundingRange: 1.000 – 7.500€
-open: December 15th, 2025
-closes: January 31st, 2026
-status: closed
-email: cfp+2026oc2@osfw.foundation
+open: July 15th, 2026
+closes: September 30th, 2026
+status: open
+email: cfp+2026oc3@osfw.foundation
 categories:
   - Firmware Development
   - Tooling
@@ -50,7 +50,7 @@ This call is open to:
 
 ## How to Apply
 
-Send your proposal to [cfp+2026oc2@osfw.foundation](mailto:cfp+2026oc2@osfw.foundation) including:
+Send your proposal to [cfp+2026oc3@osfw.foundation](mailto:cfp+2026oc3@osfw.foundation) including:
 
 1. **Project Description**: What you want to build or improve (max 500 words)
 2. **Impact**: Why it matters to the open source firmware ecosystem
@@ -72,4 +72,4 @@ Proposals will be evaluated based on:
 
 ## Questions?
 
-If you have any questions about this funding call, please reach out to [cfp+2026oc2@osfw.foundation](mailto:cfp+2026oc2@osfw.foundation).
+If you have any questions about this funding call, please reach out to [cfp+2026oc3@osfw.foundation](mailto:cfp+2026oc3@osfw.foundation).
