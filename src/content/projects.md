@@ -68,4 +68,8 @@ projects:
       description: Trusted Firmware provides a reference implementation of secure software for Armv8-A, Armv9-A and Armv8-M. It provides SoC developers and OEMs with a reference trusted code base complying with the relevant Arm specifications.
       url: https://www.trustedfirmware.org/
       logo: "../assets/images/projects/trustedfirmware.png"
+    - title: ESP32 Bit Pirate
+      description: The Bit Pirate firmware is complemented by scripting, hardware dock, extension, adapters, browser tools, documentation and practical embedded workflows to enable comprehensive hardware debugging and development with serial interfaces or Wi-Fi connectivity.
+      url: https://geo-tp.github.io/ESP32-Bit-Pirate
+      logo: "../assets/images/projects/bit-pirate-square.png"
 ---
